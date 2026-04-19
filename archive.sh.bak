@@ -50,14 +50,10 @@ fi
 
 # Git 提交并推送
 git -C "$BRIEFINGS" add .
-if git -C "$BRIEFINGS" diff --cached --quiet; then
-  echo "ℹ️  无新变更，无需推送"
-else
-  git -C "$BRIEFINGS" commit -m "简报归档: $FORMATTED_DATE" && \
-    git -C "$BRIEFINGS" push origin main 2>&1 && \
-    echo "🚀 已推送到 GitHub Pages" || \
-    echo "⚠️  推送失败，请检查网络"
-fi
+git -C "$BRIEFINGS" commit -m "简报归档: $FORMATTED_DATE" 2>/dev/null && \
+  git -C "$BRIEFINGS" push origin main 2>&1 && \
+  echo "🚀 已推送到 GitHub Pages" || \
+  echo "⚠️  推送失败，请检查网络"
 
 echo ""
 echo "🌐 在线网站: https://lucylook6-design.github.io/landy-briefings/"
