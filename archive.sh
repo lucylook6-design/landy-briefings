@@ -1,28 +1,31 @@
 #!/bin/bash
-# 自动归档 openclaw 生成的日报到网站
+# 自动归档 openclaw 生成的日报到网站并推送 GitHub Pages
 
 WORKSPACE=~/.openclaw/workspace
 BRIEFINGS=~/briefings
 REPORTS=$BRIEFINGS/reports
 
+# 动态读取系统代理端口
+PROXY_PORT=$(scutil --proxy 2>/dev/null | grep HTTPSPort | awk '{print $3}')
+if [ -n "$PROXY_PORT" ]; then
+  export https_proxy=http://127.0.0.1:$PROXY_PORT
+  export http_proxy=http://127.0.0.1:$PROXY_PORT
+fi
+
 # 查找最新的 HTML 简报
-LATEST=$(ls -t $WORKSPACE/*report*.html $WORKSPACE/lt_report*.html 2>/dev/null | head -1)
+LATEST=$(ls -t $WORKSPACE/lt_report_*.html $WORKSPACE/*report*.html 2>/dev/null | head -1)
 
 if [ -z "$LATEST" ]; then
   echo "❌ 未找到新简报"
   exit 1
 fi
 
-# 提取日期（从文件名或内容）
+# 提取日期
 FILENAME=$(basename "$LATEST")
 DATE=$(echo "$FILENAME" | grep -oE '[0-9]{8}' | head -1)
-
 if [ -z "$DATE" ]; then
-  echo "⚠️  无法从文件名提取日期，使用今天日期"
   DATE=$(date +%Y%m%d)
 fi
-
-# 格式化日期 YYYYMMDD -> YYYY-MM-DD
 FORMATTED_DATE="${DATE:0:4}-${DATE:4:2}-${DATE:6:2}"
 TARGET="$REPORTS/$FORMATTED_DATE.html"
 
@@ -30,34 +33,28 @@ TARGET="$REPORTS/$FORMATTED_DATE.html"
 cp "$LATEST" "$TARGET"
 echo "✅ 已归档: $TARGET"
 
-# 更新 index.html 中的 REPORTS 数组
-# 提取简报标题和描述（从 HTML 中）
-TITLE=$(grep -oP '<h1[^>]*>\K[^<]+' "$TARGET" | head -1 | sed 's/AI研究员--Landy陸葉的简报//' | xargs)
-if [ -z "$TITLE" ]; then
-  TITLE="每日简报"
+# 提取标题和描述
+TITLE=$(grep -oE '<h1[^>]*>[^<]+' "$TARGET" | sed 's/<[^>]*>//' | head -1 | xargs)
+DESC=$(grep -oE '<li><strong>[^<]+' "$TARGET" | sed 's/<[^>]*>//' | head -3 | paste -sd ' · ' -)
+[ -z "$TITLE" ] && TITLE="每日简报"
+[ -z "$DESC" ] && DESC="液冷 · AI · 资本市场情报"
+
+# 更新 index.html REPORTS 数组（去重后插入）
+if ! grep -q "\"$FORMATTED_DATE\"" "$BRIEFINGS/index.html"; then
+  NEW_ENTRY="  {\n    date: \"$FORMATTED_DATE\",\n    title: \"$TITLE\",\n    desc: \"$DESC\",\n    tags: [\"ai\", \"stock\", \"energy\"],\n    file: \"reports/$FORMATTED_DATE.html\"\n  },"
+  sed -i.bak "s|const REPORTS = \[|const REPORTS = [\n$NEW_ENTRY|" "$BRIEFINGS/index.html"
+  echo "✅ 已更新首页索引"
+else
+  echo "ℹ️  $FORMATTED_DATE 已存在，跳过索引更新"
 fi
 
-DESC=$(grep -oP '<li><strong>\K[^<]+' "$TARGET" | head -3 | paste -sd ' · ' -)
-if [ -z "$DESC" ]; then
-  DESC="液冷 · AI · 资本市场情报"
-fi
+# Git 提交并推送
+git -C "$BRIEFINGS" add .
+git -C "$BRIEFINGS" commit -m "简报归档: $FORMATTED_DATE" 2>/dev/null && \
+  git -C "$BRIEFINGS" push origin main 2>&1 && \
+  echo "🚀 已推送到 GitHub Pages" || \
+  echo "⚠️  推送失败，请检查网络"
 
-# 生成新的 REPORTS 条目
-NEW_ENTRY=$(cat <<ENTRY
-  {
-    date: "$FORMATTED_DATE",
-    title: "$TITLE",
-    desc: "$DESC",
-    tags: ["ai", "stock", "energy"],
-    file: "reports/$FORMATTED_DATE.html"
-  }
-ENTRY
-)
-
-# 插入到 index.html（在 REPORTS 数组开头）
-sed -i.bak "/const REPORTS = \[/a\\
-$NEW_ENTRY," "$BRIEFINGS/index.html"
-
-echo "✅ 已更新首页索引"
 echo ""
-echo "🌐 打开网站: file://$BRIEFINGS/index.html"
+echo "🌐 在线网站: https://lucylook6-design.github.io/landy-briefings/"
+echo "🌐 本地预览: file://$BRIEFINGS/index.html"
