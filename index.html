@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landy 陸葉 · 每日简报</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #21262d;
+    --accent: #1a73e8;
+    --accent2: #e87020;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --tag-ai: #1a3a5c;
+    --tag-stock: #2d4a1e;
+    --tag-energy: #4a2d1e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    min-height: 100vh;
+  }
+
+  /* ── 顶栏 ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-icon {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, #1a73e8, #e87020);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .logo-text { font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
+  .logo-sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .header-stats { display: flex; gap: 24px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 20px; font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* ── 主体 ── */
+  main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+  .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .page-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+
+  /* ── 搜索栏 ── */
+  .search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .search-bar input {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-bar input:focus { border-color: var(--accent); }
+  .search-bar input::placeholder { color: var(--muted); }
+
+  /* ── 年份分组 ── */
+  .year-group { margin-bottom: 40px; }
+  .year-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── 简报卡片 ── */
+  .report-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+  .report-card:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+  .card-date-block {
+    min-width: 52px;
+    text-align: center;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 8px 6px;
+  }
+  .card-month { font-size: 11px; color: var(--muted); text-transform: uppercase; }
+  .card-day { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
+  .card-weekday { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .card-body { flex: 1; }
+  .card-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .card-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .tag-ai { background: var(--tag-ai); color: #7ab3e8; }
+  .tag-stock { background: var(--tag-stock); color: #7ac87a; }
+  .tag-energy { background: var(--tag-energy); color: #e8a87a; }
+  .tag-robot { background: #2d1a4a; color: #c87ae8; }
+  .card-arrow {
+    color: var(--muted);
+    font-size: 18px;
+    transition: color 0.2s;
+  }
+  .report-card:hover .card-arrow { color: var(--accent); }
+
+  /* ── 空状态 ── */
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+  }
+  .empty-icon { font-size: 48px; margin-bottom: 12px; }
+
+  /* ── 底部 ── */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">📊</div>
+    <div>
+      <div class="logo-text">Landy 陸葉 · 每日简报</div>
+      <div class="logo-sub">液冷 · AI · 资本 · 利通科技</div>
+    </div>
+  </div>
+  <div class="header-stats">
+    <div class="stat">
+      <div class="stat-num" id="total-count">—</div>
+      <div class="stat-label">期简报</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="latest-date">—</div>
+      <div class="stat-label">最新一期</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="page-title">历史简报存档</div>
+  <div class="page-sub">每日 AI · 液冷 · 二级市场 · 利通科技 情报汇总</div>
+
+  <div class="search-bar">
+    <input type="text" id="search-input" placeholder="搜索日期或关键词…" oninput="filterReports()">
+  </div>
+
+  <div id="reports-container"></div>
+</main>
+
+<footer>
+  Landy 陸葉 · AI研究员简报系统 · 数据仅供参考，不构成投资建议
+</footer>
+
+<script>
+// ── 简报数据（由 archive.sh 自动更新） ──
+const REPORTS = [
+  {
+    date: "2026-04-19",
+    title: "液冷千人大会前瞻 · 英伟达Rubin强制液冷",
+    desc: "霍尔木兹封锁冲击能源 · 机器人半马北京举办 · 力源信息Q1净利+240%",
+    tags: ["ai", "stock", "energy", "robot"],
+    file: "reports/2026-04-19.html"
+  }
+];
+
+const WEEKDAYS = ["日","一","二","三","四","五","六"];
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function renderReports(list) {
+  const container = document.getElementById("reports-container");
+  if (list.length === 0) {
+    container.innerHTML = `<div class="empty"><div class="empty-icon">🔍</div><div>没有找到匹配的简报</div></div>`;
+    return;
+  }
+
+  // 按年分组
+  const groups = {};
+  list.forEach(r => {
+    const year = r.date.split("-")[0];
+    if (!groups[year]) groups[year] = [];
+    groups[year].push(r);
+  });
+
+  let html = "";
+  Object.keys(groups).sort((a,b) => b-a).forEach(year => {
+    html += `<div class="year-group"><div class="year-label">${year} 年</div>`;
+    groups[year].sort((a,b) => b.date.localeCompare(a.date)).forEach(r => {
+      const d = new Date(r.date + "T00:00:00");
+      const month = MONTHS[d.getMonth()];
+      const day = String(d.getDate()).padStart(2,"0");
+      const weekday = "周" + WEEKDAYS[d.getDay()];
+      const tagHtml = (r.tags||[]).map(t => {
+        const map = {ai:"AI·液冷", stock:"二级市场", energy:"储能·新能源", robot:"机器人"};
+        return `<span class="tag tag-${t}">${map[t]||t}</span>`;
+      }).join("");
+      html += `
+        <a class="report-card" href="${r.file}" target="_blank">
+          <div class="card-date-block">
+            <div class="card-month">${month}</div>
+            <div class="card-day">${day}</div>
+            <div class="card-weekday">${weekday}</div>
+          </div>
+          <div class="card-body">
+            <div class="card-title">${r.title}</div>
+            <div class="card-desc">${r.desc}</div>
+            <div class="card-tags">${tagHtml}</div>
+          </div>
+          <div class="card-arrow">›</div>
+        </a>`;
+    });
+    html += `</div>`;
+  });
+  container.innerHTML = html;
+}
+
+function filterReports() {
+  const q = document.getElementById("search-input").value.toLowerCase();
+  if (!q) { renderReports(REPORTS); return; }
+  const filtered = REPORTS.filter(r =>
+    r.date.includes(q) || r.title.toLowerCase().includes(q) || r.desc.toLowerCase().includes(q)
+  );
+  renderReports(filtered);
+}
+
+// 初始化
+renderReports(REPORTS);
+document.getElementById("total-count").textContent = REPORTS.length;
+const latest = REPORTS.sort((a,b) => b.date.localeCompare(a.date))[0];
+if (latest) {
+  const d = new Date(latest.date + "T00:00:00");
+  document.getElementById("latest-date").textContent = `${d.getMonth()+1}/${d.getDate()}`;
+}
+</script>
+</body>
+</html>
