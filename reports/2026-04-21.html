@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年4月21日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  /* 响应式设计 - 手机端 */
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    .date {
+      font-size: 15px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+    }
+    .section {
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 17px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    table {
+      font-size: 15px;
+    }
+    th, td {
+      padding: 10px 12px;
+    }
+    .highlight, .warning {
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+    .back-button {
+      font-size: 15px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+  }
+
+  /* 响应式设计 - 平板端 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body {
+      max-width: 90%;
+      margin: 30px auto;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 21px;
+    }
+  }
+
+  /* 响应式设计 - 小屏幕手机 */
+  @media (max-width: 480px) {
+    body {
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 17px;
+    }
+    h1 {
+      font-size: 19px;
+    }
+    .date {
+      font-size: 14px;
+    }
+    .section-title {
+      font-size: 18px;
+    }
+    table {
+      font-size: 14px;
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
+  /* 响应式设计 - 大屏幕电脑 */
+  @media (min-width: 1200px) {
+    body {
+      max-width: 900px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年4月21日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>金富科技液冷产能扩张</strong> — 并购标的公司已启动液冷业务产能扩张，预计5月底起陆续释放，已进入奇宏电子、宝德科技、双鸿电子等液冷头部厂商供应体系 <span class="source">（36氪）</span></li>
+    <li><strong>广东加大算电协同投资</strong> — 广东省委财经委员会会议强调用好产业引导基金，加大对集成电路、具身智能、算电协同等领域的投资 <span class="source">（36氪）</span></li>
+    <li><strong>中东局势推高油价</strong> — 霍尔木兹海峡航运受阻，WTI原油涨6.87%至89.61美元/桶，布伦特原油涨5.64%至95.48美元/桶 <span class="source">（财联社）</span></li>
+    <li><strong>亚马逊千亿AI投资</strong> — 亚马逊与Anthropic未来十年将在AWS技术上投入超1000亿美元，拓展亚洲和欧洲AI推断能力 <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 行业数据</strong>
+    <ul>
+      <li><strong>油价大涨</strong> — WTI原油期货结算价收涨6.87%至89.61美元/桶，布伦特原油涨5.64%至95.48美元/桶，霍尔木兹海峡航运受阻推高能源成本 <span class="source">（财联社）</span></li>
+      <li><strong>美股回调</strong> — 纳指跌0.26%终结13连涨，标普500跌0.24%，道指跌0.01%，大型科技股多数下跌 <span class="source">（财联社）</span></li>
+      <li><strong>黄金下跌</strong> — COMEX黄金期货收跌0.79%至4841美元/盎司，白银跌2.41%至79.87美元/盎司 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 政策动态</strong>
+    <ul>
+      <li><strong>广东加码新质生产力</strong> — 广东省委财经委员会会议强调积极布局新质生产力项目，用好产业引导基金，加大对集成电路、具身智能、算电协同等领域的投资 <span class="source">（36氪）</span></li>
+      <li><strong>印尼能源转型</strong> — 印尼计划自7月起停止进口柴油，为下半年实施"B50"生物燃料政策做准备 <span class="source">（36氪）</span></li>
+      <li><strong>美国关税退款</strong> — 美国关税退款系统上线，数千家企业已提交申请，预计退还高达1660亿美元税款 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🔬 技术路线</strong>
+    <ul>
+      <li><strong>液冷渗透率持续提升</strong> — 芯片功耗持续攀升（H100 700W → Rubin 1800W+），液冷从可选变强制，政策要求新建智算中心液冷渗透率100%</li>
+      <li><strong>国产替代加速</strong> — 冷却液、液冷管路国产化进程加快，国内厂商技术逐步成熟</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🏭 竞争格局</strong>
+    <ul>
+      <li><strong>金富科技切入液冷业务</strong> — 通过并购卓晖金属、联益热能各51%股权切入液冷业务，标的公司已进入奇宏电子、宝德科技、双鸿电子等液冷领域头部厂商供应体系 <span class="source">（36氪）</span></li>
+      <li><strong>产能扩张启动</strong> — 标的公司核心产线已接近饱和，近期已启动产能扩张安排，产能预计将于5月底起陆续释放 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">📦 客户与订单</strong>
+    <ul>
+      <li><strong>北美头部客户</strong> — 金富科技并购标的公司最终服务于北美头部科技客户等终端客户 <span class="source">（36氪）</span></li>
+      <li><strong>中长期扩产规划</strong> — 未来将根据订单获取情况及客户需求节奏，有序推进扩产 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- 四、集成商动态 -->
+<div class="section">
+  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
+  <table>
+    <tr>
+      <th style="width:18%">企业</th>
+      <th>核心进展</th>
+    </tr>
+    <tr>
+      <td><strong>英维克</strong></td>
+      <td>国内液冷温控龙头，数据中心液冷解决方案市场份额领先</td>
+    </tr>
+    <tr>
+      <td><strong>曙光数创</strong></td>
+      <td>中科曙光旗下，专注浸没式液冷技术，在智算中心领域有多个标杆项目</td>
+    </tr>
+    <tr>
+      <td><strong>高澜股份</strong></td>
+      <td>液冷业务覆盖数据中心、储能、新能源汽车三大领域</td>
+    </tr>
+    <tr>
+      <td><strong>申菱环境</strong></td>
+      <td>数据中心温控解决方案提供商，液冷产品已实现规模化应用</td>
+    </tr>
+    <tr>
+      <td><strong>巨化股份</strong></td>
+      <td>电子级氟化工龙头，冷却液材料供应商，受益于液冷渗透率提升</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <ul>
+    <li><strong>金富科技6天3板</strong> — 因液冷业务产能扩张消息，金富科技近期股价表现强势，显示市场对液冷赛道高度关注 <span class="source">（36氪）</span></li>
+    <li><strong>亚马逊千亿AI投资</strong> — 亚马逊与Anthropic未来十年将在AWS技术上投入超1000亿美元，拓展亚洲和欧洲AI推断能力 <span class="source">（财联社）</span></li>
+    <li><strong>美国稀土收购巴西Serra Verde</strong> — 交易价值约28亿美元，旨在打造涵盖采矿、加工和磁铁制造的全球稀土行业领军企业 <span class="source">（36氪）</span></li>
+    <li><strong>礼来拟收购Kelonia</strong> — 拟以至多70亿美元现金收购美国生物技术公司Kelonia，强化抗肿瘤药物管线 <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li><strong>液冷管核心标的</strong> — 利通科技是北交所液冷管赛道核心持仓，专注液冷软管研发生产</li>
+    <li><strong>四大应用场景</strong> — 业务覆盖数据中心/智算中心、储能行业、新能源汽车、液冷超充桩四大液冷应用场景</li>
+    <li><strong>国产替代受益</strong> — 冷却液、液冷管路国产化加速，利通科技作为国内龙头有望受益</li>
+    <li><strong>政策驱动明确</strong> — 工信部要求新建智算中心液冷渗透率100%，为液冷管需求提供长期确定性</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    <strong>金富科技液冷产能扩张</strong> — 竞争对手金富科技通过并购切入液冷业务，产能预计5月底起陆续释放，已进入奇宏电子、宝德科技、双鸿电子等头部厂商供应体系，需关注其对利通科技市场份额的潜在影响。
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>油价上涨对成本影响</strong> — WTI原油大涨6.87%至89.61美元/桶，布伦特原油涨5.64%至95.48美元/桶，需关注原材料成本上升对液冷管毛利率的影响。<br>
+    <strong>广东算电协同投资</strong> — 广东省委强调加大对算电协同等领域的投资，可能推动华南地区智算中心建设，利好液冷管需求。
+  </div>
+</div>
+
+</body>
+</html>
