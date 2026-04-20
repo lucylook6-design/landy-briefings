@@ -93,6 +93,25 @@
     font-size: 14px;
   }
 
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
   /* 响应式设计 - 手机端 */
   @media (max-width: 768px) {
     body {
@@ -132,6 +151,11 @@
     .highlight, .warning {
       padding: 14px 18px;
       font-size: 15px;
+    }
+    .back-button {
+      font-size: 15px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
     }
   }
 
@@ -179,6 +203,12 @@
 </style>
 </head>
 <body>
+
+<div>
+  <a href="../index.html" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
 
 <h1>AI研究员--Landy葉的简报</h1>
 <div class="date">2026年4月20日</div>
