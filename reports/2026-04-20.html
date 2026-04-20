@@ -2,185 +2,197 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI研究员--Landy葉的简报 | 2026年4月20日</title>
 <style>
-  :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface2: #1c2128;
-    --border: #30363d;
-    --accent: #1a73e8;
-    --accent2: #e87020;
-    --accent3: #34a853;
-    --text: #e6edf3;
-    --text2: #c9d1d9;
-    --muted: #8b949e;
-    --red: #ea4335;
-    --yellow: #f9a825;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-    min-height: 100vh;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
     font-size: 15px;
-    line-height: 1.7;
   }
-
-  .header {
-    background: linear-gradient(135deg, #1a3a5c 0%, #0d1f33 100%);
-    color: #fff;
-    padding: 18px 20px;
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 18px;
+  h1 {
+    font-size: 22px;
     font-weight: bold;
-    letter-spacing: 1px;
+    margin-bottom: 6px;
+    color: #111;
   }
-  .header .subtitle {
-    font-size: 11px;
-    color: #a8c8e8;
-    margin-top: 4px;
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
   }
-
-  .section-bar {
-    display: flex;
-    align-items: center;
-    margin: 0 16px 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #1a3a5c;
+  .section {
+    margin-bottom: 28px;
   }
-  .section-bar .emoji { font-size: 15px; margin-right: 8px; }
-  .section-bar .name { font-size: 14px; font-weight: bold; color: var(--accent); }
-  .section-bar .line { flex: 1; height: 1px; background: var(--border); margin-left: 10px; }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
 
-  .content { padding: 0 16px 20px; }
-
-  ul { padding-left: 16px; }
-  li { margin-bottom: 6px; font-size: 13.5px; color: var(--text2); }
-  li strong { color: var(--text); }
-  .source-tag { color: var(--muted); font-size: 11px; }
-
-  table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 6px; }
-  th { background: #1a3a5c; color: #fff; padding: 7px 10px; text-align: left; font-weight: 600; }
-  td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text2); }
-  tr:nth-child(even) td { background: var(--surface); }
-
-  .two-col { display: grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 768px) { .two-col { grid-template-columns: 1fr 1fr; } }
-
-  .alert { padding: 10px 14px; border-radius: 4px; margin-top: 10px; font-size: 13px; }
-  .alert.red { background: rgba(234,67,53,0.12); border-left: 4px solid var(--red); color: #fca5a5; }
-  .alert.yellow { background: rgba(249,168,37,0.12); border-left: 4px solid var(--yellow); color: #fde68a; }
-
-  .gap { height: 16px; }
-
-  .footer { text-align: center; padding: 20px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); margin-top: 20px; }
-
-  @media (max-width: 767px) {
-    body { font-size: 14px; }
-    .content { padding: 0 14px 16px; }
-    li { font-size: 13px; }
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
   }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>AI研究员--Landy葉的简报</h1>
-  <div class="subtitle">利通科技战略情报 | 2026年4月20日 | 液冷产业链深度追踪</div>
-</div>
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年4月20日</div>
 
 <!-- 今日速览 -->
-<div class="section-bar">
-  <span class="emoji">📊</span>
-  <span class="name">今日速览</span>
-  <span class="line"></span>
-</div>
-<div class="content">
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
   <ul>
-    <li><strong>阿里AI视频模型HappyHorse将于4月27日开放测试</strong>，5月正式商用，首批邀测企业级客户 <span class="source-tag">（财联社）</span></li>
-    <li><strong>国际能源署</strong>：2025年数据中心电力需求增长<strong>17%</strong>，电动汽车增长<strong>38%</strong> <span class="source-tag">（财联社/IEA）</span></li>
-    <li><strong>沪深两市成交额连续第9个交易日突破2万亿</strong>，预计全天成交超2.6万亿 <span class="source-tag">（财联社）</span></li>
-    <li><strong>商业航天概念</strong>涨停潮，近20只成分股封板，海南发布商业航天产业规划 <span class="source-tag">（财联社）</span></li>
-    <li><strong>燃气轮机/柴发概念</strong>震荡拉升，机构称全球AI算力基建爆发，海外柴发排产至2028年 <span class="source-tag">（财联社）</span></li>
-    <li><strong>IDC</strong>：2030年全球人形机器人出货量将突破<strong>51万台</strong>，年复合增长率近<strong>95%</strong> <span class="source-tag">（36氪）</span></li>
-    <li><strong>三星电机、LG Innotek</strong>启动CPO半导体基板测试，瞄准光互连封装 <span class="source-tag">（ETNews）</span></li>
+    <li><strong>阿里AI视频模型HappyHorse将于4月27日开放测试</strong> — 5月正式商用，首批邀测企业级客户，AI视频生成算力需求持续爆发 <span class="source">（财联社）</span></li>
+    <li><strong>国际能源署：2025年数据中心电力需求增长17%，电动汽车增长38%</strong> — 算力基建+新能源双轮驱动液冷管需求 <span class="source">（财联社/IEA）</span></li>
+    <li><strong>沪深两市成交额连续第9个交易日突破2万亿</strong> — 预计全天成交超2.6万亿，市场流动性充裕 <span class="source">（财联社）</span></li>
+    <li><strong>商业航天概念掀涨停潮</strong> — 近20只成分股封板，海南发布商业航天产业规划 <span class="source">（财联社）</span></li>
+    <li><strong>燃气轮机/柴发概念震荡拉升</strong> — 机构称全球AI算力基建爆发，海外柴发排产至2028年，国内供应商迎替代机遇 <span class="source">（财联社）</span></li>
+    <li><strong>IDC：2030年全球人形机器人出货量将突破51万台</strong> — 年复合增长率近95%，液冷技术渗透新场景 <span class="source">（36氪）</span></li>
+    <li><strong>三星电机、LG Innotek启动CPO半导体基板测试</strong> — 瞄准光互连封装，液冷散热需求同步升级 <span class="source">（ETNews）</span></li>
   </ul>
 </div>
 
 <!-- 一、大势研判 -->
-<div class="section-bar">
-  <span class="emoji">🤖</span>
-  <span class="name">一、大势研判</span>
-  <span class="line"></span>
-</div>
-<div class="content two-col">
-  <div>
-    <div class="section-bar" style="margin:0 0 8px 0; border-bottom-color:#1a73e8;"><span class="emoji">📈</span><span class="name" style="color:#1a73e8">行业数据</span><span class="line"></span></div>
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 行业数据</strong>
     <ul>
-      <li>2025年全球电力消费增长<strong>3%</strong>，数据中心用电增长<strong>17%</strong>（IEA）</li>
+      <li>2025年全球电力消费增长<strong>3%</strong>，数据中心用电增长<strong>17%</strong>，电动汽车增长<strong>38%</strong>（IEA）</li>
       <li>人形机器人2030年全球出货量预计突破<strong>51万台</strong>，年复合增长率<strong>95%</strong>（IDC）</li>
-      <li>第二艘国产大邮轮"爱达·花城号"正式发布，11月交付，南沙首航 <span class="source-tag">（央视新闻）</span></li>
+      <li>第二艘国产大邮轮"爱达·花城号"正式发布，11月交付，南沙首航 <span class="source">（央视新闻）</span></li>
     </ul>
   </div>
-  <div>
-    <div class="section-bar" style="margin:0 0 8px 0; border-bottom-color:#1a73e8;"><span class="emoji">⚡</span><span class="name" style="color:#1a73e8">政策动态</span><span class="line"></span></div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 政策动态</strong>
     <ul>
-      <li><strong>海南</strong>：完善"发射+服务+制造+应用"一体化商用航天产业体系，探索电磁发射技术 <span class="source-tag">（海南省政府）</span></li>
-      <li><strong>香港</strong>：允许持牌虚拟资产交易平台进行代币化基金交易 <span class="source-tag">（财联社）</span></li>
-      <li>三星电子全面转向新一代存储器，LPDDR4/4X 2027年Q1停止接单 <span class="source-tag">（台湾电子时报）</span></li>
+      <li><strong>海南</strong>：完善"发射+服务+制造+应用"一体化商用航天产业体系，探索电磁发射技术 <span class="source">（海南省政府）</span></li>
+      <li><strong>香港</strong>：允许持牌虚拟资产交易平台进行代币化基金交易 <span class="source">（财联社）</span></li>
+      <li>三星电子全面转向新一代存储器，LPDDR4/4X 2027年Q1停止接单 <span class="source">（台湾电子时报）</span></li>
     </ul>
   </div>
 </div>
 
 <!-- 二、液冷管赛道情报 -->
-<div class="section-bar">
-  <span class="emoji">💧</span>
-  <span class="name">二、液冷管赛道情报</span>
-  <span class="line"></span>
-</div>
-<div class="content">
-  <ul>
-    <li><strong>CPO（共封装光学）</strong>加速：三星电机与LG Innotek合作评估CPO所需半导体基板原型组件，集成电光开关、收发器、光互连组件 <span class="source-tag">（ETNews）</span></li>
-    <li><strong>AI算力基建</strong>带动燃气轮机/柴发概念拉升，机构称北美云服务商2026年资本开支激增，海外柴发交付排产至2028年，国内优质供应商迎替代机遇 <span class="source-tag">（财联社）</span></li>
-    <li>阿里HappyHorse视频生成模型4月27日开放测试，5月正式商用，AI算力需求持续爆发 <span class="source-tag">（财联社）</span></li>
-    <li>国际能源署称2025年数据中心电力需求增长17%，电力需求增长由建筑和工业领域及电动汽车、数据中心共同推动 <span class="source-tag">（IEA/财联社）</span></li>
-  </ul>
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🔬 技术路线</strong>
+    <ul>
+      <li><strong>CPO（共封装光学）加速</strong> — 三星电机与LG Innotek合作评估CPO所需半导体基板原型组件，集成电光开关、收发器、光互连组件 <span class="source">（ETNews）</span></li>
+      <li>光互连技术迭代加速，液冷管路需同步升级，关注利通在光通信液冷散热领域的潜在机会</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🏭 竞争格局</strong>
+    <ul>
+      <li><strong>AI算力基建爆发</strong> — 机构称北美云服务商（亚马逊/谷歌/Meta）2026年资本开支激增，海外柴发交付排产至2028年，国内优质供应商迎替代机遇 <span class="source">（财联社）</span></li>
+      <li>阿里HappyHorse视频生成模型4月27日开放测试，5月正式商用，AI算力需求持续扩张</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">📦 客户与订单</strong>
+    <ul>
+      <li>国际能源署称2025年数据中心电力需求增长<strong>17%</strong>，电力需求增长由建筑和工业领域及电动汽车、数据中心共同推动 <span class="source">（IEA/财联社）</span></li>
+      <li>液冷四大应用场景（智算/储能/新能源车/超充）需求持续，订单保持增长态势</li>
+    </ul>
+  </div>
 </div>
 
 <!-- 三、下游应用战场 -->
-<div class="section-bar">
-  <span class="emoji">🔋</span>
-  <span class="name">三、下游应用战场</span>
-  <span class="line"></span>
-</div>
-<div class="content two-col">
-  <div>
-    <div class="section-bar" style="margin:0 0 8px 0; border-bottom-color:#34a853;"><span class="emoji">🖥️</span><span class="name" style="color:#34a853">数据中心</span><span class="line"></span></div>
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
     <ul>
-      <li>数据中心用电增长17%（IEA），AI算力需求持续爆发</li>
-      <li>燃气轮机/柴发概念受AI算力基建驱动震荡拉升 <span class="source-tag">（财联社）</span></li>
+      <li>数据中心用电增长<strong>17%</strong>（IEA），AI算力需求持续爆发</li>
+      <li>燃气轮机/柴发概念受AI算力基建驱动震荡拉升 <span class="source">（财联社）</span></li>
     </ul>
   </div>
-  <div>
-    <div class="section-bar" style="margin:0 0 8px 0; border-bottom-color:#34a853;"><span class="emoji">🔋</span><span class="name" style="color:#34a853">储能行业</span><span class="line"></span></div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🔋 储能行业</strong>
     <ul>
-      <li>欣旺达动力成立低空产业发展公司，注册资本100万元，电池销售/租赁业务 <span class="source-tag">（36氪）</span></li>
+      <li>欣旺达动力成立低空产业发展公司，注册资本100万元，电池销售/租赁业务 <span class="source">（36氪）</span></li>
     </ul>
   </div>
-  <div>
-    <div class="section-bar" style="margin:0 0 8px 0; border-bottom-color:#34a853;"><span class="emoji">🚗</span><span class="name" style="color:#34a853">新能源汽车</span><span class="line"></span></div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
     <ul>
       <li>2025年电动汽车电力需求增长<strong>38%</strong>（IEA），增速远超数据中心</li>
-      <li>印尼国家石油公司Pertamina与丰田合作开发生物乙醇 <span class="source-tag">（界面）</span></li>
+      <li>印尼国家石油公司Pertamina与丰田合作开发生物乙醇 <span class="source">（界面）</span></li>
     </ul>
   </div>
-  <div>
-    <div class="section-bar" style="margin:0 0 8px 0; border-bottom-color:#34a853;"><span class="emoji">⚡</span><span class="name" style="color:#34a853">液冷超充桩</span><span class="line"></span></div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
     <ul>
       <li>液冷超充桩高功率密度散热需求持续，800V高压平台热管理升级趋势不变</li>
     </ul>
@@ -188,44 +200,50 @@
 </div>
 
 <!-- 四、集成商动态 -->
-<div class="section-bar">
-  <span class="emoji">📡</span>
-  <span class="name">四、集成商动态（渠道情报）</span>
-  <span class="line"></span>
-</div>
-<div class="content">
+<div class="section">
+  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
   <table>
-    <tr><th>企业</th><th>核心进展</th></tr>
-    <tr><td><strong>英维克</strong></td><td>液冷温控龙头，持续受益智算中心液冷渗透率提升</td></tr>
-    <tr><td><strong>曙光数创</strong></td><td>浸没式液冷技术储备，智算中心订单持续</td></tr>
-    <tr><td><strong>高澜股份</strong></td><td>热管理设备供应商，数据中心液冷订单稳定</td></tr>
-    <tr><td><strong>申菱环境</strong></td><td>数据中心专用空调/液冷系统，渠道进展中</td></tr>
-    <tr><td><strong>巨化股份</strong></td><td>冷却液国产化主力，工信部液冷政策受益</td></tr>
+    <tr>
+      <th style="width:18%">企业</th>
+      <th>核心进展</th>
+    </tr>
+    <tr>
+      <td><strong>英维克</strong></td>
+      <td>液冷温控龙头，持续受益智算中心液冷渗透率提升</td>
+    </tr>
+    <tr>
+      <td><strong>曙光数创</strong></td>
+      <td>浸没式液冷技术储备，智算中心订单持续</td>
+    </tr>
+    <tr>
+      <td><strong>高澜股份</strong></td>
+      <td>热管理设备供应商，数据中心液冷订单稳定</td>
+    </tr>
+    <tr>
+      <td><strong>申菱环境</strong></td>
+      <td>数据中心专用空调/液冷系统，渠道进展中</td>
+    </tr>
+    <tr>
+      <td><strong>巨化股份</strong></td>
+      <td>冷却液国产化主力，工信部液冷政策受益</td>
+    </tr>
   </table>
 </div>
 
-<!-- 五、二级市场 -->
-<div class="section-bar">
-  <span class="emoji">📈</span>
-  <span class="name">五、二级市场 & 资本动向</span>
-  <span class="line"></span>
-</div>
-<div class="content">
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
   <ul>
-    <li><strong>沪深两市成交额连续第9个交易日突破2万亿</strong>，较上一日此时放量超1400亿，预计全天成交超<strong>2.6万亿</strong> <span class="source-tag">（财联社）</span></li>
-    <li><strong>商业航天概念</strong>掀涨停潮：江顺科技2连板，中国卫通、天奥电子、中国卫星、有研复材、西部材料等近20只成分股涨停 <span class="source-tag">（财联社）</span></li>
-    <li><strong>燃气轮机/柴发概念</strong>震荡拉升：水发燃气直线涨停，潍柴重机、泰豪科技涨停，飞沃科技、崇德科技、航发科技等跟涨 <span class="source-tag">（财联社）</span></li>
-    <li>三星电子2027年Q1全面转向新一代存储器，LPDDR4/4X停止接单，台湾电子产业链影响持续 <span class="source-tag">（台湾电子时报）</span></li>
+    <li><strong>沪深两市成交额连续第9个交易日突破2万亿</strong> — 较上一日此时放量超1400亿，预计全天成交超<strong>2.6万亿</strong> <span class="source">（财联社）</span></li>
+    <li><strong>商业航天概念掀涨停潮</strong> — 江顺科技2连板，中国卫通、天奥电子、中国卫星、有研复材、西部材料等近20只成分股涨停 <span class="source">（财联社）</span></li>
+    <li><strong>燃气轮机/柴发概念震荡拉升</strong> — 水发燃气直线涨停，潍柴重机、泰豪科技涨停，飞沃科技、崇德科技、航发科技等跟涨 <span class="source">（财联社）</span></li>
+    <li>三星电子2027年Q1全面转向新一代存储器，LPDDR4/4X停止接单，台湾电子产业链影响持续 <span class="source">（台湾电子时报）</span></li>
   </ul>
 </div>
 
 <!-- 六、利通科技 -->
-<div class="section-bar">
-  <span class="emoji">🏢</span>
-  <span class="name">六、利通科技（839167）动态</span>
-  <span class="line"></span>
-</div>
-<div class="content">
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
   <ul>
     <li>液冷软管赛道持续受益于AI算力基建爆发，下游集成商（英维克/高澜/曙光数创）订单保持增长态势</li>
     <li>储能大储项目液冷渗透率维持高位，新能源汽车800V平台热管理升级持续</li>
@@ -234,19 +252,24 @@
 </div>
 
 <!-- 七、战略预警 -->
-<div class="section-bar">
-  <span class="emoji">📌</span>
-  <span class="name">七、战略预警 / 机会提示</span>
-  <span class="line"></span>
-</div>
-<div class="content">
-  <div class="alert red"><strong>🔴 高度关注 | CPO封装技术</strong><br>三星电机+LG Innotek合作评估CPO半导体基板，光互连技术加速迭代，液冷管路需同步升级，关注利通在光通信液冷散热领域的潜在机会</div>
-  <div class="gap"></div>
-  <div class="alert yellow"><strong>🟡 持续跟踪 | AI视频生成爆发</strong><br>阿里HappyHorse 4月27日开放测试，5月商用，算力需求持续扩张，液冷管四大应用场景（智算/储能/新能源车/超充）均受益</div>
-  <div class="gap"></div>
-  <div class="alert yellow"><strong>🟡 持续跟踪 | 商业航天涨停潮</strong><br>海南发布商业航天产业规划，液冷技术在卫星/火箭热管理中有关键应用，关注航天领域液冷管路潜在需求</div>
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    <strong>CPO封装技术加速</strong> — 三星电机+LG Innotek合作评估CPO半导体基板，光互连技术加速迭代，液冷管路需同步升级，关注利通在光通信液冷散热领域的潜在机会
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>AI视频生成爆发</strong> — 阿里HappyHorse 4月27日开放测试，5月商用，算力需求持续扩张，液冷管四大应用场景（智算/储能/新能源车/超充）均受益
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>商业航天涨停潮</strong> — 海南发布商业航天产业规划，液冷技术在卫星/火箭热管理中有关键应用，关注航天领域液冷管路潜在需求
+  </div>
 </div>
 
-<div class="footer">由 AI研究员 自动生成 · 2026年4月20日 14:06补发</div>
 </body>
 </html>
