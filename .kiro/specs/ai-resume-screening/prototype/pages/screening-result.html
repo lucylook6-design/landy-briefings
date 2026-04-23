@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>筛选结果 — HR智能体</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo">HR<span>智能体</span></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">工作台</div>
+      <a class="nav-item" href="dashboard.html"><span class="icon">📋</span>需求看板</a>
+      <a class="nav-item" href="job-detail.html"><span class="icon">📝</span>招聘需求</a>
+      <a class="nav-item" href="resume-upload.html"><span class="icon">📤</span>简历管理</a>
+      <a class="nav-item active" href="screening-result.html"><span class="icon">🎯</span>筛选结果</a>
+      <a class="nav-item" href="delivery.html"><span class="icon">📨</span>交付记录</a>
+      <div class="nav-section">系统</div>
+      <a class="nav-item" href="company-settings.html"><span class="icon">🏢</span>公司管理</a>
+      <a class="nav-item" href="#"><span class="icon">⚙️</span>系统设置</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="flex-center gap-8">
+        <a href="resume-upload.html" class="btn btn-secondary btn-sm">← 返回</a>
+        <div class="topbar-title">筛选结果 · 高级算法工程师 · 字节跳动</div>
+        <span class="badge badge-green">筛选完成</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary">重新筛选</button>
+        <a href="delivery.html" class="btn btn-primary">推送给甲方 →</a>
+        <div class="avatar">张</div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- 筛选概览 -->
+      <div class="alert alert-success">
+        <span>✅</span>
+        <span>AI筛选完成：从 <strong>180份</strong> 简历中完成语义初筛，大模型精筛后保留 <strong>6份</strong> 候选人，耗时 <strong>2分48秒</strong>，token消耗约为全流程方案的 <strong>1/52</strong>。</span>
+      </div>
+
+      <!-- 筛选流程步骤 US-009 US-010 -->
+      <div class="card mb-16">
+        <div class="card-body" style="padding:16px 20px;">
+          <div class="steps">
+            <div class="step">
+              <div class="step-dot done">✓</div>
+              <div class="step-label">简历解析<br><span class="text-sm text-gray">180份</span></div>
+            </div>
+            <div class="step-line done"></div>
+            <div class="step">
+              <div class="step-dot done">✓</div>
+              <div class="step-label">语义初筛<br><span class="text-sm text-gray">保留6份</span></div>
+            </div>
+            <div class="step-line done"></div>
+            <div class="step">
+              <div class="step-dot done">✓</div>
+              <div class="step-label">大模型精筛<br><span class="text-sm text-gray">排序+推荐理由</span></div>
+            </div>
+            <div class="step-line done"></div>
+            <div class="step">
+              <div class="step-dot active">4</div>
+              <div class="step-label active">交付甲方<br><span class="text-sm" style="color:var(--primary);">待确认推送</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 280px;gap:20px;">
+
+        <!-- 候选人列表 -->
+        <div>
+          <div class="flex-between mb-16">
+            <div style="font-size:15px;font-weight:600;">精筛结果（6份）</div>
+            <div class="flex-center gap-8">
+              <span class="text-sm text-gray">推荐前3名给甲方</span>
+              <button class="btn btn-secondary btn-sm">调整排序</button>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:12px;">
+
+            <!-- 第1名 -->
+            <div class="candidate-card rank-1">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                <div style="font-size:11px;color:var(--success);font-weight:700;">推荐</div>
+                <div class="score-ring score-high">94</div>
+                <div style="font-size:11px;color:var(--gray-500);">第1名</div>
+              </div>
+              <div class="candidate-info">
+                <div class="flex-between">
+                  <div>
+                    <div class="candidate-name">刘宇航</div>
+                    <div class="candidate-meta">7年经验 · 前百度搜索算法工程师 · 北京</div>
+                  </div>
+                  <span class="badge badge-green">推荐</span>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">搜索排序</span>
+                  <span class="tag">LTR</span>
+                  <span class="tag">C++/Python</span>
+                  <span class="tag">大厂背景</span>
+                </div>
+                <div style="margin-top:10px;padding:10px;background:var(--success-light);border-radius:6px;font-size:13px;">
+                  <div style="font-weight:600;color:var(--success);margin-bottom:4px;">✨ AI推荐理由</div>
+                  <div style="color:var(--gray-700);line-height:1.7;">
+                    <strong>优势：</strong>7年搜索排序经验，与JD高度匹配；百度背景，有大规模系统经验。<br>
+                    <strong>匹配点：</strong>LTR算法、C++工程能力、推荐系统全链路经验均符合要求。<br>
+                    <strong>潜在风险：</strong>薪资预期可能偏高，建议提前沟通。
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+                <a href="resume-detail.html" class="btn btn-secondary btn-sm">查看简历</a>
+                <button class="btn btn-secondary btn-sm">编辑理由</button>
+              </div>
+            </div>
+
+            <!-- 第2名 -->
+            <div class="candidate-card rank-2">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                <div style="font-size:11px;color:var(--primary);font-weight:700;">推荐</div>
+                <div class="score-ring score-high" style="border-color:var(--primary);color:var(--primary);background:var(--primary-light);">89</div>
+                <div style="font-size:11px;color:var(--gray-500);">第2名</div>
+              </div>
+              <div class="candidate-info">
+                <div class="flex-between">
+                  <div>
+                    <div class="candidate-name">王晓明</div>
+                    <div class="candidate-meta">5年经验 · 前阿里推荐算法工程师 · 杭州</div>
+                  </div>
+                  <span class="badge badge-blue">推荐</span>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">推荐系统</span>
+                  <span class="tag">深度学习</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">Transformer</span>
+                </div>
+                <div style="margin-top:10px;padding:10px;background:var(--primary-light);border-radius:6px;font-size:13px;">
+                  <div style="font-weight:600;color:var(--primary);margin-bottom:4px;">✨ AI推荐理由</div>
+                  <div style="color:var(--gray-700);line-height:1.7;">
+                    <strong>优势：</strong>阿里推荐系统背景，深度学习能力强，有Transformer实战经验。<br>
+                    <strong>匹配点：</strong>推荐算法全链路、Python工程能力符合要求。<br>
+                    <strong>潜在风险：</strong>搜索排序经验相对较少，需评估学习曲线。
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+                <a href="resume-detail.html" class="btn btn-secondary btn-sm">查看简历</a>
+                <button class="btn btn-secondary btn-sm">编辑理由</button>
+              </div>
+            </div>
+
+            <!-- 第3名 -->
+            <div class="candidate-card rank-3">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;">
+                <div style="font-size:11px;color:var(--warning);font-weight:700;">推荐</div>
+                <div class="score-ring score-mid">82</div>
+                <div style="font-size:11px;color:var(--gray-500);">第3名</div>
+              </div>
+              <div class="candidate-info">
+                <div class="flex-between">
+                  <div>
+                    <div class="candidate-name">李思远</div>
+                    <div class="candidate-meta">3年经验 · 腾讯算法工程师 · 深圳</div>
+                  </div>
+                  <span class="badge badge-yellow">推荐</span>
+                </div>
+                <div class="tag-list">
+                  <span class="tag">深度学习</span>
+                  <span class="tag">XGBoost</span>
+                  <span class="tag">TensorFlow</span>
+                </div>
+                <div style="margin-top:10px;padding:10px;background:var(--warning-light);border-radius:6px;font-size:13px;">
+                  <div style="font-weight:600;color:var(--warning);margin-bottom:4px;">✨ AI推荐理由</div>
+                  <div style="color:var(--gray-700);line-height:1.7;">
+                    <strong>优势：</strong>腾讯背景，深度学习基础扎实，成长潜力大。<br>
+                    <strong>匹配点：</strong>算法能力符合要求，有大厂实战经验。<br>
+                    <strong>潜在风险：</strong>经验年限偏短（3年），需评估是否满足P6要求。
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
+                <a href="resume-detail.html" class="btn btn-secondary btn-sm">查看简历</a>
+                <button class="btn btn-secondary btn-sm">编辑理由</button>
+              </div>
+            </div>
+
+            <!-- 备选（折叠） -->
+            <div style="border:1px dashed var(--gray-300);border-radius:var(--radius);padding:12px 16px;background:var(--gray-50);">
+              <div class="flex-between">
+                <span style="font-size:13px;color:var(--gray-500);">备选候选人（3份，不推送给甲方）</span>
+                <button class="btn btn-secondary btn-sm">展开查看</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 右侧：筛选统计 -->
+        <div>
+          <div class="card mb-16">
+            <div class="card-header"><div class="card-title">筛选统计</div></div>
+            <div class="card-body">
+              <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;">
+                <div class="flex-between">
+                  <span class="text-gray">输入简历</span>
+                  <span class="text-bold">180 份</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">初筛保留</span>
+                  <span class="text-bold">6 份</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">推荐给甲方</span>
+                  <span class="text-bold" style="color:var(--success);">3 份</span>
+                </div>
+                <div style="height:1px;background:var(--gray-100);"></div>
+                <div class="flex-between">
+                  <span class="text-gray">总耗时</span>
+                  <span class="text-bold">2分48秒</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">使用模型</span>
+                  <span class="text-bold">通义千问</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">Token消耗</span>
+                  <span class="text-bold" style="color:var(--success);">1/52 基准</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">交付设置</div></div>
+            <div class="card-body">
+              <div style="font-size:13.5px;display:flex;flex-direction:column;gap:10px;">
+                <div class="flex-between">
+                  <span class="text-gray">推送方式</span>
+                  <span class="text-bold">企业微信</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">推送内容</span>
+                  <span class="text-bold">卡片 + PDF附件</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">接收人</span>
+                  <span class="text-bold">李明（字节跳动）</span>
+                </div>
+                <div style="height:1px;background:var(--gray-100);"></div>
+                <a href="delivery.html" class="btn btn-primary" style="width:100%;justify-content:center;">确认推送给甲方</a>
+                <button class="btn btn-secondary" style="width:100%;justify-content:center;">人工审核后推送</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="prototype-note">📐 原型 · US-009 US-010 筛选结果与推荐理由</div>
+</body>
+</html>

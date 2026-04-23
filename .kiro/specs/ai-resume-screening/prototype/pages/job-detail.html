@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>招聘需求详情 — HR智能体</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo">HR<span>智能体</span></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">工作台</div>
+      <a class="nav-item" href="dashboard.html"><span class="icon">📋</span>需求看板</a>
+      <a class="nav-item active" href="job-detail.html"><span class="icon">📝</span>招聘需求</a>
+      <a class="nav-item" href="resume-upload.html"><span class="icon">📤</span>简历管理</a>
+      <a class="nav-item" href="screening-result.html"><span class="icon">🎯</span>筛选结果</a>
+      <a class="nav-item" href="delivery.html"><span class="icon">📨</span>交付记录</a>
+      <div class="nav-section">系统</div>
+      <a class="nav-item" href="company-settings.html"><span class="icon">🏢</span>公司管理</a>
+      <a class="nav-item" href="#"><span class="icon">⚙️</span>系统设置</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="flex-center gap-8">
+        <a href="dashboard.html" class="btn btn-secondary btn-sm">← 返回</a>
+        <div class="topbar-title">高级算法工程师 · 字节跳动</div>
+        <span class="badge badge-blue">进行中</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-secondary">保存草稿</button>
+        <a href="resume-upload.html" class="btn btn-primary">下一步：上传简历 →</a>
+        <div class="avatar">张</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:20px;">
+
+        <!-- 左侧：JD编辑 -->
+        <div>
+          <!-- 基本信息 -->
+          <div class="card mb-16">
+            <div class="card-header">
+              <div class="card-title">基本信息</div>
+            </div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label">职位名称 <span class="required">*</span></label>
+                  <input class="form-control" value="高级算法工程师">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">客户名称 <span class="required">*</span></label>
+                  <select class="form-control">
+                    <option selected>字节跳动</option>
+                    <option>美团</option>
+                    <option>滴滴出行</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">初筛保留数量</label>
+                  <input class="form-control" type="number" value="6" min="1" max="20">
+                  <div class="form-hint">建议 5-8 份，最终推荐 3 份给甲方（范围：1-20）</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">定时筛选</label>
+                  <select class="form-control">
+                    <option>关闭</option>
+                    <option selected>每天 09:00 自动筛选</option>
+                    <option>每天 18:00 自动筛选</option>
+                    <option>自定义...</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- JD编辑 + AI优化 -->
+          <!-- US-002: AI辅助优化JD -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">职位描述（JD）</div>
+              <button class="btn btn-primary btn-sm">✨ AI优化JD</button>
+            </div>
+            <div class="card-body">
+              <div class="alert alert-info">
+                <span>💡</span>
+                <span>AI已检测到JD中存在模糊表述，点击「AI优化JD」可自动规范化并补全缺失字段，预计耗时 &lt;30秒。</span>
+              </div>
+
+              <!-- 原始JD -->
+              <div class="form-group">
+                <label class="form-label">原始JD</label>
+                <textarea class="form-control" style="min-height:160px;">【职位要求】
+- 本科及以上学历，计算机相关专业
+- 3年以上算法工程师经验
+- 熟悉机器学习、深度学习相关算法
+- 有推荐系统或搜索排序经验优先
+- 良好的编程能力，熟悉Python/C++
+
+【工作内容】
+负责公司核心推荐算法的研发和优化，提升用户体验和业务指标。</textarea>
+              </div>
+
+              <!-- AI优化后（展示优化结果状态） -->
+              <div style="border:1px solid #bbf7d0;border-radius:var(--radius);overflow:hidden;">
+                <div style="background:var(--success-light);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;">
+                  <span style="font-size:13px;font-weight:600;color:var(--success);">✅ AI优化结果（已高亮修改内容）</span>
+                  <div style="display:flex;gap:8px;">
+                    <button class="btn btn-secondary btn-sm">对比查看</button>
+                    <button class="btn btn-success btn-sm">采用优化版本</button>
+                  </div>
+                </div>
+                <div style="padding:16px;font-size:13.5px;line-height:1.8;color:var(--gray-700);">
+                  <strong>【职位要求】</strong><br>
+                  - 本科及以上学历，计算机/数学/统计相关专业<br>
+                  - <span style="background:#fef9c3;padding:1px 3px;border-radius:2px;">3-5年</span>算法工程师经验，<span style="background:#fef9c3;padding:1px 3px;border-radius:2px;">有大厂背景优先</span><br>
+                  - 熟悉机器学习、深度学习相关算法，<span style="background:#fef9c3;padding:1px 3px;border-radius:2px;">掌握 LightGBM、XGBoost、Transformer 等主流框架</span><br>
+                  - 有推荐系统或搜索排序经验优先，<span style="background:#fef9c3;padding:1px 3px;border-radius:2px;">熟悉召回、排序、重排全链路</span><br>
+                  - 良好的编程能力，熟悉 Python/C++，<span style="background:#fef9c3;padding:1px 3px;border-radius:2px;">代码规范，有开源项目经验加分</span><br><br>
+                  <strong>【工作内容】</strong><br>
+                  负责公司核心推荐算法的研发和优化，提升用户体验和业务指标。<br>
+                  <span style="background:#fef9c3;padding:1px 3px;border-radius:2px;">参与算法方案设计、模型训练、线上部署及效果评估全流程。</span><br><br>
+                  <span style="background:#fef9c3;padding:1px 3px;border-radius:2px;"><strong>【薪资范围】</strong>（AI补全）<br>
+                  30-50K · 15薪，具体面议</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：状态面板 -->
+        <div>
+          <div class="card mb-16">
+            <div class="card-header"><div class="card-title">需求进度</div></div>
+            <div class="card-body">
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div class="step-dot done">✓</div>
+                  <div>
+                    <div style="font-size:13px;font-weight:600;">JD创建与优化</div>
+                    <div class="text-sm text-gray">已完成 · 2小时前</div>
+                  </div>
+                </div>
+                <div style="width:2px;height:16px;background:var(--success);margin-left:13px;"></div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div class="step-dot active">2</div>
+                  <div>
+                    <div style="font-size:13px;font-weight:600;color:var(--primary);">简历上传</div>
+                    <div class="text-sm text-gray">186份已上传，解析中</div>
+                  </div>
+                </div>
+                <div style="width:2px;height:16px;background:var(--gray-200);margin-left:13px;"></div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div class="step-dot pending">3</div>
+                  <div>
+                    <div style="font-size:13px;color:var(--gray-500);">AI筛选</div>
+                    <div class="text-sm text-gray">等待简历解析完成</div>
+                  </div>
+                </div>
+                <div style="width:2px;height:16px;background:var(--gray-200);margin-left:13px;"></div>
+                <div style="display:flex;align-items:center;gap:10px;">
+                  <div class="step-dot pending">4</div>
+                  <div>
+                    <div style="font-size:13px;color:var(--gray-500);">交付甲方</div>
+                    <div class="text-sm text-gray">待完成</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-16">
+            <div class="card-header"><div class="card-title">筛选配置</div></div>
+            <div class="card-body">
+              <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;">
+                <div class="flex-between">
+                  <span class="text-gray">初筛保留数量</span>
+                  <span class="text-bold">6 份</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">最终推荐数量</span>
+                  <span class="text-bold">3 份</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">定时筛选</span>
+                  <span class="badge badge-green">每天 09:00</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">使用模型</span>
+                  <span class="text-bold">通义千问（主）</span>
+                </div>
+                <div class="flex-between">
+                  <span class="text-gray">交付方式</span>
+                  <span class="text-bold">企业微信</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">甲方联系人</div></div>
+            <div class="card-body">
+              <div style="font-size:13.5px;">
+                <div class="text-bold">李明 · HR总监</div>
+                <div class="text-gray mt-8">字节跳动 · 北京</div>
+                <div class="mt-8">企业微信：<span style="color:var(--primary);">liming_bytedance</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="prototype-note">📐 原型 · US-001 US-002 JD管理与AI优化</div>
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公司管理 — HR智能体</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .company-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      transition: box-shadow .15s, border-color .15s;
+    }
+    .company-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .company-info h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+    .company-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+    .platform-section {
+      background: var(--gray-50);
+      border-radius: 6px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .platform-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .platform-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-700);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .platform-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+    .status-dot.inactive {
+      background: var(--gray-400);
+    }
+    .account-info {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      font-size: 13px;
+    }
+    .account-label {
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    .account-value {
+      color: var(--gray-800);
+    }
+    .password-mask {
+      font-family: monospace;
+      letter-spacing: 2px;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: var(--radius);
+      width: 90%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--gray-400);
+      cursor: pointer;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+    .modal-close:hover {
+      background: var(--gray-100);
+      color: var(--gray-600);
+    }
+    .modal-body {
+      padding: 24px;
+    }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 8px;
+    }
+    .form-label .required {
+      color: var(--danger);
+      margin-left: 2px;
+    }
+    .form-help {
+      font-size: 12px;
+      color: var(--gray-500);
+      margin-top: 6px;
+    }
+    .alert {
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .alert-info {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: 1px solid #90caf9;
+    }
+    .alert-warning {
+      background: #fff3e0;
+      color: #e65100;
+      border: 1px solid #ffb74d;
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">HR<span>智能体</span></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">工作台</div>
+      <a class="nav-item" href="dashboard.html"><span class="icon">📋</span>需求看板</a>
+      <a class="nav-item" href="job-detail.html"><span class="icon">📝</span>招聘需求</a>
+      <a class="nav-item" href="resume-upload.html"><span class="icon">📤</span>简历管理</a>
+      <a class="nav-item" href="screening-result.html"><span class="icon">🎯</span>筛选结果</a>
+      <a class="nav-item" href="delivery.html"><span class="icon">📨</span>交付记录</a>
+      <div class="nav-section">系统</div>
+      <a class="nav-item active" href="company-settings.html"><span class="icon">🏢</span>公司管理</a>
+      <a class="nav-item" href="#"><span class="icon">⚙️</span>系统设置</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <!-- 顶栏 -->
+    <header class="topbar">
+      <div class="topbar-title">公司管理</div>
+      <div class="topbar-actions">
+        <!-- US-015: 公司切换功能 -->
+        <div class="company-selector" style="margin-right:16px;">
+          <select class="form-control" style="width:180px;font-size:13px;">
+            <option>🏢 字节跳动</option>
+            <option>🏢 美团</option>
+            <option>🏢 滴滴出行</option>
+            <option>🏢 京东</option>
+            <option>🏢 快手</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="document.getElementById('addCompanyModal').classList.add('active')">＋ 添加公司</button>
+        <div class="avatar">张</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- 说明卡片 -->
+      <div class="card mb-16">
+        <div class="card-body">
+          <div style="display:flex;gap:16px;align-items:flex-start;">
+            <div style="font-size:32px;">🏢</div>
+            <div style="flex:1;">
+              <h3 style="font-size:15px;font-weight:600;color:var(--gray-900);margin-bottom:6px;">公司与平台账号管理</h3>
+              <p style="font-size:13px;color:var(--gray-600);line-height:1.6;margin-bottom:12px;">
+                管理您有权限的所有公司，为每个公司配置BOSS直聘账号。系统将使用这些账号自动获取简历，所有数据按公司严格隔离。
+              </p>
+              <div style="display:flex;gap:24px;font-size:12px;color:var(--gray-500);">
+                <div><strong style="color:var(--primary);">✓</strong> 一个用户可管理多个公司</div>
+                <div><strong style="color:var(--primary);">✓</strong> 每个公司独立配置平台账号</div>
+                <div><strong style="color:var(--primary);">✓</strong> AES-256加密存储密码</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公司列表 -->
+      <!-- US-015: 用户管理多个公司 -->
+      <!-- US-016: BOSS直聘账号绑定 -->
+      
+      <!-- 公司1: 字节跳动 -->
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-info">
+            <h3>🏢 字节跳动</h3>
+            <div class="company-meta">
+              <span>👤 当前用户角色: <strong>管理员</strong></span>
+              <span>📅 加入时间: 2024-01-15</span>
+              <span>📊 12个招聘需求</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-secondary btn-sm">编辑信息</button>
+          </div>
+        </div>
+
+        <!-- BOSS直聘账号配置 -->
+        <div class="platform-section">
+          <div class="platform-header">
+            <div class="platform-title">
+              <span style="font-size:18px;">💼</span>
+              <span>BOSS直聘账号</span>
+            </div>
+            <div class="platform-status">
+              <span class="status-dot"></span>
+              <span style="color:var(--success);font-weight:500;">已绑定</span>
+            </div>
+          </div>
+          <div class="account-info">
+            <div class="account-label">账号:</div>
+            <div class="account-value">hr_bytedance@example.com</div>
+            <div class="account-label">密码:</div>
+            <div class="account-value password-mask">••••••••••••</div>
+            <div class="account-label">最后使用:</div>
+            <div class="account-value">2小时前</div>
+            <div class="account-label">状态:</div>
+            <div class="account-value"><span class="badge badge-green">正常</span></div>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:8px;">
+            <button class="btn btn-secondary btn-sm" onclick="document.getElementById('editBossModal').classList.add('active')">修改账号</button>
+            <button class="btn btn-secondary btn-sm">测试连接</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公司2: 美团 -->
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-info">
+            <h3>🏢 美团</h3>
+            <div class="company-meta">
+              <span>👤 当前用户角色: <strong>成员</strong></span>
+              <span>📅 加入时间: 2024-02-20</span>
+              <span>📊 8个招聘需求</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-secondary btn-sm">查看详情</button>
+          </div>
+        </div>
+
+        <!-- BOSS直聘账号配置 -->
+        <div class="platform-section">
+          <div class="platform-header">
+            <div class="platform-title">
+              <span style="font-size:18px;">💼</span>
+              <span>BOSS直聘账号</span>
+            </div>
+            <div class="platform-status">
+              <span class="status-dot"></span>
+              <span style="color:var(--success);font-weight:500;">已绑定</span>
+            </div>
+          </div>
+          <div class="account-info">
+            <div class="account-label">账号:</div>
+            <div class="account-value">hr_meituan@example.com</div>
+            <div class="account-label">密码:</div>
+            <div class="account-value password-mask">••••••••••••</div>
+            <div class="account-label">最后使用:</div>
+            <div class="account-value">1天前</div>
+            <div class="account-label">状态:</div>
+            <div class="account-value"><span class="badge badge-green">正常</span></div>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:8px;">
+            <button class="btn btn-secondary btn-sm">修改账号</button>
+            <button class="btn btn-secondary btn-sm">测试连接</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公司3: 滴滴出行 (未绑定账号) -->
+      <div class="company-card">
+        <div class="company-header">
+          <div class="company-info">
+            <h3>🏢 滴滴出行</h3>
+            <div class="company-meta">
+              <span>👤 当前用户角色: <strong>管理员</strong></span>
+              <span>📅 加入时间: 2024-03-10</span>
+              <span>📊 5个招聘需求</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-secondary btn-sm">编辑信息</button>
+          </div>
+        </div>
+
+        <!-- BOSS直聘账号配置 - 未绑定 -->
+        <div class="platform-section">
+          <div class="platform-header">
+            <div class="platform-title">
+              <span style="font-size:18px;">💼</span>
+              <span>BOSS直聘账号</span>
+            </div>
+            <div class="platform-status">
+              <span class="status-dot inactive"></span>
+              <span style="color:var(--gray-500);">未绑定</span>
+            </div>
+          </div>
+          <div class="alert alert-warning">
+            <span>⚠️</span>
+            <div>
+              <strong>尚未配置BOSS直聘账号</strong><br>
+              绑定账号后，系统可自动从BOSS直聘获取简历，提升工作效率。
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="document.getElementById('bindBossModal').classList.add('active')">立即绑定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 添加公司弹窗 -->
+<div id="addCompanyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">添加公司</div>
+      <button class="modal-close" onclick="this.closest('.modal').classList.remove('active')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">公司名称<span class="required">*</span></label>
+        <input type="text" class="form-control" placeholder="请输入公司名称">
+      </div>
+      <div class="form-group">
+        <label class="form-label">联系人姓名</label>
+        <input type="text" class="form-control" placeholder="请输入联系人姓名">
+      </div>
+      <div class="form-group">
+        <label class="form-label">联系电话</label>
+        <input type="tel" class="form-control" placeholder="请输入联系电话">
+      </div>
+      <div class="alert alert-info">
+        <span>ℹ️</span>
+        <div>添加公司后，您可以为该公司配置BOSS直聘账号，并邀请其他用户加入。</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="this.closest('.modal').classList.remove('active')">取消</button>
+      <button class="btn btn-primary">确认添加</button>
+    </div>
+  </div>
+</div>
+
+<!-- 绑定BOSS直聘账号弹窗 -->
+<div id="bindBossModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">绑定BOSS直聘账号</div>
+      <button class="modal-close" onclick="this.closest('.modal').classList.remove('active')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="alert alert-info">
+        <span>🔒</span>
+        <div>
+          <strong>安全提示</strong><br>
+          账号密码将使用AES-256加密存储，仅用于自动获取简历，不会用于其他用途。
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">BOSS直聘账号<span class="required">*</span></label>
+        <input type="text" class="form-control" placeholder="请输入BOSS直聘登录账号（手机号或邮箱）">
+        <div class="form-help">请确保该账号有权限访问公司的招聘信息</div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">密码<span class="required">*</span></label>
+        <input type="password" class="form-control" placeholder="请输入BOSS直聘登录密码">
+        <div class="form-help">密码将加密存储，系统管理员也无法查看明文</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="this.closest('.modal').classList.remove('active')">取消</button>
+      <button class="btn btn-primary">测试并保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- 修改BOSS直聘账号弹窗 -->
+<div id="editBossModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">修改BOSS直聘账号</div>
+      <button class="modal-close" onclick="this.closest('.modal').classList.remove('active')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">BOSS直聘账号<span class="required">*</span></label>
+        <input type="text" class="form-control" value="hr_bytedance@example.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">新密码</label>
+        <input type="password" class="form-control" placeholder="留空表示不修改密码">
+        <div class="form-help">仅在需要更换密码时填写</div>
+      </div>
+      <div class="alert alert-warning">
+        <span>⚠️</span>
+        <div>修改账号信息后，请务必测试连接以确保账号可用。</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="this.closest('.modal').classList.remove('active')">取消</button>
+      <button class="btn btn-primary">测试并保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="prototype-note">📐 原型 · US-015 公司管理 · US-016 BOSS直聘账号绑定</div>
+</body>
+</html>

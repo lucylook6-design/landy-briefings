@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>需求管理看板 — HR智能体</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">HR<span>智能体</span></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">工作台</div>
+      <a class="nav-item active" href="dashboard.html"><span class="icon">📋</span>需求看板</a>
+      <a class="nav-item" href="job-detail.html"><span class="icon">📝</span>招聘需求</a>
+      <a class="nav-item" href="resume-upload.html"><span class="icon">📤</span>简历管理</a>
+      <a class="nav-item" href="screening-result.html"><span class="icon">🎯</span>筛选结果</a>
+      <a class="nav-item" href="delivery.html"><span class="icon">📨</span>交付记录</a>
+      <div class="nav-section">系统</div>
+      <a class="nav-item" href="company-settings.html"><span class="icon">🏢</span>公司管理</a>
+      <a class="nav-item" href="#"><span class="icon">⚙️</span>系统设置</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <!-- 顶栏 -->
+    <header class="topbar">
+      <div class="topbar-title">需求管理看板</div>
+      <div class="topbar-actions">
+        <!-- US-015: 公司切换功能 -->
+        <div class="company-selector" style="margin-right:16px;">
+          <select class="form-control" style="width:180px;font-size:13px;" onchange="alert('切换到: ' + this.value)">
+            <option>🏢 字节跳动</option>
+            <option>🏢 美团</option>
+            <option>🏢 滴滴出行</option>
+            <option>🏢 京东</option>
+            <option>🏢 快手</option>
+          </select>
+        </div>
+        <a href="job-detail.html" class="btn btn-primary">＋ 新建招聘需求</a>
+        <div class="avatar">张</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- 统计卡片 -->
+      <!-- US-014: 多客户多需求管理 -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">进行中需求</div>
+          <div class="stat-value">12</div>
+          <div class="stat-sub stat-up">↑ 3 本周新增</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">本月筛选简历</div>
+          <div class="stat-value">1,840</div>
+          <div class="stat-sub stat-up">↑ 12% 较上月</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">已交付推荐</div>
+          <div class="stat-value">47</div>
+          <div class="stat-sub text-gray">本月累计</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">平均筛选耗时</div>
+          <div class="stat-value">3.2<span style="font-size:14px;font-weight:400;color:var(--gray-500)">分钟</span></div>
+          <div class="stat-sub stat-up">↓ 较人工节省 97%</div>
+        </div>
+      </div>
+
+      <!-- 筛选栏 -->
+      <div class="card mb-16">
+        <div class="card-body" style="padding:12px 20px;">
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+            <input class="form-control" style="width:220px;" placeholder="搜索职位名称或客户...">
+            <select class="form-control" style="width:140px;">
+              <option>全部客户</option>
+              <option>字节跳动</option>
+              <option>美团</option>
+              <option>滴滴出行</option>
+            </select>
+            <select class="form-control" style="width:120px;">
+              <option>全部状态</option>
+              <option>进行中</option>
+              <option>筛选中</option>
+              <option>已交付</option>
+              <option>已关闭</option>
+            </select>
+            <button class="btn btn-secondary">筛选</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 需求列表 -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">招聘需求列表</div>
+          <span class="text-sm text-gray">共 12 条</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>职位名称</th>
+                <th>客户</th>
+                <th>简历数</th>
+                <th>当前阶段</th>
+                <th>初筛保留</th>
+                <th>最近更新</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 模拟数据 -->
+              <tr>
+                <td>
+                  <div class="text-bold">高级算法工程师</div>
+                  <div class="text-sm text-gray">REQ-2024-001</div>
+                </td>
+                <td>字节跳动</td>
+                <td>
+                  <div>186 份</div>
+                  <div class="progress mt-8" style="width:80px;">
+                    <div class="progress-bar" style="width:93%;"></div>
+                  </div>
+                </td>
+                <td><span class="badge badge-blue">筛选中</span></td>
+                <td>6 份</td>
+                <td>10分钟前</td>
+                <td>
+                  <a href="screening-result.html" class="btn btn-primary btn-sm">查看结果</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="text-bold">产品经理（增长方向）</div>
+                  <div class="text-sm text-gray">REQ-2024-002</div>
+                </td>
+                <td>美团</td>
+                <td>
+                  <div>94 份</div>
+                  <div class="progress mt-8" style="width:80px;">
+                    <div class="progress-bar success" style="width:100%;"></div>
+                  </div>
+                </td>
+                <td><span class="badge badge-green">已完成</span></td>
+                <td>5 份</td>
+                <td>2小时前</td>
+                <td>
+                  <a href="delivery.html" class="btn btn-success btn-sm">去交付</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="text-bold">Java后端工程师（P6）</div>
+                  <div class="text-sm text-gray">REQ-2024-003</div>
+                </td>
+                <td>滴滴出行</td>
+                <td>
+                  <div>212 份</div>
+                  <div class="progress mt-8" style="width:80px;">
+                    <div class="progress-bar" style="width:0%;"></div>
+                  </div>
+                </td>
+                <td><span class="badge badge-yellow">待筛选</span></td>
+                <td>8 份</td>
+                <td>1天前</td>
+                <td>
+                  <a href="resume-upload.html" class="btn btn-secondary btn-sm">上传简历</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="text-bold">数据分析师</div>
+                  <div class="text-sm text-gray">REQ-2024-004</div>
+                </td>
+                <td>京东</td>
+                <td>
+                  <div>67 份</div>
+                  <div class="progress mt-8" style="width:80px;">
+                    <div class="progress-bar success" style="width:100%;"></div>
+                  </div>
+                </td>
+                <td><span class="badge badge-gray">已交付</span></td>
+                <td>6 份</td>
+                <td>3天前</td>
+                <td>
+                  <a href="#" class="btn btn-secondary btn-sm">查看详情</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="text-bold">前端工程师（React）</div>
+                  <div class="text-sm text-gray">REQ-2024-005</div>
+                </td>
+                <td>快手</td>
+                <td>
+                  <div>0 份</div>
+                  <div class="progress mt-8" style="width:80px;">
+                    <div class="progress-bar" style="width:0%;"></div>
+                  </div>
+                </td>
+                <td><span class="badge badge-yellow">待上传</span></td>
+                <td>6 份</td>
+                <td>刚刚</td>
+                <td>
+                  <a href="job-detail.html" class="btn btn-secondary btn-sm">编辑JD</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="prototype-note">📐 原型 · US-014 多客户需求管理</div>
+</body>
+</html>

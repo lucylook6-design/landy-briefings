@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简历上传与解析 — HR智能体</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo">HR<span>智能体</span></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">工作台</div>
+      <a class="nav-item" href="dashboard.html"><span class="icon">📋</span>需求看板</a>
+      <a class="nav-item" href="job-detail.html"><span class="icon">📝</span>招聘需求</a>
+      <a class="nav-item active" href="resume-upload.html"><span class="icon">📤</span>简历管理</a>
+      <a class="nav-item" href="screening-result.html"><span class="icon">🎯</span>筛选结果</a>
+      <a class="nav-item" href="delivery.html"><span class="icon">📨</span>交付记录</a>
+      <div class="nav-section">系统</div>
+      <a class="nav-item" href="company-settings.html"><span class="icon">🏢</span>公司管理</a>
+      <a class="nav-item" href="#"><span class="icon">⚙️</span>系统设置</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="flex-center gap-8">
+        <a href="job-detail.html" class="btn btn-secondary btn-sm">← 返回</a>
+        <div class="topbar-title">简历上传与解析 · 高级算法工程师</div>
+      </div>
+      <div class="topbar-actions">
+        <a href="screening-result.html" class="btn btn-primary">开始筛选 →</a>
+        <div class="avatar">张</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:20px;">
+
+        <!-- 左侧 -->
+        <div>
+          <!-- 上传区域 US-004 -->
+          <div class="card mb-16">
+            <div class="card-header">
+              <div class="card-title">上传简历</div>
+              <span class="text-sm text-gray">支持 Word (.doc/.docx) 和 PDF 格式</span>
+            </div>
+            <div class="card-body">
+              <div class="upload-zone">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">拖拽文件到此处，或点击选择文件</div>
+                <div class="upload-hint">支持批量上传，单次最多 200 份 · 单文件最大 10MB</div>
+                <button class="btn btn-primary mt-16" style="margin-top:16px;">选择文件</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 解析状态列表 US-008 -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">简历列表</div>
+              <div class="flex-center gap-8">
+                <span class="badge badge-blue">解析中 3</span>
+                <span class="badge badge-green">成功 180</span>
+                <span class="badge badge-red">需人工处理 3</span>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width:32px;"><input type="checkbox"></th>
+                    <th>姓名</th>
+                    <th>文件</th>
+                    <th>解析状态</th>
+                    <th>关键信息</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 解析成功 -->
+                  <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td>
+                      <div class="text-bold">王晓明</div>
+                      <div class="text-sm text-gray">上传于 5分钟前</div>
+                    </td>
+                    <td><span class="badge badge-gray">PDF</span></td>
+                    <td><span class="badge badge-green">✓ 解析成功</span></td>
+                    <td>
+                      <div class="tag-list">
+                        <span class="tag">5年经验</span>
+                        <span class="tag">推荐算法</span>
+                        <span class="tag">Python</span>
+                      </div>
+                    </td>
+                    <td><button class="btn btn-secondary btn-sm">查看详情</button></td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td>
+                      <div class="text-bold">李思远</div>
+                      <div class="text-sm text-gray">上传于 5分钟前</div>
+                    </td>
+                    <td><span class="badge badge-gray">DOCX</span></td>
+                    <td><span class="badge badge-green">✓ 解析成功</span></td>
+                    <td>
+                      <div class="tag-list">
+                        <span class="tag">3年经验</span>
+                        <span class="tag">深度学习</span>
+                        <span class="tag">TensorFlow</span>
+                      </div>
+                    </td>
+                    <td><button class="btn btn-secondary btn-sm">查看详情</button></td>
+                  </tr>
+                  <!-- OCR重试中 Q4澄清 -->
+                  <tr>
+                    <td><input type="checkbox" disabled></td>
+                    <td>
+                      <div class="text-bold">陈建国</div>
+                      <div class="text-sm text-gray">上传于 8分钟前</div>
+                    </td>
+                    <td><span class="badge badge-gray">PDF</span></td>
+                    <td>
+                      <span class="badge badge-yellow">⟳ OCR重试中 2/3</span>
+                    </td>
+                    <td><span class="text-sm text-gray">解析中，请稍候...</span></td>
+                    <td><button class="btn btn-secondary btn-sm" disabled>等待中</button></td>
+                  </tr>
+                  <!-- 需人工处理 Q4澄清 -->
+                  <tr style="background:#fef2f2;">
+                    <td><input type="checkbox" disabled></td>
+                    <td>
+                      <div class="text-bold">赵丽华</div>
+                      <div class="text-sm text-gray">上传于 10分钟前</div>
+                    </td>
+                    <td><span class="badge badge-gray">PDF</span></td>
+                    <td><span class="badge badge-red">⚠ 需人工处理</span></td>
+                    <td><span class="text-sm" style="color:var(--danger);">扫描版PDF，OCR 3次失败</span></td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">手动补录</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" checked></td>
+                    <td>
+                      <div class="text-bold">刘宇航</div>
+                      <div class="text-sm text-gray">上传于 12分钟前</div>
+                    </td>
+                    <td><span class="badge badge-gray">DOCX</span></td>
+                    <td><span class="badge badge-green">✓ 解析成功</span></td>
+                    <td>
+                      <div class="tag-list">
+                        <span class="tag">7年经验</span>
+                        <span class="tag">搜索排序</span>
+                        <span class="tag">C++</span>
+                      </div>
+                    </td>
+                    <td><button class="btn btn-secondary btn-sm">查看详情</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:12px 20px;border-top:1px solid var(--gray-100);display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm text-gray">已选 180 份 · 3 份需人工处理后可加入</span>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-secondary btn-sm">删除选中</button>
+                <a href="screening-result.html" class="btn btn-primary">开始筛选（180份）</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：解析统计 -->
+        <div>
+          <div class="card mb-16">
+            <div class="card-header"><div class="card-title">解析进度</div></div>
+            <div class="card-body">
+              <div style="text-align:center;padding:8px 0 16px;">
+                <div style="font-size:36px;font-weight:800;color:var(--gray-900);">186</div>
+                <div class="text-gray" style="font-size:13px;">份简历已上传</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div>
+                  <div class="flex-between mb-16" style="margin-bottom:4px;">
+                    <span class="text-sm text-gray">解析成功</span>
+                    <span class="text-sm text-bold" style="color:var(--success);">180 份</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar success" style="width:97%;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-between mb-16" style="margin-bottom:4px;">
+                    <span class="text-sm text-gray">OCR重试中</span>
+                    <span class="text-sm text-bold" style="color:var(--warning);">3 份</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar warning" style="width:1.6%;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex-between mb-16" style="margin-bottom:4px;">
+                    <span class="text-sm text-gray">需人工处理</span>
+                    <span class="text-sm text-bold" style="color:var(--danger);">3 份</span>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" style="width:1.6%;background:var(--danger);"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 手动补录弹窗提示 -->
+          <div class="card" style="border-color:#fca5a5;">
+            <div class="card-header" style="background:#fef2f2;">
+              <div class="card-title" style="color:var(--danger);">⚠ 需人工处理（3份）</div>
+            </div>
+            <div class="card-body">
+              <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px;">以下简历OCR识别失败，请手动补录关键信息后加入筛选池：</p>
+              <div style="display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px;background:var(--gray-50);border-radius:6px;">
+                  <span style="font-size:13px;">赵丽华.pdf</span>
+                  <button class="btn btn-danger btn-sm">补录</button>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px;background:var(--gray-50);border-radius:6px;">
+                  <span style="font-size:13px;">孙志强.pdf</span>
+                  <button class="btn btn-danger btn-sm">补录</button>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px;background:var(--gray-50);border-radius:6px;">
+                  <span style="font-size:13px;">周美玲.pdf</span>
+                  <button class="btn btn-danger btn-sm">补录</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="prototype-note">📐 原型 · US-004 US-008 简历上传与解析</div>
+</body>
+</html>
