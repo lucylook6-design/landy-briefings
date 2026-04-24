@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年4月24日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  /* 响应式设计 - 手机端 */
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    .date {
+      font-size: 15px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+    }
+    .section {
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 17px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    table {
+      font-size: 15px;
+    }
+    th, td {
+      padding: 10px 12px;
+    }
+    .highlight, .warning {
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+    .back-button {
+      font-size: 15px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+  }
+
+  /* 响应式设计 - 平板端 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body {
+      max-width: 90%;
+      margin: 30px auto;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 21px;
+    }
+  }
+
+  /* 响应式设计 - 小屏幕手机 */
+  @media (max-width: 480px) {
+    body {
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 17px;
+    }
+    h1 {
+      font-size: 19px;
+    }
+    .date {
+      font-size: 14px;
+    }
+    .section-title {
+      font-size: 18px;
+    }
+    table {
+      font-size: 14px;
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
+  /* 响应式设计 - 大屏幕电脑 */
+  @media (min-width: 1200px) {
+    body {
+      max-width: 900px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年4月24日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>DeepSeek发布V4接口文档</strong> — deepseek-v4-flash和deepseek-v4-pro上线，国产大模型再进阶 <span class="source">（财联社）</span></li>
+    <li><strong>霍尔木兹海峡局势急剧升温</strong> — 伊朗布雷，特朗普下令美军可开火击沉船只 <span class="source">（新华社/AP）</span></li>
+    <li><strong>德州仪器Q2指引大超预期</strong> — 隔夜大涨19.43%，创2000年以来最大单日涨幅，芯片需求强劲 <span class="source">（财联社）</span></li>
+    <li><strong>英特尔CEO：CPU正重归AI核心地位</strong> — 中央处理器成为AI技术栈的调度层与控制平面 <span class="source">（财联社）</span></li>
+    <li><strong>千问加速上车</strong> — 2026北京车展首日，长安/比亚迪/理想等10多家车企同日宣布接入千问 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 AI & 算力</strong>
+    <ul>
+      <li><strong>DeepSeek V4正式发布</strong> — 官网已上线deepseek-v4接口文档和模型介绍，包括flash和pro两个版本，国产大模型竞争进入新阶段 <span class="source">（财联社）</span></li>
+      <li><strong>英特尔CEO陈立武</strong>在财报电话会上表示，CPU正重新成为AI时代不可缺少的基础，"中央处理器已成为AI技术栈的调度层与关键控制平面" <span class="source">（财联社）</span></li>
+      <li><strong>软银拟改造工厂</strong>为大阪工厂转型为日本最大电池生产线之一，为其AI数据中心提供电力，目标五年内投产 <span class="source">（36氪/财联社）</span></li>
+      <li><strong>亚马逊支持的X-Energy</strong>核反应堆开发商通过IPO募资<strong>10.2亿美元</strong>，发行价23美元/股超预期（原区间16-19美元）<span class="source">（36氪）</span></li>
+      <li><strong>可灵AI 3.0</strong>新增原生4K直出功能，支持一键生成院线级质感视频 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 行业数据 & 政策</strong>
+    <ul>
+      <li><strong>工信部：3月户均流量23.4GB创新高</strong>，同比增长13.8%；5G移动电话用户达12.54亿户，占移动电话用户的<strong>68.3%</strong> <span class="source">（财联社）</span></li>
+      <li><strong>国家能源局：1-3月全国电力市场交易电量</strong>累计6355亿千瓦时，同比<strong>增长25.9%</strong>，其中现货交易电量893亿千瓦时 <span class="source">（36氪）</span></li>
+      <li><strong>北京车展开幕</strong> — 千问加速上车，10多家车企同日宣布接入，Qwen-Omni全模态大模型已适配主流车端芯片 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🔬 芯片功耗与液冷需求</strong>
+    <ul>
+      <li><strong>德州仪器Q2指引大超预期</strong>，隔夜大涨19.43%（2000年10月以来最大涨幅），全球模拟芯片需求强劲，AI算力扩张持续推动芯片出货 <span class="source">（财联社）</span></li>
+      <li><strong>ASMPT订单创四年新高</strong>，1Q26订单量大增，华泰证券维持"买入"评级，目标价200港元。充分受益AI驱动的先进封装及后道设备需求，预计2026-2028年净利润CAGR达<strong>59%</strong> <span class="source">（财联社）</span></li>
+      <li><strong>芯片产业链持续走强</strong>，华虹公司涨近9%，纳芯微涨超12%，中芯国际涨6.24% <span class="source">（财联社）</span></li>
+      <li><strong>半导体涨价潮蔓延</strong>：代工设计环节接连调价，涨幅最高达<strong>30%</strong> <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">🌍 地缘与能源</strong>
+    <ul>
+      <li><strong>霍尔木兹海峡危机升级</strong> — 伊朗革命卫队海军本周在霍尔木兹海峡布设更多水雷，特朗普下令美军可开火击沉布雷船只。WTI原油若上涨将推高液冷相对风冷的成本优势 <span class="source">（新华社/AP）</span></li>
+      <li><strong>软银为数据中心生产电池</strong> — AI算力基建扩张加速，数据中心能源配套成为关键瓶颈 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
+    <ul>
+      <li><strong>DeepSeek V4发布</strong> → 国产AI模型能力持续跃升 → 推理算力需求爆发 → 智算中心液冷渗透率持续提升 <span class="source">（财联社）</span></li>
+      <li><strong>软银改造工厂生产数据中心电池</strong>，反映AI数据中心电力需求爆发式增长，液冷省电价值进一步凸显 <span class="source">（36氪）</span></li>
+      <li><strong>英特尔CPU回归AI核心</strong>，CPU作为AI技术栈调度层→CPU散热需求增加，带动液冷散热方案需求 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li><strong>大众汽车2026年在中国推出13款新能源车型</strong>，涵盖纯电、插混和增程，包括首款增程车型ID.ERA9X、首款<strong>800V平台</strong>车型与众08 <span class="source">（36氪）</span></li>
+      <li><strong>蔚来在武汉成立新能源科技公司</strong>，注册资本500万元，经营范围包括新能源汽车整车销售、换电设施销售等 <span class="source">（36氪）</span></li>
+      <li><strong>千问加速上车</strong>，10多家车企宣布接入，AI座舱成为北京车展最大亮点 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
+    <ul>
+      <li>北京车展期间大众推出<strong>首款800V平台车型</strong>（与众08），800V高压平台是超充基础设施的前提，利好液冷超充桩建设 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、集成商动态 -->
+<div class="section">
+  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
+  <table>
+    <tr>
+      <th style="width:18%">企业</th>
+      <th>核心进展</th>
+    </tr>
+    <tr>
+      <td><strong>英维克</strong></td>
+      <td>液冷温控龙头，受益于AI算力扩张及芯片功耗持续攀升 <span class="source">（跟踪）</span></td>
+    </tr>
+    <tr>
+      <td><strong>曙光数创</strong></td>
+      <td>液冷数据中心领先，中科系算力基建核心供应商 <span class="source">（跟踪）</span></td>
+    </tr>
+    <tr>
+      <td><strong>高澜股份</strong></td>
+      <td>电力电子冷却龙头，液冷管路线重点受益标的 <span class="source">（跟踪）</span></td>
+    </tr>
+    <tr>
+      <td><strong>申菱环境</strong></td>
+      <td>数据中心温控解决方案，液冷系统布局 <span class="source">（跟踪）</span></td>
+    </tr>
+    <tr>
+      <td><strong>巨化股份</strong></td>
+      <td>冷却液/氟化工龙头，受益于液冷冷却液国产替代加速 <span class="source">（跟踪）</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <ul>
+    <li><strong>创业板指跌逾2%</strong>，沪指跌0.72%，深成指跌1.39%，AI硬件和软件领跌，沪深京三市下跌个股近4000只 <span class="source">（36氪）</span></li>
+    <li><strong>芯片产业链逆势走强</strong>，算力/模拟芯片方向领涨，华虹公司涨近9%，纳芯微涨12.52%，中芯国际涨6.24% <span class="source">（财联社）</span></li>
+    <li><strong>主力资金大幅净流出通信</strong>，新易盛遭净卖出<strong>超29亿元</strong>居首，天孚通信、蓝色光标、工业富联资金净流出居前 <span class="source">（财联社）</span></li>
+    <li><strong>富瑞予MiniMax买入评级</strong>，目标价<strong>1118港元</strong>，认为全模态模型具独特传播效应，能提升模型智能 <span class="source">（财联社）</span></li>
+    <li><strong>亚马逊支持的X-Energy</strong>核反应堆开发商IPO募资<strong>10.2亿美元</strong>，发行价23美元超预期，AI能源需求推高核能投资热度 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li>今日无最新公告 <span class="source">（财联社）</span></li>
+    <li>产业链层面利好：<strong>半导体涨价潮蔓延</strong>（涨幅最高30%），芯片产能紧张推动下游智算中心建设加速，液冷管作为核心配套间接获益</li>
+    <li>大众推出<strong>首款800V平台车型</strong>，新能源车热管理升级趋势明确，利好液冷管产品线</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注 — 霍尔木兹海峡危机</strong><br>
+    伊朗在霍尔木兹海峡布设水雷，特朗普授权美军开火。局势升级可能导致<strong>全球油价急涨</strong>，影响原材料成本。若WTI突破90美元，液冷省电方案的经济性优势将显著扩大，对液冷管产业是重大催化剂。菲律宾央行已暗示加息应对石油冲击。
+  </div>
+
+  <div class="highlight">
+    <strong>🟢 重大机会 — DeepSeek V4发布</strong><br>
+    DeepSeek V4正式上线（flash+pro），国产大模型进入新阶段。推理算力需求将在现有基础上再上一个台阶，<strong>智算中心建设潮只会加速</strong>，液冷管需求将持续爆发。关注后续V4的API调用量数据。
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    (1) 北京车展期间800V平台车型发布潮 — 液冷超充桩配套需求 <br>
+    (2) 半导体涨价潮 — 产能紧张程度可能影响液冷产业链上游供给 <br>
+    (3) 软银数据中心电池改造 — 算力基建扩张的信号
+  </div>
+</div>
+
+</body>
+</html>
