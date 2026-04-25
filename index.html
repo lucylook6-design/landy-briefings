@@ -6,16 +6,19 @@
 <title>Landy 陸葉 · 每日简报</title>
 <style>
   :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --border: #21262d;
-    --accent: #1a73e8;
-    --accent2: #e87020;
-    --text: #e6edf3;
-    --muted: #8b949e;
-    --tag-ai: #1a3a5c;
-    --tag-stock: #2d4a1e;
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --border: #2a3548;
+    --accent: #3b82f6;
+    --accent2: #f97316;
+    --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    --text: #f1f5f9;
+    --muted: #64748b;
+    --tag-ai: #1e3a5f;
+    --tag-stock: #1a3d2e;
     --tag-energy: #4a2d1e;
+    --glow: rgba(59, 130, 246, 0.15);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -23,6 +26,9 @@
     color: var(--text);
     font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
     min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
   }
 
   /* ── 顶栏 ── */
@@ -34,23 +40,24 @@
     justify-content: space-between;
     position: sticky;
     top: 0;
-    background: rgba(13,17,23,0.92);
-    backdrop-filter: blur(8px);
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(12px);
     z-index: 100;
   }
-  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 14px; }
   .logo-icon {
-    width: 36px; height: 36px;
-    background: linear-gradient(135deg, #1a73e8, #e87020);
-    border-radius: 8px;
+    width: 42px; height: 42px;
+    background: var(--accent-gradient);
+    border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
+    box-shadow: 0 4px 20px var(--glow);
   }
-  .logo-text { font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
-  .logo-sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
-  .header-stats { display: flex; gap: 24px; }
+  .logo-text { font-size: 17px; font-weight: 700; letter-spacing: 0.5px; }
+  .logo-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .header-stats { display: flex; gap: 32px; }
   .stat { text-align: center; }
-  .stat-num { font-size: 20px; font-weight: 700; color: var(--accent); }
+  .stat-num { font-size: 22px; font-weight: 700; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
   /* ── 主体 ── */
@@ -105,50 +112,64 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 16px 20px;
+    padding: 18px 22px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 14px;
+    margin-bottom: 12px;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.2s, transform 0.15s;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .report-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity 0.25s;
   }
   .report-card:hover {
     border-color: var(--accent);
-    transform: translateX(4px);
+    transform: translateX(6px);
+    box-shadow: 0 8px 30px var(--glow);
   }
+  .report-card:hover::before { opacity: 0.03; }
   .card-date-block {
-    min-width: 52px;
+    min-width: 56px;
     text-align: center;
-    background: var(--bg);
-    border-radius: 8px;
-    padding: 8px 6px;
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 10px 8px;
+    border: 1px solid var(--border);
   }
-  .card-month { font-size: 11px; color: var(--muted); text-transform: uppercase; }
-  .card-day { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
-  .card-weekday { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .card-month { font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+  .card-day { font-size: 24px; font-weight: 800; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1; }
+  .card-weekday { font-size: 10px; color: var(--muted); margin-top: 3px; }
   .card-body { flex: 1; }
-  .card-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .card-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
   .card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-  .card-tags { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .card-tags { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
   .tag {
     font-size: 11px;
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 20px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.3px;
   }
-  .tag-ai { background: var(--tag-ai); color: #7ab3e8; }
-  .tag-stock { background: var(--tag-stock); color: #7ac87a; }
-  .tag-energy { background: var(--tag-energy); color: #e8a87a; }
-  .tag-robot { background: #2d1a4a; color: #c87ae8; }
+  .tag-ai { background: var(--tag-ai); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+  .tag-stock { background: var(--tag-stock); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.2); }
+  .tag-energy { background: var(--tag-energy); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.2); }
+  .tag-robot { background: #2d1a4a; color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.2); }
   .card-arrow {
     color: var(--muted);
-    font-size: 18px;
-    transition: color 0.2s;
+    font-size: 22px;
+    transition: all 0.2s;
   }
-  .report-card:hover .card-arrow { color: var(--accent); }
+  .report-card:hover .card-arrow { color: var(--accent); transform: translateX(4px); }
 
   /* ── 空状态 ── */
   .empty {
@@ -157,6 +178,71 @@
     color: var(--muted);
   }
   .empty-icon { font-size: 48px; margin-bottom: 12px; }
+
+  /* ── 培训入口卡片 ── */
+  .training-banner {
+    background: linear-gradient(135deg, #1a1f35 0%, #2d1f4a 50%, #1a2a3a 100%);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .training-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.5), transparent);
+  }
+  .training-banner:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+  }
+  .training-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #f97316, #ea580c, #dc2626);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+  }
+  .training-content { flex: 1; }
+  .training-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+  .training-title span { background: linear-gradient(90deg, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .training-desc { font-size: 13px; color: var(--muted); }
+  .training-meta { display: flex; gap: 16px; margin-top: 8px; }
+  .training-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .training-arrow {
+    font-size: 24px;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+  .training-banner:hover .training-arrow {
+    color: #a78bfa;
+    transform: translateX(4px);
+  }
 
   /* ── 底部 ── */
   footer {
@@ -192,8 +278,21 @@
 </header>
 
 <main>
-  <div class="page-title">历史简报存档</div>
-  <div class="page-sub">每日 AI · 液冷 · 二级市场 · 利通科技 情报汇总</div>
+  <div class="page-title" id="page-title">历史简报存档</div>
+  <div class="page-sub" id="page-sub">每日 AI · 液冷 · 二级市场 · 利通科技 情报汇总</div>
+
+  <a class="training-banner" href="https://lucylook6-design.github.io/liquid-cooling-training/" target="_blank">
+    <div class="training-icon">📚</div>
+    <div class="training-content">
+      <div class="training-title"><span>液冷技术培训课程</span></div>
+      <div class="training-desc">5天系统学习液冷技术，从基础到实战</div>
+      <div class="training-meta">
+        <span class="training-tag">🔥 Day1-Day5 完整课程</span>
+        <span class="training-tag">💧 液冷原理与实践</span>
+      </div>
+    </div>
+    <div class="training-arrow">›</div>
+  </a>
 
   <div class="search-bar">
     <input type="text" id="search-input" placeholder="搜索日期或关键词…" oninput="filterReports()">
@@ -212,7 +311,7 @@ const REPORTS = [
   {
     date: "2026-04-25",
     title: "AI研究员简报",
-    desc: "<strong>DeepSeek-V4-Pro API限时2.5折优惠 <strong>百度智能云上线DeepSeek-V4�<strong>元戎启行全面转向大模型自动驾驶路线",
+    desc: "<strong>DeepSeek-V4-Pro API限时2.5折优惠 <strong>百度智能云上线DeepSeek-V4�<strong>元戎启行全面转向大模型自动驾驶路线",
     tags: ["ai", "stock", "energy"],
     file: "reports/2026-04-25.html"
   },
@@ -233,21 +332,21 @@ const REPORTS = [
   {
     date: "2026-04-22",
     title: "AI研究员--Landy葉的简报",
-    desc: "<strong>宁德时代发布第三代神行超充电池 <strong>宁德时代钠离子电池年内大规模量产�<strong>我国软件产业规模有望突破20万亿元大关",
+    desc: "<strong>宁德时代发布第三代神行超充电池 <strong>宁德时代钠离子电池年内大规模量产�<strong>我国软件产业规模有望突破20万亿元大关",
     tags: ["ai", "stock", "energy"],
     file: "reports/2026-04-22.html"
   },
   {
     date: "2026-04-21",
     title: "AI研究员--Landy葉的简报",
-    desc: "<strong>金富科技液冷产能扩张 <strong>广东加大算电协同投资�<strong>中东局势推高油价",
+    desc: "<strong>金富科技液冷产能扩张 <strong>广东加大算电协同投资�<strong>中东局势推高油价",
     tags: ["ai", "stock", "energy"],
     file: "reports/2026-04-21.html"
   },
   {
     date: "2026-04-20",
     title: "AI研究员--Landy葉的简报",
-    desc: "<strong>阿里AI视频模型HappyHorse将于4月27日开放测试 <strong>国际能源署�<strong>沪深两市成交额连续第9个交易日突破2万亿",
+    desc: "<strong>阿里AI视频模型HappyHorse将于4月27日开放测试 <strong>国际能源署�<strong>沪深两市成交额连续第9个交易日突破2万亿",
     tags: ["ai", "stock", "energy"],
     file: "reports/2026-04-20.html"
   },
@@ -326,6 +425,8 @@ const latest = REPORTS.sort((a,b) => b.date.localeCompare(a.date))[0];
 if (latest) {
   const d = new Date(latest.date + "T00:00:00");
   document.getElementById("latest-date").textContent = `${d.getMonth()+1}/${d.getDate()}`;
+  document.getElementById("page-title").textContent = latest.title;
+  document.getElementById("page-sub").textContent = latest.date + " · " + latest.desc.replace(/<[^>]*>/g, '').substring(0, 60) + "...";
 }
 </script>
 </body>
