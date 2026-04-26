@@ -63,6 +63,60 @@
   /* ── 主体 ── */
   main { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 
+  /* ── Tab切换 ── */
+  .tab-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0;
+  }
+  .tab-btn {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    border-radius: 8px 8px 0 0;
+  }
+  .tab-btn:hover {
+    color: var(--text);
+    background: var(--surface2);
+  }
+  .tab-btn.active {
+    color: var(--text);
+    background: var(--surface2);
+  }
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+  }
+  .tab-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 6px;
+    font-weight: 700;
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+
   .page-title {
     font-size: 28px;
     font-weight: 700;
@@ -278,46 +332,61 @@
 </header>
 
 <main>
-  <div class="page-title">知识库</div>
-  <div class="page-sub" style="margin-bottom: 20px;">技术培训 · 产品资料 · 行业知识</div>
-
-  <div class="page-title">知识库</div>
-  <div class="page-sub" style="margin-bottom: 20px;">技术培训 · 产品资料 · 行业知识</div>
-
-  <a class="training-banner" href="https://lucylook6-design.github.io/liquid-cooling-training/" target="_blank">
-    <div class="training-icon">📚</div>
-    <div class="training-content">
-      <div class="training-title"><span>液冷技术培训课程</span></div>
-      <div class="training-desc">5天系统学习液冷技术，从基础到实战</div>
-      <div class="training-meta">
-        <span class="training-tag">🔥 Day1-Day5 完整课程</span>
-        <span class="training-tag">💧 液冷原理与实践</span>
-      </div>
-    </div>
-    <div class="training-arrow">›</div>
-  </a>
-
-  <a class="training-banner" href="reports/cejn-product-inventory.html" target="_blank" style="background: linear-gradient(135deg, #1a2f35 0%, #1f2d4a 50%, #1a2535 100%); border-color: rgba(59, 130, 246, 0.3);">
-    <div class="training-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);">🔧</div>
-    <div class="training-content">
-      <div class="training-title"><span>希恩产品库存</span></div>
-      <div class="training-desc">CEJN数据中心液冷快速接头产品目录</div>
-      <div class="training-meta">
-        <span class="training-tag">📦 UQD/UQDB系列</span>
-        <span class="training-tag">✅ OCP标准认证</span>
-      </div>
-    </div>
-    <div class="training-arrow">›</div>
-  </a>
-
-  <div class="page-title" style="margin-top: 48px;">每日简报</div>
-  <div class="page-sub">AI · 液冷 · 二级市场 · 利通科技 情报汇总</div>
-
-  <div class="search-bar">
-    <input type="text" id="search-input" placeholder="搜索日期或关键词…" oninput="filterReports()">
+  <!-- Tab导航 -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('briefings')">
+      📊 每日简报
+      <span class="tab-badge" id="briefing-count">—</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('knowledge')">
+      📚 知识库
+      <span class="tab-badge">2</span>
+    </button>
   </div>
 
-  <div id="reports-container"></div>
+  <!-- 每日简报Tab -->
+  <div id="tab-briefings" class="tab-content active">
+    <div class="page-title">每日简报</div>
+    <div class="page-sub">AI · 液冷 · 二级市场 · 利通科技 情报汇总</div>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="搜索日期或关键词…" oninput="filterReports()">
+    </div>
+
+    <div id="reports-container"></div>
+  </div>
+
+  <!-- 知识库Tab -->
+  <div id="tab-knowledge" class="tab-content">
+    <div class="page-title">知识库</div>
+    <div class="page-sub" style="margin-bottom: 20px;">技术培训 · 产品资料 · 行业知识</div>
+
+    <a class="training-banner" href="https://lucylook6-design.github.io/liquid-cooling-training/" target="_blank">
+      <div class="training-icon">📚</div>
+      <div class="training-content">
+        <div class="training-title"><span>液冷技术培训课程</span></div>
+        <div class="training-desc">5天系统学习液冷技术，从基础到实战</div>
+        <div class="training-meta">
+          <span class="training-tag">🔥 Day1-Day5 完整课程</span>
+          <span class="training-tag">💧 液冷原理与实践</span>
+        </div>
+      </div>
+      <div class="training-arrow">›</div>
+    </a>
+
+    <a class="training-banner" href="reports/cejn-product-inventory.html" target="_blank" style="background: linear-gradient(135deg, #1a2f35 0%, #1f2d4a 50%, #1a2535 100%); border-color: rgba(59, 130, 246, 0.3);">
+      <div class="training-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8); box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);">🔧</div>
+      <div class="training-content">
+        <div class="training-title"><span>希恩产品库存</span></div>
+        <div class="training-desc">CEJN数据中心液冷快速接头产品目录</div>
+        <div class="training-meta">
+          <span class="training-tag">📦 UQD/UQDB系列</span>
+          <span class="training-tag">✅ OCP标准认证</span>
+        </div>
+      </div>
+      <div class="training-arrow">›</div>
+    </a>
+  </div>
 </main>
 
 <footer>
@@ -325,6 +394,17 @@
 </footer>
 
 <script>
+// ── Tab切换函数 ──
+function switchTab(tabName) {
+  // 移除所有active类
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+  
+  // 添加active类到选中的tab
+  event.target.classList.add('active');
+  document.getElementById('tab-' + tabName).classList.add('active');
+}
+
 // ── 简报数据（由 archive.sh 自动更新） ──
 const REPORTS = [
   {
@@ -440,6 +520,7 @@ function filterReports() {
 // 初始化
 renderReports(REPORTS);
 document.getElementById("total-count").textContent = REPORTS.length;
+document.getElementById("briefing-count").textContent = REPORTS.length;
 const latest = REPORTS.sort((a,b) => b.date.localeCompare(a.date))[0];
 if (latest) {
   const d = new Date(latest.date + "T00:00:00");
