@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy陸葉的简报 | 2026年4月19日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  /* 响应式设计 - 手机端 */
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    .date {
+      font-size: 15px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+    }
+    .section {
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 17px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    table {
+      font-size: 15px;
+    }
+    th, td {
+      padding: 10px 12px;
+    }
+    .highlight, .warning {
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+    .back-button {
+      font-size: 15px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+  }
+
+  /* 响应式设计 - 平板端 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body {
+      max-width: 90%;
+      margin: 30px auto;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 21px;
+    }
+  }
+
+  /* 响应式设计 - 小屏幕手机 */
+  @media (max-width: 480px) {
+    body {
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 17px;
+    }
+    h1 {
+      font-size: 19px;
+    }
+    .date {
+      font-size: 14px;
+    }
+    .section-title {
+      font-size: 18px;
+    }
+    table {
+      font-size: 14px;
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
+  /* 响应式设计 - 大屏幕电脑 */
+  @media (min-width: 1200px) {
+    body {
+      max-width: 900px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy陸葉的简报</h1>
+<div class="date">2026年4月19日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>霍尔木兹海峡封锁冲击全球能源</strong> — 伊朗封锁霍尔木兹海峡，伊拉克近<strong>400万桶</strong>原油出口受阻，全球油价波动加剧，新能源+储能赛道或加速替代 <span class="source">（财联社）</span></li>
+    <li><strong>英伟达 Rubin 架构强制液冷</strong> — 单GPU功耗突破<strong>1.8kW</strong>，液冷从"可选"变为"强制标配"，液冷管需求窗口彻底打开 <span class="source">（液冷行业数据）</span></li>
+    <li><strong>机器人半马在北京举办</strong> — 齐天大圣/雷霆闪电/星火燎原三支队伍分获冠亚季军，具身智能产业化加速，液冷技术渗透新场景 <span class="source">（央视新闻）</span></li>
+    <li><strong>力源信息Q1净利润+240%</strong> — 存储芯片量价齐升，半导体景气传导算力基建，智算中心扩建持续 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 行业数据</strong>
+    <ul>
+      <li>2026年全球液冷市场规模预计突破<strong>165-170亿美元</strong>（约1162亿元），年增速约<strong>59%</strong></li>
+      <li>中国液冷服务器渗透率从<strong>12%</strong>跃升至<strong>28%</strong>，AI训练服务器液冷渗透率达<strong>74%</strong></li>
+      <li>芯片功耗持续攀升：英伟达 H100 <strong>700W</strong> → GB200 <strong>1200W</strong> → GB300 <strong>1400W</strong> → Rubin <strong>1800-2000W</strong>，单柜功率密度超<strong>150kW</strong></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 政策动态</strong>
+    <ul>
+      <li>工信部明确：2026年底新建大型数据中心PUE需低于<strong>1.15</strong>，北京/上海对PUE超1.35机房征收差别电价</li>
+      <li>新建智算中心液冷渗透率要求<strong>100%</strong>，东数西算枢纽不低于<strong>70%</strong></li>
+      <li><strong>4月23日（下周四）</strong>全球液冷&AI芯片热管理供应链千人大会将在深圳举办，工信部、中国信通院将正式发布液冷渗透率强制行业标准；谷歌/英伟达/微软将现场签约，百亿级海外订单集中官宣 <span class="source">（液冷行业数据）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🏭 竞争格局</strong>
+    <ul>
+      <li>五大巨头：英维克（冷板市占<strong>42%</strong>）、曙光数创（浸没市占<strong>60%+</strong>）、浪潮信息（液冷服务器整机市占<strong>50%+</strong>）、高澜股份、巨化股份（冷却液国产唯一）</li>
+      <li>工业富联为英伟达GB200/GB300液冷机柜<strong>独家代工</strong>，订单排至<strong>2028年</strong></li>
+      <li>国产冷却液价格仅为进口产品的<strong>1/4</strong>，国产替代持续突破</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">📦 客户与订单</strong>
+    <ul>
+      <li>汉和网通连中三元：中标国家级数据中心液冷改造（<strong>500套</strong>冷板）、头部智算中心（<strong>300套</strong>浸没）、大型储能电站液冷系统（<strong>200套</strong>）</li>
+      <li>浪潮信息斩获字节跳动<strong>百亿级AI服务器订单</strong>，液冷占比<strong>85%+</strong></li>
+      <li>申菱环境：华为昇腾AI服务器液冷机柜<strong>核心供应商</strong>，五大基地满产</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">🔬 技术路线</strong>
+    <ul>
+      <li>冷板式液冷（<strong>60%+</strong>市场）：适配AI推理、存量改造，PUE 1.08-1.15</li>
+      <li>浸没式液冷（快速渗透）：超高功率密度，PUE可至<strong>1.04以下</strong>，单机柜功率超<strong>900kW</strong></li>
+      <li>芯片热流密度已超<strong>200W/cm²</strong>，两相液冷成为技术刚需</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
+    <ul>
+      <li>中国移动2026-2027年智算集采<strong>20.65亿元</strong>，全部锁定华为昇腾生态，液冷成为标配</li>
+      <li>深圳首个万卡昇腾910C超节点智算集群采用全液冷+一体化供电，PUE低至<strong>1.19</strong></li>
+      <li>甘肃庆阳数据中心集群加速：预计2026年6月底交付，提供<strong>8000架</strong>高功率密度机柜，<strong>144兆瓦</strong>IT负荷</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🔋 储能行业</strong>
+    <ul>
+      <li>2025年中国液冷储能市场规模<strong>54.7亿元</strong>，同比<strong>+74.8%</strong>，大储项目液冷渗透率达<strong>92.7%</strong></li>
+      <li>宁德时代西澳Collie <strong>500MW/2.4GWh</strong>项目、湛江徐闻<strong>200MW/400MWh</strong>项目推进中</li>
+      <li>8省市强制要求<strong>1GWh以上</strong>储能项目使用液冷</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li>800V高压平台推动液冷技术升级，电池热管理系统散热需求持续提升</li>
+      <li>主要客户：宁德时代、比亚迪、蔚来、小鹏、理想</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
+    <ul>
+      <li>2025年全球市场<strong>5.82亿美元</strong>，预计2032年飙升至<strong>35.69亿美元</strong>，年复合增长率<strong>30%</strong></li>
+      <li>华为、特斯拉、国家电网加快推进液冷超充网络，单枪功率<strong>600kW~1.5MW</strong></li>
+      <li>液冷超充枪线单根售价<strong>2-5万元</strong>，2026年国内需求突破<strong>百万根</strong>，对应市场规模接近<strong>90亿元</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、集成商动态 -->
+<div class="section">
+  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
+  <table>
+    <tr>
+      <th style="width:18%">企业</th>
+      <th>核心进展</th>
+    </tr>
+    <tr>
+      <td><strong>英维克</strong></td>
+      <td>进入谷歌全球供应链，2026年订单<strong>20-30亿元</strong>；Q1净利<strong>+150%</strong>，在手订单<strong>50亿+</strong></td>
+    </tr>
+    <tr>
+      <td><strong>曙光数创</strong></td>
+      <td>发布全球首个MW级相变浸没液冷整机柜C8000 V3.0，单机柜<strong>900kW</strong></td>
+    </tr>
+    <tr>
+      <td><strong>高澜股份</strong></td>
+      <td>英伟达+谷歌双认证，在手订单<strong>14.56亿元</strong>，液冷业务同比<strong>+120%</strong></td>
+    </tr>
+    <tr>
+      <td><strong>申菱环境</strong></td>
+      <td>投<strong>8亿</strong>建液冷基地，产能翻<strong>3倍</strong></td>
+    </tr>
+    <tr>
+      <td><strong>巨化股份</strong></td>
+      <td>电子氟化液国产唯一，2026年需求<strong>+300%</strong></td>
+    </tr>
+  </table>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <ul>
+    <li>力源信息Q1净利润<strong>+240.58%</strong>，存储芯片景气传导算力基建 <span class="source">（36氪）</span></li>
+    <li>工业富联：英伟达GB200/GB300<strong>独家代工</strong>，订单排至<strong>2028年</strong></li>
+    <li>液冷超充枪线单根售价<strong>2-5万元</strong>，订单已排至<strong>2026年下半年</strong>（日丰电缆、鑫宏业、远东电气）</li>
+    <li>三星正式停止LPDDR4/LPDDR4X接收新订单，内存技术升级窗口打开 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li>暂无最新公开公告</li>
+    <li><strong>建议关注：</strong>液冷管是智算中心+储能+新能源+超充四大场景的"血管"，赛道爆发直接受益。建议密切跟踪大客户订单落地及产能扩张动态</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    <strong>4月23日深圳液冷千人大会</strong> — 工信部将正式发布液冷渗透率强制行业标准，谷歌/英伟达/微软将现场签约，<strong>百亿级海外订单</strong>集中官宣。可能是液冷管赛道今年最重要的情报窗口，建议叶总密切跟踪
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>霍尔木兹海峡封锁持续</strong> — 油价波动+能源安全焦虑，可能加速全球新能源+储能布局，储能温控管路需求或超预期
+  </div>
+</div>
+
+</body>
+</html>

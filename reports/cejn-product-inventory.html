@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合产品库存文档 - CEJN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        .header {
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #0066cc;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #555;
+            min-width: 100px;
+        }
+        
+        .info-value {
+            color: #333;
+        }
+        
+        h2 {
+            color: #0066cc;
+            font-size: 24px;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        h3 {
+            color: #333;
+            font-size: 20px;
+            margin: 25px 0 15px 0;
+            background: #f0f7ff;
+            padding: 12px 15px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .series-box {
+            background: #fff9e6;
+            border-left: 4px solid #ffa500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .series-box h3 {
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin-top: 0;
+            color: #ff8c00;
+        }
+        
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .product-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: -25px -25px 20px -25px;
+        }
+        
+        .product-header h3 {
+            color: white;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .product-detail {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 5px;
+        }
+        
+        .product-detail strong {
+            color: #0066cc;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .product-detail span {
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .features {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .features h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .features li {
+            padding: 5px 0 5px 25px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #0066cc;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .price-total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .product-links {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .product-links h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .link-button {
+            display: inline-block;
+            background: #2196f3;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 5px 5px 5px 0;
+            font-size: 13px;
+            transition: background 0.3s;
+        }
+        
+        .link-button:hover {
+            background: #1976d2;
+        }
+        
+        .link-button.ocp {
+            background: #ff9800;
+        }
+        
+        .link-button.ocp:hover {
+            background: #f57c00;
+        }
+        
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .note-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .supplier-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>综合产品库存文档</h1>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="info-label">报价编号:</span>
+                <span class="info-value">CSF1001108</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">报价日期:</span>
+                <span class="info-value">2026-04-24</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">有效期:</span>
+                <span class="info-value">从报价日起 30天</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">交货时间:</span>
+                <span class="info-value">合同生效起 4~6周</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">付款条件:</span>
+                <span class="info-value">预付30%, 其余款到发货</span>
+            </div>
+        </div>
+
+        <h2>产品系列概述</h2>
+        
+        <div class="series-box">
+            <h3>UQD系列 - 热插拔快速连接器</h3>
+            <p><strong>应用场景:</strong> 直接液冷(DLC)应用</p>
+            <div class="features">
+                <h4>核心特性:</h4>
+                <ul>
+                    <li>热插拔功能，允许在压力下连接和断开</li>
+                    <li>Push-lock软管连接方式</li>
+                    <li>防溢漏紧凑设计</li>
+                    <li>双O型圈密封，提供冗余和额外泄漏保护</li>
+                    <li>颜色编码选项，防止交叉连接</li>
+                    <li>符合UL-IEC 62368-1 G.15.2.3标准的EPDM密封</li>
+                    <li>连接时最小空气侵入</li>
+                    <li>可与OCP UQD标准互换</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="series-box">
+            <h3>UQDB系列 - 盲插快速连接器</h3>
+            <p><strong>应用场景:</strong> 直接液冷(DLC)应用</p>
+            <div class="features">
+                <h4>核心特性:</h4>
+                <ul>
+                    <li>盲插功能</li>
+                    <li>±1mm径向偏差容差</li>
+                    <li>防溢漏紧凑设计</li>
+                    <li>符合UL-IEC 62368-1标准的EPDM密封</li>
+                    <li>O-ring Boss螺纹(ISO 11926-3)为标准</li>
+                    <li>双O型圈密封，提供冗余和额外泄漏保护</li>
+                    <li>可与OCP UQDB标准互换</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>详细产品清单</h2>
+
+        <!-- 产品1 -->
+        <div class="product-card">
+            <div class="product-header">
+                <h3>1. UQD04 Coupling - 3/8" 软管接头 (红色)</h3>
+            </div>
+            <div style="background: #f8f9fa; padding: 20px; margin-bottom: 20px; border-radius: 8px; text-align: center;">
+                <div style="display: inline-block; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <svg width="300" height="150" viewBox="0 0 300 150">
+                        <!-- Coupling body (red) -->
+                        <rect x="50" y="40" width="80" height="70" fill="#dc3545" stroke="#333" stroke-width="2" rx="5"/>
+                        <text x="90" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">UQD04</text>
+                        <text x="90" y="95" text-anchor="middle" fill="white" font-size="10">Coupling</text>
+                        <!-- Hose barb connection -->
+                        <rect x="130" y="55" width="40" height="40" fill="#c82333" stroke="#333" stroke-width="2"/>
+                        <line x1="170" y1="65" x2="190" y2="65" stroke="#333" stroke-width="2"/>
+                        <line x1="170" y1="75" x2="190" y2="75" stroke="#333" stroke-width="2"/>
+                        <line x1="170" y1="85" x2="190" y2="85" stroke="#333" stroke-width="2"/>
+                        <line x1="170" y1="95" x2="190" y2="95" stroke="#333" stroke-width="2"/>
+                        <line x1="170" y1="105" x2="190" y2="105" stroke="#333" stroke-width="2"/>
+                        <!-- Push-lock indicator -->
+                        <circle cx="70" cy="75" r="8" fill="#ffc107" stroke="#333" stroke-width="1"/>
+                        <text x="70" y="78" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">P</text>
+                        <!-- Labels -->
+                        <text x="90" y="130" text-anchor="middle" font-size="11" fill="#333">3/8" Hose Barb</text>
+                        <text x="220" y="75" font-size="10" fill="#666">Push-lock</text>
+                        <text x="220" y="90" font-size="10" fill="#666">Style</text>
+                    </svg>
+                    <p style="margin-top: 15px; color: #666; font-size: 13px;">
+                        <strong>产品外观：</strong>红色铝制本体，带3/8"软管倒刺接头，Push-lock快速锁定设计
+                    </p>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail">
+                    <strong>产品编码</strong>
+                    <span>101541024</span>
+                </div>
+                <div class="product-detail">
+                    <strong>数量</strong>
+                    <span>2个</span>
+                </div>
+                <div class="product-detail">
+                    <strong>含税单价</strong>
+                    <span>¥459.91</span>
+                </div>
+                <div class="product-detail">
+                    <strong>金额</strong>
+                    <span style="color: #d32f2f; font-weight: bold;">¥919.82</span>
+                </div>
+                <div class="product-detail">
+                    <strong>类型</strong>
+                    <span>Coupling (母头/插座)</span>
+                </div>
+                <div class="product-detail">
+                    <strong>尺寸</strong>
+                    <span>3/8" hose barb</span>
+                </div>
+                <div class="product-detail">
+                    <strong>密封材料</strong>
+                    <span>EPDM</span>
+                </div>
+                <div class="product-detail">
+                    <strong>颜色编码</strong>
+                    <span style="color: red; font-weight: bold;">Red (红色)</span>
+                </div>
+                <div class="product-detail">
+                    <strong>流量直径</strong>
+                    <span>6.4 mm</span>
+                </div>
+                <div class="product-detail">
+                    <strong>最大工作压力</strong>
+                    <span>40 bar (580 PSI)</span>
+                </div>
+            </div>
+            <div class="features">
+                <h4>技术特点</h4>
+                <ul>
+                    <li>热插拔功能，可在最高5 bar压差下安全连接</li>
+                    <li>双O型圈密封设计</li>
+                    <li>防溢漏紧凑结构</li>
+                    <li>符合UL-IEC 62368-1标准</li>
+                </ul>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqd-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQD系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/340/cejn-universal-quick-disconnect-uqd" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 154 1024 | <strong>系列:</strong> UQD (Universal Quick Disconnect)
+                </p>
+            </div>
+        </div>
+
+        <!-- 产品2 -->
+        <div class="product-card">
+            <div class="product-header">
+                <h3>2. UQD06 Coupling - 1/2" 软管接头 (蓝色)</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail">
+                    <strong>产品编码</strong>
+                    <span>101541046</span>
+                </div>
+                <div class="product-detail">
+                    <strong>数量</strong>
+                    <span>2个</span>
+                </div>
+                <div class="product-detail">
+                    <strong>含税单价</strong>
+                    <span>¥598.90</span>
+                </div>
+                <div class="product-detail">
+                    <strong>金额</strong>
+                    <span style="color: #d32f2f; font-weight: bold;">¥1,197.80</span>
+                </div>
+                <div class="product-detail">
+                    <strong>类型</strong>
+                    <span>Coupling (母头/插座)</span>
+                </div>
+                <div class="product-detail">
+                    <strong>尺寸</strong>
+                    <span>1/2"</span>
+                </div>
+                <div class="product-detail">
+                    <strong>密封材料</strong>
+                    <span>EPDM</span>
+                </div>
+                <div class="product-detail">
+                    <strong>颜色编码</strong>
+                    <span style="color: blue; font-weight: bold;">Blue (蓝色)</span>
+                </div>
+                <div class="product-detail">
+                    <strong>流量直径</strong>
+                    <span>9.5 mm</span>
+                </div>
+                <div class="product-detail">
+                    <strong>最大工作压力</strong>
+                    <span>40 bar (580 PSI)</span>
+                </div>
+            </div>
+            <div class="features">
+                <h4>技术特点</h4>
+                <ul>
+                    <li>热插拔功能</li>
+                    <li>双O型圈密封</li>
+                    <li>颜色编码防止交叉连接</li>
+                    <li>最小空气侵入设计</li>
+                </ul>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqd-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQD系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/340/cejn-universal-quick-disconnect-uqd" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 154 1046 | <strong>系列:</strong> UQD (Universal Quick Disconnect)
+                </p>
+            </div>
+        </div>
+
+        <!-- 产品3 -->
+        <div class="product-card">
+            <div class="product-header">
+                <h3>3. UQD08 Coupling - 5/8" 软管接头 (红色)</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail">
+                    <strong>产品编码</strong>
+                    <span>101541028</span>
+                </div>
+                <div class="product-detail">
+                    <strong>数量</strong>
+                    <span>2个</span>
+                </div>
+                <div class="product-detail">
+                    <strong>含税单价</strong>
+                    <span>¥689.30</span>
+                </div>
+                <div class="product-detail">
+                    <strong>金额</strong>
+                    <span style="color: #d32f2f; font-weight: bold;">¥1,378.60</span>
+                </div>
+                <div class="product-detail">
+                    <strong>类型</strong>
+                    <span>Coupling (母头/插座)</span>
+                </div>
+                <div class="product-detail">
+                    <strong>尺寸</strong>
+                    <span>5/8" hose barb</span>
+                </div>
+                <div class="product-detail">
+                    <strong>密封材料</strong>
+                    <span>EPDM</span>
+                </div>
+                <div class="product-detail">
+                    <strong>颜色编码</strong>
+                    <span style="color: red; font-weight: bold;">Red (红色)</span>
+                </div>
+                <div class="product-detail">
+                    <strong>流量直径</strong>
+                    <span>12.7 mm</span>
+                </div>
+                <div class="product-detail">
+                    <strong>最大工作压力</strong>
+                    <span>40 bar (580 PSI)</span>
+                </div>
+            </div>
+            <div class="features">
+                <h4>技术特点</h4>
+                <ul>
+                    <li>更大流量直径，适合高流量应用</li>
+                    <li>热插拔功能</li>
+                    <li>防溢漏设计</li>
+                    <li>符合数据中心液冷系统标准</li>
+                </ul>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqd-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQD系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/340/cejn-universal-quick-disconnect-uqd" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 154 1028 | <strong>系列:</strong> UQD (Universal Quick Disconnect)
+                </p>
+            </div>
+        </div>
+
+        <!-- 产品4-14 简化显示 -->
+        <div class="product-card">
+            <div class="product-header">
+                <h3>4. UQD04 Nipple - UNF 9/16"-18 公头 (红色)</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101546674</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥251.99</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥503.98</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Nipple (公头/插头)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 9/16"-18 male (ORB -06)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>6.4 mm</span></div>
+                <div class="product-detail"><strong>最大工作压力</strong><span>40 bar (580 PSI)</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqd-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQD系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/340/cejn-universal-quick-disconnect-uqd" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 154 6674 | <strong>系列:</strong> UQD Nipple
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>5. UQD06 Nipple - UNF 3/4"-16 公头 (蓝色)</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101546696</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥300.58</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥601.16</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Nipple (公头/插头)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 3/4"-16 male</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>9.5 mm</span></div>
+                <div class="product-detail"><strong>最大工作压力</strong><span>40 bar (580 PSI)</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqd-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQD系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/340/cejn-universal-quick-disconnect-uqd" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 154 6696 | <strong>系列:</strong> UQD Nipple
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>6. UQD08 Nipple - UNF 7/8"-14 公头 (红色)</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101546678</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥361.60</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥723.20</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Nipple (公头/插头)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 7/8"-14 male</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>12.7 mm</span></div>
+                <div class="product-detail"><strong>最大工作压力</strong><span>40 bar (580 PSI)</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqd-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQD系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/340/cejn-universal-quick-disconnect-uqd" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 154 6678 | <strong>系列:</strong> UQD Nipple
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>7. UQDB 02 Coupling - UNF 9/16"-18 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101531922</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥505.79</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,011.58</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Coupling (母头/插座)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 9/16"-18 male (ORB -06)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>3.2 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>盲插功能, ±1mm容差</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 1922 | <strong>系列:</strong> UQDB (Blind-Mate)
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>8. UQDB 04 Coupling - UNF 3/4"-16 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101531924</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥531.55</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,063.10</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Coupling (母头/插座)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 3/4"-16 male (ORB -08)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>6.4 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>盲插功能</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 1924 | <strong>系列:</strong> UQDB (Blind-Mate)
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>9. UQDB 06 Coupling - UNF 7/8"-14 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101531926</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥633.25</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,266.50</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Coupling (母头/插座)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 7/8"-14 male (ORB -10)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>9.5 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>盲插功能, 符合OCP标准</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 1926 | <strong>系列:</strong> UQDB (Blind-Mate)
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>10. UQDB 08 Coupling - UNF 1 1/16"-12 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101531928</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥728.17</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,456.34</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Coupling (母头/插座)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 1 1/16"-12 male (ORB -12)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>12.7 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>最大流量设计</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 1928 | <strong>系列:</strong> UQDB (Blind-Mate)
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>11. UQDB 02 Nipple - UNF 7/16"-20 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101536922</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥519.35</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,038.70</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Nipple (公头/插头)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 7/16"-20 male (ORB -04)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>3.2 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>盲插系统组件</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 6922 | <strong>系列:</strong> UQDB Nipple
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>12. UQDB 04 Nipple - UNF 9/16"-18 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101536924</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥546.47</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,092.94</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Nipple (公头/插头)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 9/16"-18 male (ORB -06)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>6.4 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>符合ISO 11926-3标准</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 6924 | <strong>系列:</strong> UQDB Nipple
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>13. UQDB 06 Nipple - UNF 3/4"-16 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101536926</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥650.88</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,301.76</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Nipple (公头/插头)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 3/4"-16 male (ORB -08)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>9.5 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>盲插系统专用</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 6926 | <strong>系列:</strong> UQDB Nipple
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-header">
+                <h3>14. UQDB 08 Nipple - UNF 7/8"-14 公头</h3>
+            </div>
+            <div class="product-grid">
+                <div class="product-detail"><strong>产品编码</strong><span>101536928</span></div>
+                <div class="product-detail"><strong>数量</strong><span>2个</span></div>
+                <div class="product-detail"><strong>含税单价</strong><span>¥786.48</span></div>
+                <div class="product-detail"><strong>金额</strong><span style="color: #d32f2f; font-weight: bold;">¥1,572.96</span></div>
+                <div class="product-detail"><strong>类型</strong><span>Nipple (公头/插头)</span></div>
+                <div class="product-detail"><strong>螺纹规格</strong><span>UNF 7/8"-14 male (ORB -10)</span></div>
+                <div class="product-detail"><strong>流量直径</strong><span>12.7 mm</span></div>
+                <div class="product-detail"><strong>特性</strong><span>高性能数据中心应用</span></div>
+            </div>
+            <div class="product-links">
+                <h4>📎 产品详细信息链接</h4>
+                <a href="https://www.cejn.com/products/thermal-control/uqdb-couplings/" target="_blank" class="link-button">
+                    🔗 CEJN UQDB系列产品页面
+                </a>
+                <a href="https://www.opencompute.org/products/341/cejn-universal-quick-disconnect-blind-mate-uqdb" target="_blank" class="link-button ocp">
+                    🌐 OCP标准认证页面
+                </a>
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <strong>产品编码:</strong> 10 153 6928 | <strong>系列:</strong> UQDB Nipple
+                </p>
+            </div>
+        </div>
+
+        <h2>价格汇总</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>项目</th>
+                    <th style="text-align: right;">金额 (CNY)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>合计（不含税）</td>
+                    <td style="text-align: right;">¥13,388.00</td>
+                </tr>
+                <tr>
+                    <td>增值税</td>
+                    <td style="text-align: right;">¥1,740.44</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td style="font-weight: bold; font-size: 18px;">合计（含税）</td>
+                    <td style="text-align: right;" class="price-total">¥15,128.44</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>关于CEJN与产品应用</h2>
+        
+        <div class="supplier-info">
+            <h3 style="margin-top: 0;">公司背景</h3>
+            <p>CEJN自1955年以来一直在瑞典生产专业、高质量和创新的快速连接接头。作为独立的全球利基公司，CEJN在全球拥有22个办事处，为几乎所有行业领域提供产品和服务。</p>
+            
+            <h3>数据中心液冷解决方案</h3>
+            <p>随着云计算、机器学习(ML)、人工智能(AI)、物联网(IoT)和边缘应用的需求不断增长，数据中心需要更先进、更强大的热管理液冷系统。CEJN的快速接头在其中发挥着至关重要的作用。</p>
+            
+            <h3>Open Compute Project (OCP)</h3>
+            <p>CEJN积极参与Open Compute Project (OCP)，这是一个开发液冷系统创新开放标准解决方案的协作社区。本报价单中的产品均符合OCP标准，可与其他OCP认证产品互换使用。</p>
+        </div>
+
+        <div class="note-box">
+            <h4>产品认证</h4>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>✓ <strong>UL-IEC 62368-1</strong>: 音视频、信息和通信技术设备安全标准</li>
+                <li>✓ <strong>ISO 11926</strong>: 液压传动连接标准</li>
+                <li>✓ <strong>EPDM密封</strong>: 三元乙丙橡胶，耐高温、耐化学腐蚀</li>
+            </ul>
+        </div>
+
+        <h2>供应商信息</h2>
+        <div class="supplier-info">
+            <p><strong>CEJN Shanghai Fluid Systems Co Ltd</strong></p>
+            <p>地址: 100 Dongwei Road, Songjiang Dist., 201619 Shanghai, P.R.CHINA</p>
+            <p>电话: 0086 21 5442 4200 | 传真: 0086 21 5442 4187</p>
+            <p>邮箱: sales.china@cejn.com | 网站: www.cejn.com</p>
+            <p>公司注册号: 913100007390073906</p>
+        </div>
+
+        <div class="note-box">
+            <h4>备注</h4>
+            <ol>
+                <li>订单金额低于¥10,000元人民币，需方支付运费</li>
+                <li>所有产品均为CEJN原装进口</li>
+                <li>产品符合数据中心液冷系统国际标准</li>
+                <li>可根据要求提供定制化连接方案</li>
+                <li>完整的供应链控制：从设计、测试、生产到交付</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p><em>文档生成日期: 2026-04-26</em></p>
+            <p><em>数据来源: CEJN产品图册与报价单</em></p>
+        </div>
+    </div>
+</body>
+</html>

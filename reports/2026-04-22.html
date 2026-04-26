@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年4月22日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  /* 响应式设计 - 手机端 */
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    .date {
+      font-size: 15px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+    }
+    .section {
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 17px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    table {
+      font-size: 15px;
+    }
+    th, td {
+      padding: 10px 12px;
+    }
+    .highlight, .warning {
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+    .back-button {
+      font-size: 15px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+  }
+
+  /* 响应式设计 - 平板端 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body {
+      max-width: 90%;
+      margin: 30px auto;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 21px;
+    }
+  }
+
+  /* 响应式设计 - 小屏幕手机 */
+  @media (max-width: 480px) {
+    body {
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 17px;
+    }
+    h1 {
+      font-size: 19px;
+    }
+    .date {
+      font-size: 14px;
+    }
+    .section-title {
+      font-size: 18px;
+    }
+    table {
+      font-size: 14px;
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
+  /* 响应式设计 - 大屏幕电脑 */
+  @media (min-width: 1200px) {
+    body {
+      max-width: 900px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年4月22日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>宁德时代发布第三代神行超充电池</strong> — 满电仅需6分钟，10%至80% SOC仅需3分44秒，液冷超充技术再突破 <span class="source">（来源：36氪）</span></li>
+    <li><strong>宁德时代钠离子电池年内大规模量产</strong> — 已解决制造环节核心问题，储能领域应用前景广阔 <span class="source">（来源：财联社）</span></li>
+    <li><strong>我国软件产业规模有望突破20万亿元大关</strong> — 前两个月软件业务收入21534亿元，同比增长11.7% <span class="source">（来源：央视新闻）</span></li>
+    <li><strong>OpenAI推出ChatGPT Images 2.0</strong> — 可基于一个提示创建一系列图像，AI生成能力再升级 <span class="source">（来源：The Verge）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 行业数据</strong>
+    <ul>
+      <li><strong>软件产业高增长</strong>：2025年我国软件业务收入达15.48万亿元，年平均增速13.8%，位居国民经济各行业前列</li>
+      <li><strong>数字经济需求旺盛</strong>：软件产业规模突破20万亿大关，将带动算力基础设施投资持续增长</li>
+      <li><strong>AI应用加速落地</strong>：OpenAI图像生成能力升级，AI应用场景持续拓展，算力需求保持高位</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 政策动态</strong>
+    <ul>
+      <li><strong>工信部召开未来产业企业座谈会</strong>：强调加强统筹谋划和前瞻布局，强化场景牵引，提升产业链协同创新能力</li>
+      <li><strong>未来产业培育政策体系</strong>：将建立健全未来产业创新发展、金融支持、人才培育等方面政策效能</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🔬 技术路线</strong>
+    <ul>
+      <li><strong>超充技术突破</strong>：宁德时代第三代神行超充电池实现等效10C、峰值15C行业最强超充能力，对液冷管路散热性能提出更高要求</li>
+      <li><strong>钠离子电池量产</strong>：宁德时代钠离子电池年内大规模量产，储能领域液冷需求将进一步释放</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🏭 竞争格局</strong>
+    <ul>
+      <li><strong>技术门槛提升</strong>：超充功率密度持续攀升，对液冷管耐压、耐温、耐腐蚀性能要求更高，头部企业技术优势凸显</li>
+      <li><strong>国产替代加速</strong>：冷却液、液冷管路等关键材料国产化进程加快，国内供应链企业迎来发展机遇</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">📦 客户与订单</strong>
+    <ul>
+      <li><strong>具身智能领域大单</strong>：魔法原子获大健康行业1.5亿元机器人采购大单，刷新行业纪录，AI+健康场景拓展</li>
+      <li><strong>超充桩建设加速</strong>：宁德时代超充技术突破将推动液冷超充桩建设提速，2026年国内需求有望突破百万根</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
+    <ul>
+      <li><strong>软件产业增长驱动</strong>：软件业务收入同比增长11.7%，数字经济需求持续旺盛，算力中心建设保持高景气度</li>
+      <li><strong>AI算力需求强劲</strong>：OpenAI图像生成能力升级，AI应用场景拓展，智算中心液冷渗透率已达100%</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🔋 储能行业</strong>
+    <ul>
+      <li><strong>钠离子电池量产</strong>：宁德时代钠离子电池年内大规模量产，大储项目液冷渗透率已达92.7%</li>
+      <li><strong>技术路线多元化</strong>：磷酸铁锂、三元锂、钠离子多化学体系并行发展，不同场景适配不同液冷方案</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li><strong>800V高压平台普及</strong>：新能源汽车热管理升级，液冷管路需求随电压平台提升而增长</li>
+      <li><strong>超充技术突破</strong>：6分钟满电的超充能力将推动充电基础设施升级，液冷管路是关键散热组件</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
+    <ul>
+      <li><strong>技术突破里程碑</strong>：宁德时代第三代神行超充电池实现10%至80% SOC仅需3分44秒，液冷超充技术成熟度大幅提升</li>
+      <li><strong>单枪功率持续攀升</strong>：液冷超充桩单枪功率达600kW~1.5MW，对液冷管路散热能力要求极高</li>
+      <li><strong>市场空间广阔</strong>：2026年国内液冷超充桩需求有望突破百万根，成为液冷管重要增量市场</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、集成商动态 -->
+<div class="section">
+  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
+  <table>
+    <tr>
+      <th style="width:18%">企业</th>
+      <th>核心进展</th>
+    </tr>
+    <tr>
+      <td><strong>英维克</strong></td>
+      <td>数据中心液冷解决方案领先企业，受益于智算中心建设加速</td>
+    </tr>
+    <tr>
+      <td><strong>曙光数创</strong></td>
+      <td>液冷技术全栈解决方案提供商，在算力中心领域市场份额领先</td>
+    </tr>
+    <tr>
+      <td><strong>高澜股份</strong></td>
+      <td>电力电子热管理专家，液冷产品覆盖数据中心、储能、新能源汽车等多领域</td>
+    </tr>
+    <tr>
+      <td><strong>申菱环境</strong></td>
+      <td>特种空调及热管理解决方案提供商，液冷技术在数据中心应用广泛</td>
+    </tr>
+    <tr>
+      <td><strong>巨化股份</strong></td>
+      <td>氟化工龙头企业，冷却液关键材料供应商，受益于液冷渗透率提升</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <ul>
+    <li><strong>机构净买入云南锗业3.07亿元</strong> — 稀有金属材料受关注，或与半导体、新能源材料需求相关 <span class="source">（来源：第一财经）</span></li>
+    <li><strong>美股三大指数集体收跌</strong> — 道指跌0.59%，纳指跌0.59%，标普500指数跌0.63% <span class="source">（来源：财联社）</span></li>
+    <li><strong>WTI原油期货大涨2.81%</strong> — 报92.13美元/桶，中东局势紧张推高能源价格 <span class="source">（来源：财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li><strong>今日无重大公告</strong> — 关注液冷管四大应用场景渗透率持续提升</li>
+    <li><strong>超充技术突破利好</strong> — 宁德时代第三代神行超充电池发布，液冷超充桩建设将加速</li>
+    <li><strong>钠离子电池量产机遇</strong> — 储能领域液冷需求将进一步释放，大储项目液冷渗透率已达92.7%</li>
+  </ul>
+
+  <div class="highlight">
+    <strong>💡 投资视角：</strong> 今日无重大公告。关注液冷管在四大应用场景的渗透率提升：1）智算中心液冷渗透率已达100%（政策强制）；2）大储项目液冷渗透率92.7%；3）新能源汽车800V平台升级；4）液冷超充桩单枪功率600kW~1.5MW，2026年国内需求破百万根。宁德时代超充技术突破将加速液冷超充桩普及，利好液冷管供应商。
+  </div>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    1. <strong>中东局势紧张</strong>：原油价格大涨2.81%至92.13美元/桶，可能推高原材料成本<br>
+    2. <strong>技术迭代风险</strong>：超充功率密度持续提升，对液冷管技术要求不断提高，需关注技术跟进能力
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    1. <strong>钠离子电池量产进展</strong>：宁德时代钠离子电池年内大规模量产，关注储能领域液冷需求释放节奏<br>
+    2. <strong>超充桩建设进度</strong>：宁德时代超充技术突破后，关注液冷超充桩实际建设进度和订单落地情况<br>
+    3. <strong>集成商订单动态</strong>：关注英维克、曙光数创、高澜股份等集成商在智算中心、储能等领域的订单获取情况
+  </div>
+</div>
+
+</body>
+</html>
