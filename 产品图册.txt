@@ -1,0 +1,471 @@
+
+--- 第 1 页 ---
+www.cejn.com
+THERMAL CONTROLConnecting the data center industry
+Quick coupling solutions for high-performing liquid cooling systems
+--- 第 2 页 ---
+2
+The increasing demand for cloud, ML, AI, IoT, and edge applications drives the requirement for increased 
+cooling capacity at a rapid development pace. More advanced and powerful thermal management liquid 
+cooling systems are needed to maintain cooling temperatures in data center applications. Quick couplings 
+play a vital role in that.Quick couplings: the core 
+of liquid cooling systems
+We are at the forefront of our industry, with experience in quick coupling technology since 1955. 
+Our offer? Reliable quick connect coupling solutions for a high-performing liquid cooling system in 
+data centers. 
+--- 第 3 页 ---
+3
+Quick coupling solutions 
+developed within the Open 
+Compute Project (OCP) with 
+CEJN contributing as main 
+developer.
+Compact blind-mate quick 
+connectors for Direct Liquid 
+Cooling (DLC) applications with 
+up to +/- 5 mm radial 
+misalignment tolerance.Hand-mate quick connectors 
+with hot-swap functionality 
+and push-lock hose connection 
+for Direct Liquid Cooling (DLC). Customised quick connect 
+solutions for specific demands 
+and requirements.High-flow quick couplings 
+with a screw-to-connect 
+mechanism for Coolant 
+Distribution Units (CDUs).
+Scan the QR 
+code to read 
+more
+--- 第 4 页 ---
+4
+CEJN and the Open 
+Compute Project (OCP)Focus case: Shaping the future of liquid cooling technology in data centers
+--- 第 5 页 ---
+5Focus case: Shaping the future of liquid cooling technology in data centers
+--- 第 6 页 ---
+6With advanced technologies 
+demanding more power and 
+efficiency, data center thermal 
+management systems are under 
+greater stress. To meet the 
+increasing cooling requirements, 
+CEJN is actively contributing to the 
+Open Compute Project (OCP), a 
+collaborative community developing 
+innovative open-standard solutions 
+for liquid cooling systems.  
+Traditional air cooling systems are insufficient while 
+more advanced technologies enter the market 
+stage, demanding more efficient and powerful data 
+centers. Emil Pettersson, Design Engineer at CEJN 
+AB, highlights the fast-moving evolution driven by 
+Artificial Intelligence (AI) and Machine Learning (ML) 
+in today’s market. “The increased integration with 
+the internet and cloud services adds considerable 
+stress to the thermal management systems, for 
+which traditional air cooling is no longer enough,” 
+he says.
+To address these challenges, liquid cooling has 
+emerged as the preferred solution. “In addition 
+to outperforming conventional air cooling, 
+liquid cooling also stands out for being the more 
+sustainable solution, since it requires less power,” 
+Pettersson says. Additionally, the heat generated 
+through liquid cooling can be stored for potential 
+use elsewhere, offering an efficient alternative to the 
+wasteful heat dissipation of air cooling.
+Shaping the IT ecosystem: the work of OCP
+The Open Compute Project (OCP) has become a 
+leader in shaping the data center infrastructure 
+to align with current and emerging developments 
+within the IT ecosystem, including cooling 
+techniques. The primary goal is to create 
+interchangeable quick connect coupling solutions, 
+enabling companies to use a standard solution rather 
+than relying on a single variant. CEJN is a proud 
+member of this community. Alongside industry 
+leaders and chassis and manifold manufacturers, 
+CEJN actively contributes to designing and 
+developing quick connect coupling solutions 
+to address the growing deman ds of thermal management in liquid cooling systems. “It’s exciting to 
+play a contributing role in developing unique products 
+that set new market standards,” Pettersson says.
+CEJN has been involved in the project from the 
+conceptual phase through testing to fostering 
+collaboration among coupling manufacturers within 
+the OCP initiative. “With our long experience 
+and knowledge in quick coupling technology, 
+we have confidence that our participation will 
+move technology development forward,” he says. 
+Furthermore, he emphasizes that having all the 
+necessary competence and resources in-house has 
+positioned CEJN as a flexible and secure partner in 
+this project. “With everything under one roof, we 
+maintain full control over the complete supply chain, 
+from designing phase, testing and production to 
+delivery.”
+Anticipating tomorrow’s demands
+The development of cooling techniques in the 
+data center industry is, however, a continuous 
+process and the quest for the optimal solution is 
+still in progress. Dennis Ahlgren, Testing Engineer at 
+CEJN, underscores the significance of staying alert 
+to swift technological shifts and rapid changes in 
+a dynamic market. “While the coupling solutions 
+under development meet today’s requirements, it’s 
+crucial to anticipate how tomorrow’s demands for 
+next-generation data racks may necessitate increased 
+cooling capacity, higher flow and lower pressure,” 
+Ahlgren says. “The work within OCP has widened 
+our understanding of what customers need, as well 
+as our (CEJN) capabilities to meet specific non-
+standard demands and requests,” he concludes.
+“The work within OCP 
+has widened our 
+understanding of what 
+customers need, as well 
+as our capabilities to meet 
+specific non-standard 
+demands and requests.
+“
+--- 第 7 页 ---
+7
+--- 第 8 页 ---
+BMQC
+UQDB
+8
+UL-IEC 
+62368-1 
+approved 
+EPDM seal
+ISO 11926 threads as 
+standard connections, 
+possible for other 
+connections upon requestSpill-free and 
+compact design
+Blind-mate 
+function+/- 5 mm radial 
+misalignment tolerance 
+and +/- 2.7° angular 
+misalignment tolerance
+Interchangeable 
+with OCP BMQC
+Interchangeable 
+with OCP UQDB
++/- 1 mm radial 
+misalignment 
+toleranceBlind-mate 
+function
+Spill-free 
+and compact 
+designUL-IEC 62368-1 approved 
+EPDM sealO-ring Boss threads (ISO 11926-3) 
+as standard, other connections 
+available upon requestDouble O-ring seal 
+for redundancy 
+and extra leak 
+protection 
+--- 第 9 页 ---
+UQD
+9LQC
+Our expertise in quick coupling technology ensures that we meet the requirements, both 
+standard and customised. We offer various interchangeable coupling solutions developed 
+within OCP and customised solutions for specific demands and needs. 
+Spill-free and 
+compact design
+BSP (G) and NPT-thread as 
+standard, other connections 
+available upon requestDouble O-ring seal for 
+redundancy and extra 
+leak protection 
+Double O-ring seal for 
+redundancy and extra 
+leak protection Minimum air 
+intrusion at 
+connectionInterchangeable 
+with OCP UQD
+Interchangeable 
+with OCP LQCColor coding options to 
+eliminate cross connection
+Color coding options to 
+eliminate cross connectionHot-swappable 
+allowing connection 
+and disconnection 
+under pressure
+Safe and easy 
+connection up to 5 bar 
+differential pressure
+Screw-to-connect 
+locking mechanism UL-IEC 62368-1 
+G.15.2.3 approved 
+EPDM seal 
+--- 第 10 页 ---
+10Product data
+Part no. Category title
+LQC 
+couplings
+UQD 
+couplings
+UQDB 
+couplings
+BMQC couplings
+ultraFLOW 
+STC couplingsMaterial seal Colour code Nominal flow diameter Size Max working pressure Min. burst pressure Connection
+10 153 1290 G 1”
+G 1”
+G 1”
+G 1”
+G 1”
+G 1”NPT 1’’
+NPT 1’’
+NPT 1’’
+NPT 1’’
+NPT 1’’
+NPT 1’’
+1/4”
+1/2”
+1/2”
+5/8”
+5/8”
+UNF 9/16”-18
+UNF 9/16”-18
+UNF 7/8”-14
+UNF 7/8”-14UNF 3/4”-16
+UNF 1-1/16-16
+G 1 1/2”
+G 1 1/2”
+G 1 1/2”
+G 1 1/2”UNF 3/4”-16
+UNF 3/4”-16
+UNF 7/8-14
+UNF 7/8-14
+UNF 3/4”-16 ORB
+3/8”19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+19 mm
+3.2 mm
+3.2 mm
+32 mm
+32 mm
+32 mm
+32 mm9.5 mm
+9.5 mm
+9.5 mm
+9.5 mm
+12.7 mm
+12.7 mm
+12.7 mm12.7 mm
+12.7 mm12.7 mm
+6.4 mm
+9.5 mm
+9.5 mm
+5 mm5 mmEPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDM
+EPDMBlue
+Blue
+Blue
+Blue
+Blue
+BlueRed
+Red
+Red
+Red
+Red
+Red
+Red
+Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)
+Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)Couplings (Sockets)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)
+Nipples (Plugs)Nipples (Plugs)48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+48 bar (696 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+13.8 bar (200 PSI)
+13.8 bar (200 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+12 bar (174 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+3.45 bar (50 PSI)
+3.45 bar (50 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)10 153 1293
+10 153 1493
+10 153 1291
+10 153 1490
+10 153 6493
+10 153 1491
+10 153 6290
+10 153 6293
+10 153 6291
+10 153 6490
+10 153 6491
+10 153 1022
+UQD06UQD02
+UQDB021/4” 3.2 mm EPDM Blue Couplings (Sockets) 40 bar (580 PSI) 10 bar (145 PSI) 10 153 1042 UQD02
+UNF 7/16”-20 3.2 mm EPDM Red Nipples (Plugs) 40 bar (580 PSI) 10 bar (145 PSI) 10 153 6672 UQD02
+UNF 7/16”-20 3.2 mm EPDM Blue Nipples (Plugs) 40 bar (580 PSI) 10 bar (145 PSI) 10 153 6692 UQD02
+3/8” 6.4 mm EPDM Red Couplings (Sockets) 40 bar (580 PSI) 10 bar (145 PSI) 10 153 1024 UQD04
+3/8” 6.4 mm EPDM Blue Couplings (Sockets) 40 bar (580 PSI) 10 bar (145 PSI) 10 153 1044 UQD04
+UNF 9/16”-18 6.4 mm EPDM Red Nipples (Plugs) 40 bar (580 PSI) 10 bar (145 PSI) 10 153 6674 UQD04
+UNF 9/16”-18 6.4 mm EPDM Blue Nipples (Plugs) 40 bar (580 PSI) 10 bar (145 PSI) 10 153 6694 UQD04
+UQDB04
+UQDB06
+UQDB08UQDB06
+UQDB08UQD06
+UQD06
+UQD06
+EPDM
+EPDM
+EPDM
+EPDMBlue
+BlueRed
+RedCouplings (Sockets)
+Couplings (Sockets)
+Nipples (Plugs)
+Nipples (Plugs)10 153 1048 UQD08
+UQD08
+UQD08
+UQD0810 153 1028
+10 153 6698
+10 153 667810 153 1046
+10 153 1026
+10 153 6696
+10 153 6676
+10 153 1922
+UNF 3/4”-16 SAE ORB 6.4 mm EPDM
+EPDM
+EPDMCouplings (Sockets)
+Couplings (Sockets)
+Couplings (Sockets)40 bar (580 PSI)
+40 bar (580 PSI)
+40 bar (580 PSI)10 bar (145 PSI)
+10 bar (145 PSI)
+10 bar (145 PSI)UQDB04 10 153 1924UNF 7/16”-20 3.2 mm EPDM Nipples (Plugs) 40 bar (580 PSI) 10 bar (145 PSI) UQDB02 10 153 6922
+10 153 6924
+10 153 1926
+10 153 6926
+10 153 1928
+10 153 6928
+10 153 1990
+10 153 6990
+10 987 1223
+10 987 1273
+10 987 6223
+10 987 6273
+All our data center 
+products are listed 
+in one place on 
+our website so that 
+you easily can learn 
+more about them 
+anywhere, anytime.
+--- 第 11 页 ---
+11
+More than just a 
+coupling: A solution
+At CEJN, we possess all the necessary in-house competencies and resources, allowing us to 
+maintain complete control over the entire supply chain. We manage every step, from the 
+initial concept phase through testing in our laboratory to production, quality assurance, 
+final delivery, and post-delivery support and guidance. That is what we call being a solution 
+provider. 
+--- 第 12 页 ---
+Copyright © 2024 CEJN AB
+www.cejn.com09 0010 802_enMade in Sweden since 1955
+We have been producing professional, high-quality and innovative quick connect couplings here at CEJN since our first patented coupling 
+was launched in 1955. CEJN is an independent global niche company with its head office in the heart of Sweden. Over the years we have 
+expanded to 22 locations worldwide and are supplying products and services to virtually every industry segment. At CEJN, we are united 
+by our five core values: safety, environment, quality, innovation and performance. They are our cornerstones and define who we are, how 
+we work, what we believe in and what we stand for.  
+Contact your local sales office or visit www.cejn.com for more information.

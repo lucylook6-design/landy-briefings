@@ -1,0 +1,46 @@
+序号,产品系列,产品编码,产品名称,类型,数量,含税单价(¥),金额(¥),尺寸/螺纹规格,连接类型,密封材料,颜色编码,流量直径(mm),最大工作压力,最小爆破压力,核心特性
+1,UQD,101541024,UQD04 Coupling 3/8" 软管接头,Coupling (母头/插座),2,459.91,919.82,3/8" hose barb,Push-lock,EPDM,Red (红色),6.4,40 bar (580 PSI),10 bar (145 PSI),热插拔/双O型圈密封/防溢漏
+2,UQD,101541046,UQD06 Coupling 1/2" 软管接头,Coupling (母头/插座),2,598.90,"1,197.80",1/2",Push-lock,EPDM,Blue (蓝色),9.5,40 bar (580 PSI),10 bar (145 PSI),热插拔/颜色编码/最小空气侵入
+3,UQD,101541028,UQD08 Coupling 5/8" 软管接头,Coupling (母头/插座),2,689.30,"1,378.60",5/8" hose barb,Push-lock,EPDM,Red (红色),12.7,40 bar (580 PSI),10 bar (145 PSI),大流量/热插拔/防溢漏
+4,UQD,101546674,UQD04 Nipple UNF 9/16"-18 公头,Nipple (公头/插头),2,251.99,503.98,UNF 9/16"-18 male,ORB -06,EPDM,Red (红色),6.4,40 bar (580 PSI),10 bar (145 PSI),O-ring Boss密封/双O型圈
+5,UQD,101546696,UQD06 Nipple UNF 3/4"-16 公头,Nipple (公头/插头),2,300.58,601.16,UNF 3/4"-16 male,-,EPDM,Blue (蓝色),9.5,40 bar (580 PSI),10 bar (145 PSI),防误连接/颜色编码
+6,UQD,101546678,UQD08 Nipple UNF 7/8"-14 公头,Nipple (公头/插头),2,361.60,723.20,UNF 7/8"-14 male,-,EPDM,Red (红色),12.7,40 bar (580 PSI),10 bar (145 PSI),大流量/高性能液冷
+7,UQDB,101531922,UQDB 02 Coupling UNF 9/16"-18,Coupling (母头/插座),2,505.79,"1,011.58",UNF 9/16"-18 male,ORB -06,EPDM,-,3.2,40 bar (580 PSI),10 bar (145 PSI),盲插/±1mm容差/OCP标准
+8,UQDB,101531924,UQDB 04 Coupling UNF 3/4"-16,Coupling (母头/插座),2,531.55,"1,063.10",UNF 3/4"-16 male,ORB -08,EPDM,-,6.4,40 bar (580 PSI),10 bar (145 PSI),盲插/ISO 11926-3/双O型圈
+9,UQDB,101531926,UQDB 06 Coupling UNF 7/8"-14,Coupling (母头/插座),2,633.25,"1,266.50",UNF 7/8"-14 male,ORB -10,EPDM,-,9.5,40 bar (580 PSI),10 bar (145 PSI),盲插/OCP标准/DLC应用
+10,UQDB,101531928,UQDB 08 Coupling UNF 1 1/16"-12,Coupling (母头/插座),2,728.17,"1,456.34",UNF 1 1/16"-12 male,ORB -12,EPDM,-,12.7,40 bar (580 PSI),10 bar (145 PSI),最大流量/盲插/高性能
+11,UQDB,101536922,UQDB 02 Nipple UNF 7/16"-20,Nipple (公头/插头),2,519.35,"1,038.70",UNF 7/16"-20 male,ORB -04,EPDM,-,3.2,40 bar (580 PSI),10 bar (145 PSI),盲插系统/双O型圈
+12,UQDB,101536924,UQDB 04 Nipple UNF 9/16"-18,Nipple (公头/插头),2,546.47,"1,092.94",UNF 9/16"-18 male,ORB -06,EPDM,-,6.4,40 bar (580 PSI),10 bar (145 PSI),ISO 11926-3/防溢漏
+13,UQDB,101536926,UQDB 06 Nipple UNF 3/4"-16,Nipple (公头/插头),2,650.88,"1,301.76",UNF 3/4"-16 male,ORB -08,EPDM,-,9.5,40 bar (580 PSI),10 bar (145 PSI),盲插专用/双O型圈
+14,UQDB,101536928,UQDB 08 Nipple UNF 7/8"-14,Nipple (公头/插头),2,786.48,"1,572.96",UNF 7/8"-14 male,ORB -10,EPDM,-,12.7,40 bar (580 PSI),10 bar (145 PSI),最大流量/数据中心应用
+
+报价信息
+报价编号,CSF1001108
+报价日期,2026-04-24
+有效期,从报价日起 30天
+交货时间,合同生效起 4~6周
+付款条件,预付30% 其余款到发货
+
+价格汇总
+项目,金额(CNY)
+合计(不含税),"13,388.00"
+增值税,"1,740.44"
+合计(含税),"15,128.44"
+
+供应商信息
+公司名称,CEJN Shanghai Fluid Systems Co Ltd
+地址,100 Dongwei Road Songjiang Dist. 201619 Shanghai P.R.CHINA
+电话,0086 21 5442 4200
+传真,0086 21 5442 4187
+邮箱,sales.china@cejn.com
+网站,www.cejn.com
+公司注册号,913100007390073906
+
+产品系列说明
+UQD系列,热插拔快速连接器 - 用于直接液冷(DLC)应用 可在压力下连接/断开 符合OCP UQD标准
+UQDB系列,盲插快速连接器 - 用于直接液冷(DLC)应用 ±1mm径向容差 符合OCP UQDB标准
+
+认证标准
+UL-IEC 62368-1,音视频信息和通信技术设备安全标准
+ISO 11926,液压传动连接标准
+EPDM密封,三元乙丙橡胶 耐高温耐化学腐蚀

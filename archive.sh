@@ -42,7 +42,8 @@ DESC=$(grep -oE '<li><strong>[^<]+' "$TARGET" | sed 's/<[^>]*>//' | head -3 | pa
 # 更新 index.html REPORTS 数组（去重后插入）
 if ! grep -q "\"$FORMATTED_DATE\"" "$BRIEFINGS/index.html"; then
   NEW_ENTRY="  {\n    date: \"$FORMATTED_DATE\",\n    title: \"$TITLE\",\n    desc: \"$DESC\",\n    tags: [\"ai\", \"stock\", \"energy\"],\n    file: \"reports/$FORMATTED_DATE.html\"\n  },"
-  sed -i.bak "s|const REPORTS = \[|const REPORTS = [\n$NEW_ENTRY|" "$BRIEFINGS/index.html"
+  # 使用 LC_ALL=C 避免 sed 编码错误
+  LC_ALL=C sed -i.bak "s|const REPORTS = \[|const REPORTS = [\n$NEW_ENTRY|" "$BRIEFINGS/index.html"
   echo "✅ 已更新首页索引"
 else
   echo "ℹ️  $FORMATTED_DATE 已存在，跳过索引更新"
