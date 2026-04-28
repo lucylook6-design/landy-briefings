@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<title>AI研究员--Landy葉的简报 | YYYY年M月D日</title>
+<title>AI研究员--Landy葉的简报 | 2026年4月28日</title>
 <style>
   body {
     font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -60,24 +60,6 @@
     color: #888;
     font-size: 12px;
   }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin-top: 8px;
-  }
-  th {
-    background: #f5f5f5;
-    text-align: left;
-    padding: 8px 10px;
-    border: 1px solid #ddd;
-    font-weight: 600;
-  }
-  td {
-    padding: 8px 10px;
-    border: 1px solid #ddd;
-    vertical-align: top;
-  }
   .highlight {
     background: #fff8e1;
     padding: 12px 16px;
@@ -99,284 +81,94 @@
     color: #1a73e8;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 500;
     margin-bottom: 20px;
     padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    transition: all 0.2s;
   }
   .back-button:hover {
-    background-color: #f5f5f5;
+    background: #f5f5f5;
+    border-color: #1a73e8;
   }
-  .back-button span {
+  .back-button::before {
+    content: "←";
     margin-right: 6px;
+    font-size: 16px;
   }
 
-  /* 响应式设计 - 手机端 */
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     body {
       margin: 20px auto;
-      padding: 16px;
-      font-size: 16px;
-      line-height: 1.9;
+      padding: 15px;
+      font-size: 14px;
     }
     h1 {
       font-size: 20px;
     }
-    .date {
-      font-size: 15px;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-    }
-    .section {
-      margin-bottom: 24px;
-    }
     .section-title {
-      font-size: 17px;
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-    }
-    ul {
-      padding-left: 24px;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    table {
       font-size: 15px;
-    }
-    th, td {
-      padding: 10px 12px;
-    }
-    .highlight, .warning {
-      padding: 14px 18px;
-      font-size: 15px;
-    }
-    .back-button {
-      font-size: 15px;
-      padding: 10px 14px;
-      margin-bottom: 16px;
-    }
-  }
-
-  /* 响应式设计 - 平板端 */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    body {
-      max-width: 90%;
-      margin: 30px auto;
-      padding: 24px;
-    }
-    h1 {
-      font-size: 21px;
-    }
-  }
-
-  /* 响应式设计 - 小屏幕手机 */
-  @media (max-width: 480px) {
-    body {
-      margin: 12px auto;
-      padding: 12px;
-      font-size: 17px;
-    }
-    h1 {
-      font-size: 19px;
-    }
-    .date {
-      font-size: 14px;
-    }
-    .section-title {
-      font-size: 18px;
-    }
-    table {
-      font-size: 14px;
-      display: block;
-      overflow-x: auto;
-    }
-  }
-
-  /* 响应式设计 - 大屏幕电脑 */
-  @media (min-width: 1200px) {
-    body {
-      max-width: 900px;
     }
   }
 </style>
 </head>
 <body>
 
-<div>
-  <a href="/landy-briefings/" class="back-button">
-    <span>←</span> 返回简报列表
-  </a>
-</div>
+<a href="../index.html" class="back-button">返回首页</a>
 
 <h1>AI研究员--Landy葉的简报</h1>
-<div class="date">YYYY年M月D日</div>
+<div class="date">2026年4月28日 星期二</div>
 
-<!-- 今日速览 -->
 <div class="section">
-  <div class="section-title">📊 今日速览</div>
+  <div class="section-title lightblue">🤖 AI · 液冷技术</div>
   <ul>
-    <li><strong>要闻1</strong> — 描述... <span class="source">（来源）</span></li>
-    <li><strong>要闻2</strong> — 描述... <span class="source">（来源）</span></li>
-    <li><strong>要闻3</strong> — 描述... <span class="source">（来源）</span></li>
-    <li><strong>要闻4</strong> — 描述... <span class="source">（来源）</span></li>
+    <li><strong>美国指控DeepSeek等中国AI公司窃取知识产权</strong> - 美国国务院下令全球外交推动，关注中国公司（包括DeepSeek）涉嫌窃取美国AI实验室知识产权的行为。<span class="source">来源：Cybernews, Reuters</span></li>
+    <li><strong>OpenAI发布GPT-Rosalind科研模型</strong> - OpenAI推出GPT-Rosalind前沿推理模型，专为加速药物发现、基因组分析、蛋白质推理和科学研究工作流程而构建。<span class="source">来源：OpenAI Research</span></li>
+    <li><strong>Anthropic Claude Mythos锁定50家公司防火墙</strong> - Anthropic确认Claude Mythos模型，但将其锁定在50家公司防火墙后。同日，智谱AI开源了在编码方面击败GPT-5.4的模型。<span class="source">来源：WhatLLM</span></li>
+    <li><strong>液冷市场2026-2033年CAGR达31.5%</strong> - 全球数据中心液冷市场预计从2026年的40.7亿美元增长到2033年的276.5亿美元，年复合增长率31.5%。AI机架密度超200kW使液冷成为不可协商的选择。<span class="source">来源：MarketsandMarkets, Network World</span></li>
+    <li><strong>Oracle AI数据中心采用闭环冷却</strong> - Oracle计划在新墨西哥、密歇根、德克萨斯和威斯康星州的AI基础设施数据中心部署闭环冷却等多种冷却方法，不依赖持续消耗饮用水。<span class="source">来源：Oracle</span></li>
   </ul>
 </div>
 
-<!-- 一、大势研判 -->
 <div class="section">
-  <div class="section-title lightblue">🤖 一、大势研判</div>
-
-  <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#1a73e8;">📈 行业数据</strong>
-    <ul>
-      <li>数据1...</li>
-      <li>数据2...</li>
-      <li>数据3...</li>
-    </ul>
-  </div>
-
-  <div style="margin-left:12px;">
-    <strong style="color:#1a73e8;">⚡ 政策动态</strong>
-    <ul>
-      <li>政策1...</li>
-      <li>政策2...</li>
-      <li>政策3...</li>
-    </ul>
-  </div>
-</div>
-
-<!-- 二、液冷管赛道情报 -->
-<div class="section">
-  <div class="section-title orange">💧 二、液冷管赛道情报</div>
-
-  <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#e87020;">🔬 技术路线</strong>
-    <ul>
-      <li>技术进展1...</li>
-      <li>技术进展2...</li>
-    </ul>
-  </div>
-
-  <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#e87020;">🏭 竞争格局</strong>
-    <ul>
-      <li>竞争动态1...</li>
-      <li>竞争动态2...</li>
-    </ul>
-  </div>
-
-  <div style="margin-left:12px;">
-    <strong style="color:#e87020;">📦 客户与订单</strong>
-    <ul>
-      <li>订单信息1...</li>
-      <li>订单信息2...</li>
-    </ul>
-  </div>
-</div>
-
-<!-- 三、下游应用战场 -->
-<div class="section">
-  <div class="section-title green">🔋 三、下游应用战场</div>
-
-  <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
-    <ul>
-      <li>数据中心动态1...</li>
-      <li>数据中心动态2...</li>
-    </ul>
-  </div>
-
-  <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#34a853;">🔋 储能行业</strong>
-    <ul>
-      <li>储能动态1...</li>
-      <li>储能动态2...</li>
-    </ul>
-  </div>
-
-  <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#34a853;">🚗 新能源汽车</strong>
-    <ul>
-      <li>汽车动态1...</li>
-      <li>汽车动态2...</li>
-    </ul>
-  </div>
-
-  <div style="margin-left:12px;">
-    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
-    <ul>
-      <li>超充动态1...</li>
-      <li>超充动态2...</li>
-    </ul>
-  </div>
-</div>
-
-<!-- 四、集成商动态 -->
-<div class="section">
-  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
-  <table>
-    <tr>
-      <th style="width:18%">企业</th>
-      <th>核心进展</th>
-    </tr>
-    <tr>
-      <td><strong>英维克</strong></td>
-      <td>进展描述...</td>
-    </tr>
-    <tr>
-      <td><strong>曙光数创</strong></td>
-      <td>进展描述...</td>
-    </tr>
-    <tr>
-      <td><strong>高澜股份</strong></td>
-      <td>进展描述...</td>
-    </tr>
-    <tr>
-      <td><strong>申菱环境</strong></td>
-      <td>进展描述...</td>
-    </tr>
-    <tr>
-      <td><strong>巨化股份</strong></td>
-      <td>进展描述...</td>
-    </tr>
-  </table>
-</div>
-
-<!-- 五、二级市场 & 资本动向 -->
-<div class="section">
-  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <div class="section-title orange">💹 二级市场</div>
   <ul>
-    <li>市场动态1... <span class="source">（来源）</span></li>
-    <li>市场动态2... <span class="source">（来源）</span></li>
-    <li>市场动态3... <span class="source">（来源）</span></li>
+    <li><strong>标普500指数微涨至7,173点</strong> - 美股市场4月28日小幅上涨，标普500指数上涨0.1%至7,173点。投资者忽视警告信号，推动股市飙升。<span class="source">来源：Saxo, CNBC</span></li>
+    <li><strong>中国股市连续两日下跌</strong> - 上证综指连续两个交易日下跌，累计下跌超25点或0.6%，目前位于4,080点下方，但周一可能找到支撑。<span class="source">来源：RTTNews</span></li>
+    <li><strong>越南Vietjet Air聚焦全球扩张</strong> - Vietjet Air在4月26日年度股东大会上表示，将进入新增长阶段，专注全球覆盖、可持续增长和股东长期价值。<span class="source">来源：Index.vn</span></li>
   </ul>
 </div>
 
-<!-- 六、利通科技 -->
 <div class="section">
-  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <div class="section-title green">⚡ 储能 · 新能源</div>
   <ul>
-    <li>利通动态1...</li>
-    <li>利通动态2...</li>
-    <li>利通动态3...</li>
+    <li><strong>欧盟AccelerateEU支持200GW储能目标</strong> - 欧盟委员会设定目标，将储能容量从目前的55GW扩大到2030年的200GW。但SolarPower Europe指出，即使在中等情景下，到2030年也只能达到约160GW。<span class="source">来源：ESS-News, 4月27日</span></li>
+    <li><strong>宁德时代发布新钠离子储能电池</strong> - 宁德时代在北京ESIE 2026展会上发布新型钠离子储能电池，将钠离子产品线从乘用车、商用车和辅助电源扩展到公用事业规模和商业储能领域。<span class="source">来源：ESS-News, 4月20日</span></li>
+    <li><strong>土耳其储能装机量超越欧盟</strong> - 自2022年以来，土耳其已批准超过33GW的电池容量，而德国和意大利等欧洲领先国家的计划和运营容量总计为12-13GW。<span class="source">来源：The Guardian</span></li>
+    <li><strong>Meta投资太空太阳能和长时储能</strong> - Meta（Facebook）宣布投资太空太阳能和长时储能技术，使目前闲置的太阳能农场能够24小时发电，最大化产出并为电网创造更多能源。<span class="source">来源：Meta News</span></li>
+    <li><strong>TotalEnergies推进哈萨克斯坦风储项目</strong> - TotalEnergies正在推进位于中亚哈萨克斯坦的千兆瓦级风电+电池储能联合项目。<span class="source">来源：Energy-Storage.News</span></li>
   </ul>
 </div>
 
-<!-- 七、战略预警 -->
 <div class="section">
-  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+  <div class="section-title gray">📌 利通科技</div>
+  <ul>
+    <li><strong>行业观察</strong> - 液冷快速接头市场持续受益于AI数据中心建设热潮。全球数据中心液冷市场2026-2033年CAGR达31.5%，为液冷管路系统供应商带来巨大机遇。<span class="source">行业分析</span></li>
+  </ul>
+</div>
 
-  <div class="warning">
-    <strong>🔴 高度关注</strong><br>
-    重要预警事项描述...
-  </div>
+<div class="highlight">
+  <strong>💡 今日要点</strong><br>
+  • 美国指控DeepSeek等中国AI公司窃取知识产权，中美AI竞争升级<br>
+  • 液冷市场2026-2033年CAGR达31.5%，AI机架密度超200kW推动需求<br>
+  • 欧盟设定2030年200GW储能目标，但融资机制缺失<br>
+  • 宁德时代钠离子电池进军公用事业储能市场<br>
+  • 标普500指数微涨至7,173点，中国股市连续两日下跌
+</div>
 
-  <div class="highlight">
-    <strong>🟡 持续跟踪</strong><br>
-    需要跟踪事项描述...
-  </div>
+<div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888; font-size: 13px; text-align: center;">
+  本简报由AI研究员Landy葉整理 · 数据仅供参考，不构成投资建议<br>
+  内容来源已标注，遵循内容授权和引用规范
 </div>
 
 </body>
