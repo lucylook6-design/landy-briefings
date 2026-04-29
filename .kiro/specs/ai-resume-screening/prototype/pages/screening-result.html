@@ -16,7 +16,6 @@
       <a class="nav-item" href="job-detail.html"><span class="icon">📝</span>招聘需求</a>
       <a class="nav-item" href="resume-upload.html"><span class="icon">📤</span>简历管理</a>
       <a class="nav-item active" href="screening-result.html"><span class="icon">🎯</span>筛选结果</a>
-      <a class="nav-item" href="delivery.html"><span class="icon">📨</span>交付记录</a>
       <div class="nav-section">系统</div>
       <a class="nav-item" href="company-settings.html"><span class="icon">🏢</span>公司管理</a>
       <a class="nav-item" href="#"><span class="icon">⚙️</span>系统设置</a>
@@ -32,7 +31,7 @@
       </div>
       <div class="topbar-actions">
         <button class="btn btn-secondary">重新筛选</button>
-        <a href="delivery.html" class="btn btn-primary">推送给甲方 →</a>
+        <button class="btn btn-primary" onclick="alert('正在生成Word文档...')">📄 导出Word文档</button>
         <div class="avatar">张</div>
       </div>
     </header>
@@ -66,7 +65,7 @@
             <div class="step-line done"></div>
             <div class="step">
               <div class="step-dot active">4</div>
-              <div class="step-label active">交付甲方<br><span class="text-sm" style="color:var(--primary);">待确认推送</span></div>
+              <div class="step-label active">导出Word<br><span class="text-sm" style="color:var(--primary);">待导出</span></div>
             </div>
           </div>
         </div>
@@ -118,7 +117,6 @@
               </div>
               <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
                 <a href="resume-detail.html" class="btn btn-secondary btn-sm">查看简历</a>
-                <button class="btn btn-secondary btn-sm">编辑理由</button>
               </div>
             </div>
 
@@ -154,7 +152,6 @@
               </div>
               <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
                 <a href="resume-detail.html" class="btn btn-secondary btn-sm">查看简历</a>
-                <button class="btn btn-secondary btn-sm">编辑理由</button>
               </div>
             </div>
 
@@ -189,7 +186,6 @@
               </div>
               <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0;">
                 <a href="resume-detail.html" class="btn btn-secondary btn-sm">查看简历</a>
-                <button class="btn btn-secondary btn-sm">编辑理由</button>
               </div>
             </div>
 
@@ -240,24 +236,24 @@
           </div>
 
           <div class="card">
-            <div class="card-header"><div class="card-title">交付设置</div></div>
+            <div class="card-header"><div class="card-title">导出设置</div></div>
             <div class="card-body">
               <div style="font-size:13.5px;display:flex;flex-direction:column;gap:10px;">
                 <div class="flex-between">
-                  <span class="text-gray">推送方式</span>
-                  <span class="text-bold">企业微信</span>
+                  <span class="text-gray">导出格式</span>
+                  <span class="text-bold">Word文档 (.docx)</span>
                 </div>
                 <div class="flex-between">
-                  <span class="text-gray">推送内容</span>
-                  <span class="text-bold">卡片 + PDF附件</span>
+                  <span class="text-gray">包含内容</span>
+                  <span class="text-bold">候选人信息+AI推荐理由</span>
                 </div>
                 <div class="flex-between">
-                  <span class="text-gray">接收人</span>
-                  <span class="text-bold">李明（字节跳动）</span>
+                  <span class="text-gray">候选人数量</span>
+                  <span class="text-bold">3 位</span>
                 </div>
                 <div style="height:1px;background:var(--gray-100);"></div>
-                <a href="delivery.html" class="btn btn-primary" style="width:100%;justify-content:center;">确认推送给甲方</a>
-                <button class="btn btn-secondary" style="width:100%;justify-content:center;">人工审核后推送</button>
+                <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="alert('正在生成Word文档...\n\n文档将包含：\n- 封面页\n- 3位候选人详细信息\n- AI生成的推荐理由\n\n预计10秒内完成')">📄 导出Word文档</button>
+                <button class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="alert('已复制下载链接到剪贴板')">📋 复制下载链接</button>
               </div>
             </div>
           </div>
