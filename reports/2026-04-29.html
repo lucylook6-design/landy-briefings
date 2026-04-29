@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年4月29日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 { font-size: 20px; }
+    .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; }
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 10px; }
+    table { font-size: 15px; }
+    th, td { padding: 10px 12px; }
+    .highlight, .warning { padding: 14px 18px; font-size: 15px; }
+    .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body { max-width: 90%; margin: 30px auto; padding: 24px; }
+    h1 { font-size: 21px; }
+  }
+  @media (max-width: 480px) {
+    body { margin: 12px auto; padding: 12px; font-size: 17px; }
+    h1 { font-size: 19px; }
+    .date { font-size: 14px; }
+    .section-title { font-size: 18px; }
+    table { font-size: 14px; display: block; overflow-x: auto; }
+  }
+  @media (min-width: 1200px) {
+    body { max-width: 900px; }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年4月29日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>A股放量反弹</strong> — 沪指涨0.71%重回4100点，创业板涨2.52%，两市成交额2.59万亿，超百股涨停 <span class="source">（财联社）</span></li>
+    <li><strong>锂电产业链爆发+算力租赁活跃</strong> — 鹏辉能源20cm涨停，算力租赁方向行云科技触及20cm涨停，利通电子2连板 <span class="source">（财联社）</span></li>
+    <li><strong>韩国今年提供530亿韩元支持AI工厂项目</strong> — 重点聚焦制造业AI转型基础设施和AI工厂建设 <span class="source">（新浪财经）</span></li>
+    <li><strong>一季度海洋GDP 2.6万亿元</strong> — 同比增5.4%，拉动国民经济增长0.4个百分点；船舶工业新承接海船订单量同比增116.7% <span class="source">（央视新闻）</span></li>
+    <li><strong>OpenAI与亚马逊AWS达成新合作</strong> — 微软云独占期到期后，OpenAI CEO与AWS CEO确认将聚焦Amazon Bedrock <span class="source">（The Verge）</span></li>
+    <li><strong>梅赛德斯营收利润下滑</strong> — Q1息税前利润19亿欧元，同比降17%；关税预计对利润率产生150个基点负面影响 <span class="source">（新浪财经）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 市场数据</strong>
+    <ul>
+      <li><strong>A股</strong> — 沪指涨0.71%报4100点上方，深成指涨1.96%，创业板涨2.52%。沪深两市成交额2.59万亿，较前一交易日放量538亿，全市场超3900只个股上涨，119只个股涨停 <span class="source">（财联社）</span></li>
+      <li><strong>北交所扩容加速</strong> — 截至3月底境内上市公司5503家，北交所公司数量突破300家。一季度新增首发30家，募资总额258.79亿元，创业板+科创板+北交所占八成 <span class="source">（中上协）</span></li>
+      <li><strong>商品期货</strong> — BR橡胶涨超6%，碳酸锂涨超3%，驱动新能源材料价格回暖信号 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 政策动态</strong>
+    <ul>
+      <li><strong>电子商务持续稳进</strong> — 1-3月全国网上商品零售额占社零比重的24.8%，云计算和大数据收入增11.4%。智能眼镜网零增161.9%，旅游业线上销售额增33.4% <span class="source">（商务部）</span></li>
+      <li><strong>南京一季度GDP同比增5.5%</strong> — 高于全国5%的平均水平，经济运行稳健向好 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div class="highlight">
+    <strong>🔥 芯片功耗持续攀升趋势不变</strong><br>
+    英伟达H100 700W → B200 1000W+ → Rubin 1800W+，液冷从"可选"变"强制"。今日股市算力租赁概念反复活跃，市场对算力基建热情不减。
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🏭 竞争格局</strong>
+    <ul>
+      <li><strong>英维克</strong> — 液冷温控龙头，持续受益于智算中心建设浪潮，作为液冷集成商直接拉动液冷管路一级需求 <span class="source">（公开信息）</span></li>
+      <li><strong>高澜股份/曙光数创</strong> — 液冷解决方案主力供应商，与利通科技形成上下游协作，冷板式/浸没式液冷双重路线并行推进 <span class="source">（公开信息）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">📦 需求信号</strong>
+    <ul>
+      <li><strong>算力租赁概念反复活跃</strong> — 行云科技触及20cm涨停，利通电子2连板，利通电子（603629，与利通科技839167不同）为公司带来液冷数据中心建设的直接需求 <span class="source">（财联社）</span></li>
+      <li><strong>韩国AI工厂计划</strong> — 韩国产业部2026年提供530亿韩元（3590万美元）支持AI工厂基础设施项目，重点推动制造业AI转型 <span class="source">（新浪财经）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
+    <ul>
+      <li><strong>算力租赁板块持续走强</strong> — 行云科技20cm涨停，利通电子、三人行、华升股份2连板，CPO概念震荡回升（剑桥科技、瑞斯康达涨停），PCB产业链延续强势（山东玻纤3天2板、宏和科技涨停续创新高）<span class="source">（财联社）</span></li>
+      <li><strong>OpenAI × AWS合作深化</strong> — 微软云独占协议到期后，OpenAI转向AWS的Bedrock托管智能体服务，AI算力需求确定性进一步增强 <span class="source">（The Verge）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🔋 储能行业</strong>
+    <ul>
+      <li><strong>碳酸锂期货涨超3%</strong> — 锂电产业链爆发，十余只成分股涨停。鹏辉能源20cm涨停，永兴材料4天2板，结合碳酸锂价格回暖信号 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li><strong>乐道L80开启预售</strong> — 整车24.58万起，BaaS方案15.98万起，提供纯视觉+激光雷达双方案，蔚来换电+液冷双赛道布局继续深化 <span class="source">（36氪）</span></li>
+      <li><strong>梅赛德斯奔驰Q1利润降17%</strong> — 关税影响150个基点利润率，反映全球汽车产业贸易摩擦持续升温，新能源车企竞争加剧 <span class="source">（新浪财经）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
+    <ul>
+      <li>今日无明显超充桩专项新闻，但锂电产业链整体强势（碳酸锂涨3%、锂电股批量涨停）为超充桩建设提供了积极的成本端信号</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、集成商动态 -->
+<div class="section">
+  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
+  <table>
+    <tr>
+      <th style="width:18%">企业</th>
+      <th>核心进展</th>
+    </tr>
+    <tr>
+      <td><strong>英维克</strong></td>
+      <td>算力租赁概念反复活跃，液冷温控龙头持续受益于智算中心建设潮 <span class="source">（财联社）</span></td>
+    </tr>
+    <tr>
+      <td><strong>曙光数创</strong></td>
+      <td>北交所液冷龙头，直接受益于北交所扩容加速趋势（北交所公司数突破300家）<span class="source">（中上协）</span></td>
+    </tr>
+    <tr>
+      <td><strong>高澜股份</strong></td>
+      <td>A股液冷细分龙头，液冷管路核心客户之一，跟随算力基建板块整体走强</td>
+    </tr>
+    <tr>
+      <td><strong>申菱环境</strong></td>
+      <td>温控设备供应商，持续受益于数据中心建设周期</td>
+    </tr>
+    <tr>
+      <td><strong>巨化股份</strong></td>
+      <td>冷却液（氟化工）赛道，国产替代逻辑持续</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <ul>
+    <li><strong>沪指重回4100点</strong> — 两市成交2.59万亿，市场呈普涨格局，锂电产业链、算力租赁、稀土永磁、PCB四大方向齐爆发 <span class="source">（财联社）</span></li>
+    <li><strong>北交所扩容加速</strong> — 公司数量突破300家，首发募资+再融资功能逐步完善 <span class="source">（中上协）</span></li>
+    <li><strong>碳酸锂涨超3%</strong> — 带动锂电板块集体走强，上游材料端率先受益，鹏辉能源20cm涨停 <span class="source">（财联社）</span></li>
+    <li><strong>宁波甬投先导基金成立</strong> — 出资额8亿元，聚焦股权投资，宁波地方资本进一步布局科技领域 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li>今日利通科技无直接公告或专项新闻报道</li>
+    <li>算力租赁概念持续活跃，液冷赛道整体情绪积极，市场对液冷管路需求的预期升温</li>
+    <li>北交所扩容加速、政策利好频出，北交所标的（利通科技）的流动性溢价值得关注</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    <strong>1. 美国关税冲击持续</strong> — 梅赛德斯CFO明确关税影响利润率150个基点，美民主党议员呼吁限制总统战争权力，地缘贸易摩擦升温，利通科技出口端或受影响<br>
+    <strong>2. 布伦特原油涨至$105/桶</strong> — 油价持续高位运行，原材料端成本压力需持续跟踪
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>1. OpenAI与AWS合作深化</strong> — 微软云独占到期的"去微软化"趋势，AI算力需求确定性进一步增强，直接利好液冷全产业链<br>
+    <strong>2. 韩国530亿韩元AI工厂计划</strong> — 全球AI基建军备竞赛持续，亚太市场液冷配套设施需求进入加速期<br>
+    <strong>3. 锂电产业链回暖信号</strong> — 碳酸锂涨超3%、锂电板块批量涨停，储能/新能源车赛道需求回暖预期升温
+  </div>
+</div>
+
+</body>
+</html>

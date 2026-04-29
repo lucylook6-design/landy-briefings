@@ -1,9 +1,11 @@
 #!/bin/bash
 # 自动归档 openclaw 生成的日报到网站并推送 GitHub Pages
+# 💡 协作规范：不修改 index.html，只修改 reports-data.json + reports/*.html
 
 WORKSPACE=~/.openclaw/workspace
 BRIEFINGS=~/briefings
 REPORTS=$BRIEFINGS/reports
+JSON="$BRIEFINGS/reports-data.json"
 
 # 动态读取系统代理端口
 PROXY_PORT=$(scutil --proxy 2>/dev/null | grep HTTPSPort | awk '{print $3}')
@@ -39,25 +41,55 @@ DESC=$(grep -oE '<li><strong>[^<]+' "$TARGET" | sed 's/<[^>]*>//' | head -3 | pa
 [ -z "$TITLE" ] && TITLE="每日简报"
 [ -z "$DESC" ] && DESC="液冷 · AI · 资本市场情报"
 
-# 更新 index.html REPORTS 数组（去重后插入）
-if ! grep -q "\"$FORMATTED_DATE\"" "$BRIEFINGS/index.html"; then
-  NEW_ENTRY="  {\n    date: \"$FORMATTED_DATE\",\n    title: \"$TITLE\",\n    desc: \"$DESC\",\n    tags: [\"ai\", \"stock\", \"energy\"],\n    file: \"reports/$FORMATTED_DATE.html\"\n  },"
-  # 使用 LC_ALL=C 避免 sed 编码错误
-  LC_ALL=C sed -i.bak "s|const REPORTS = \[|const REPORTS = [\n$NEW_ENTRY|" "$BRIEFINGS/index.html"
-  echo "✅ 已更新首页索引"
+# 🆕 更新 reports-data.json（改为在数组开头插入新记录）
+if [ -f "$JSON" ]; then
+  # 检查是否已存在
+  if grep -q "\"$FORMATTED_DATE\"" "$JSON"; then
+    echo "ℹ️  $FORMATTED_DATE 已存在于 reports-data.json，跳过"
+  else
+    NEW_RECORD="  {\n    \"date\": \"$FORMATTED_DATE\",\n    \"title\": \"$TITLE\",\n    \"desc\": \"$DESC\",\n    \"tags\": [\"ai\", \"stock\", \"energy\"],\n    \"file\": \"reports/$FORMATTED_DATE.html\"\n  },"
+    # 在第一个 [ 后插入新记录（数组开头）
+    LC_ALL=C sed -i.bak "s|\[|[\n$NEW_RECORD|" "$JSON"
+    echo "✅ 已更新 reports-data.json"
+  fi
 else
-  echo "ℹ️  $FORMATTED_DATE 已存在，跳过索引更新"
+  echo "⚠️  reports-data.json 不存在，跳过数据更新（请在简报任务中手动创建）"
 fi
 
-# Git 提交并推送
-git -C "$BRIEFINGS" add .
-if git -C "$BRIEFINGS" diff --cached --quiet; then
+# 拉取最新代码，避免冲突
+cd "$BRIEFINGS"
+echo "🔄 拉取远程最新代码..."
+git pull origin main --rebase 2>&1 || echo "⚠️  rebase 失败，可能无远程变更"
+
+# Git 提交并推送（禁止 --force！）
+git add reports/$FORMATTED_DATE.html reports-data.json
+# 也添加可能修改的 archive.sh
+git add archive.sh 2>/dev/null
+
+if git diff --cached --quiet; then
   echo "ℹ️  无新变更，无需推送"
+  exit 0
+fi
+
+git commit -m "简报归档: $FORMATTED_DATE"
+
+PUSH_OK=false
+for TRY in 1 2 3; do
+  echo "🔄 推送尝试 $TRY/3..."
+  if git push origin main 2>&1; then
+    PUSH_OK=true
+    break
+  fi
+  echo "⚠️  第 $TRY 次推送失败，拉取远程变更后重试..."
+  sleep 3
+  git pull origin main --rebase 2>&1 || echo "⚠️  rebase 失败，继续尝试..."
+done
+
+if [ "$PUSH_OK" = true ]; then
+  echo "🚀 已推送到 GitHub Pages"
 else
-  git -C "$BRIEFINGS" commit -m "简报归档: $FORMATTED_DATE" && \
-    git -C "$BRIEFINGS" push origin main 2>&1 && \
-    echo "🚀 已推送到 GitHub Pages" || \
-    echo "⚠️  推送失败，请检查网络"
+  echo "⚠️  推送 3 次均失败，需要手动处理"
+  echo "  请执行: cd ~/briefings && git status"
 fi
 
 echo ""
