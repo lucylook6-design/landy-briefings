@@ -5,80 +5,294 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <title>AI研究员--Landy葉的简报 | 2026年5月1日</title>
 <style>
-  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; color: #222; line-height: 1.8; font-size: 15px; }
-  h1 { font-size: 22px; font-weight: bold; margin-bottom: 6px; color: #111; }
-  .date { color: #888; font-size: 14px; margin-bottom: 28px; border-bottom: 1px solid #eee; padding-bottom: 18px; }
-  .section { margin-bottom: 28px; }
-  .section-title { font-size: 16px; font-weight: bold; color: #111; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #222; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
   .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
   .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
   .section-title.green { border-bottom-color: #34a853; color: #34a853; }
   .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
   .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
   .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
-  ul { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 8px; }
-  li strong { font-weight: 600; }
-  .highlight { background: #fff8e1; padding: 12px 16px; border-left: 4px solid #f9a825; margin-top: 10px; font-size: 14px; }
-  .warning { background: #fce8e6; padding: 12px 16px; border-left: 4px solid #ea4335; margin-top: 10px; font-size: 14px; }
-  .back-button { display: inline-flex; align-items: center; color: #1a73e8; text-decoration: none; font-size: 14px; margin-bottom: 20px; }
-  .back-button:hover { text-decoration: underline; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 { font-size: 20px; }
+    .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; }
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 10px; }
+    table { font-size: 15px; }
+    th, td { padding: 10px 12px; }
+    .highlight, .warning { padding: 14px 18px; font-size: 15px; }
+    .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body { max-width: 90%; margin: 30px auto; padding: 24px; }
+    h1 { font-size: 21px; }
+  }
+  @media (max-width: 480px) {
+    body { margin: 12px auto; padding: 12px; font-size: 17px; }
+    h1 { font-size: 19px; }
+    .date { font-size: 14px; }
+    .section-title { font-size: 18px; }
+    table { font-size: 14px; display: block; overflow-x: auto; }
+  }
+  @media (min-width: 1200px) {
+    body { max-width: 900px; }
+  }
 </style>
 </head>
 <body>
-<a class="back-button" href="/landy-briefings/">← 返回简报列表</a>
 
-<h1>AI研究员简报</h1>
-<div class="date">2026年5月1日 星期四</div>
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
 
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年5月1日 星期五</div>
+
+<!-- 今日速览 -->
 <div class="section">
-  <div class="section-title red">🔥 地缘·能源危机</div>
+  <div class="section-title">📊 今日速览</div>
   <ul>
-    <li><strong>WTI原油暴涨至106.88美元/桶，布伦特突破118美元/桶</strong>，单日涨幅6-7%，地缘风险溢价急剧飙升。（来源：财联社）</li>
-    <li><strong>伊朗海军司令：伊朗已封锁霍尔木兹海峡</strong>，美军若进一步推进将立即采取作战行动。（来源：财联社）</li>
-    <li><strong>特朗普：美伊正通过电话谈判</strong>，但将继续维持封锁直至伊方彻底放弃核计划。（来源：财联社）</li>
-    <li><strong>美国暂停向华虹供应半导体设备</strong>，外交部回应：希望美方维护全球产供链稳定。（来源：财联社）</li>
+    <li><strong>中东局势急剧升级</strong> — 伊朗封锁霍尔木兹海峡，布伦特原油突破118美元/桶，WTI站上105美元 <span class="source">（财联社）</span></li>
+    <li><strong>AI巨头季报强劲</strong> — 谷歌涨超10%创历史新高，高通涨超15%，苹果Q2营收1112亿美元+17% <span class="source">（财联社/36氪）</span></li>
+    <li><strong>英伟达跌超4%</strong> — 热门科技股分化：Meta跌超8%，微软跌超3%，AMD涨超5% <span class="source">（财联社）</span></li>
+    <li><strong>内存价格飙升预警</strong> — 苹果Tim Cook称"内存成本将显著上升"，或影响产品定价 <span class="source">（The Verge）</span></li>
+    <li><strong>宁德时代完成H股配售</strong> — 配售价628.20港元，发行6238.5万股新H股 <span class="source">（36氪）</span></li>
+    <li><strong>5月A股休市</strong> — 五一劳动节假期，5月1-5日休市 <span class="source">（财联社）</span></li>
   </ul>
 </div>
 
+<!-- 一、大势研判 -->
 <div class="section">
-  <div class="section-title purple">🤖 AI·科技巨头季报</div>
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 全球市场数据</strong>
+    <ul>
+      <li><strong>美股4月收官亮眼</strong>：道指+7.14%，纳指+<strong>15.29%</strong>，标普500+<strong>10.42%</strong>（创2020年11月来最大单月涨幅）<span class="source">（财联社）</span></li>
+      <li><strong>科技股巨头季报超预期</strong>：苹果Q2营收1111.8亿美元+17%，净利295.8亿美元+19%，iPhone收入569.9亿美元+22% <span class="source">（财联社）</span></li>
+      <li><strong>AI算力军备竞赛升级</strong>：Alphabet上调资本支出至1800-1900亿美元；Meta Q1营收563亿美元+33% <span class="source">（财联社）</span></li>
+      <li><strong>欧洲央行维持利率不变</strong>：存款机制利率2.00%，符合市场预期 <span class="source">（财联社）</span></li>
+      <li><strong>黄金涨至4636美元/盎司</strong>，白银74.23美元，避险需求持续 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 地缘与政策动态</strong>
+    <ul>
+      <li><strong>伊朗封锁霍尔木兹海峡</strong> — 伊朗总统佩泽希齐扬称美海上封锁"不可容忍"，油价暴涨 <span class="source">（财联社）</span></li>
+      <li><strong>美国国防部长称美伊停火4月8日生效</strong>，60天军事行动期限已"暂停或中止" <span class="source">（财联社）</span></li>
+      <li><strong>以色列国防部长称或"很快需要"恢复对伊军事行动</strong>，6500吨军备24小时内运抵以色列 <span class="source">（财联社）</span></li>
+      <li><strong>苹果面临内存成本飙升压力</strong>：Tim Cook称RAM短缺将"显著影响"业务，将评估多种应对方案 <span class="source">（The Verge）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🔬 芯片功耗趋势（液冷核心驱动力）</strong>
+    <ul>
+      <li><strong>英伟达季度业绩承压</strong> — 股价跌超4%，市场担忧AI芯片需求节奏；但长期功耗走势不变，<strong>Vera Rubin单芯片1800W+</strong>持续推进 <span class="source">（财联社）</span></li>
+      <li><strong>高通涨超15%</strong> — 季报强劲，AI端侧芯片需求爆发式增长，边缘算力功耗管理需求带动液冷方案外延扩展 <span class="source">（财联社）</span></li>
+      <li><strong>AMD涨超5%</strong> — AI数据中心芯片持续放量，液冷配套需求确定 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">📦 液冷需求逻辑链</strong>
+    <ul>
+      <li><strong>AI资本支出持续上行</strong>：谷歌/微软/Meta三大云巨头Q1资本支出合计超1500亿美元，数据中心液冷方案需求刚性 <span class="source">（财联社综合）</span></li>
+      <li><strong>内存涨价潮波及服务器</strong>：DRAM短缺推高服务器成本，液冷方案能效优势进一步凸显（功耗降低40%+），经济账更优 <span class="source">（The Verge/财联社）</span></li>
+      <li><strong>全球GPU短缺正在缓解</strong>，大量积压订单释放将带动数据中心基础设施建设加速，液冷管路安装配套需求放量 <span class="source">（综合判断）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">🏭 竞争格局观测</strong>
+    <ul>
+      <li>暂无上市公司层面液冷专项公告<br>（A股5月1-5日五一休市，待复盘后关注）<span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
+    <ul>
+      <li><strong>苹果大幅增资AI基础设施</strong>（Q2财报表明AI投入持续扩大），iPhone+AI融合推动云端+边缘算力建设 <span class="source">（财联社）</span></li>
+      <li><strong>AI竞争白热化</strong>：Musk v. Altman OpenAI庭审曝光2018年邮件，Musk曾对OpenAI"失去信心"转投特斯拉AI路线 <span class="source">（The Verge）</span></li>
+      <li><strong>LG新能源一季度亏损2078亿韩元</strong>，受北美客户库存调整影响，软包EV电池出货下滑 <span class="source">（36氪/界面）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🔋 储能行业</strong>
+    <ul>
+      <li><strong>宁德时代完成H股配售</strong> — 6238.5万股新H股，配售价628.20港元，募资规模约392亿港元 <span class="source">（36氪）</span></li>
+      <li>储能行业假期期间暂无特别动态，待五一后复盘 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li><strong>特斯拉CEO马斯克2025年薪酬1583.6亿美元</strong> — 全部为股票奖励 <span class="source">（财联社）</span></li>
+      <li><strong>LG新能源一季度亏损</strong> — 软包电池出货下滑，反映北美电动车市场需求波动 <span class="source">（36氪/界面）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
+    <ul>
+      <li>暂无新动态，五一假期后续观察 <span class="source">（—）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 四、二级市场 & 资本动向</div>
   <ul>
-    <li><strong>Alphabet Q1营收1099亿美元，同比+22%</strong>，超预期，上调全年资本支出至1800-1900亿美元。（来源：财联社）</li>
-    <li><strong>微软Q3营收829亿美元，同比超预期</strong>，经营利润384亿美元。（来源：财联社）</li>
-    <li><strong>Meta Q1营收563亿美元，同比+33%</strong>，每股收益10.44美元。（来源：财联社）</li>
-    <li><strong>Anthropic正洽谈新融资，估值超9000亿美元</strong>。（来源：财联社）</li>
-    <li><strong>SpaceX批准惊天薪酬方案</strong>：若市值达7.5万亿美元并火星定居100万人，马斯克将获2亿股。（来源：财联社）</li>
+    <li><strong>美股4月暴涨收官</strong> — 标普500单月+10.42%，创2020年11月来最大涨幅，纳指+15.29% <span class="source">（财联社）</span></li>
+    <li><strong>热门科技股分化显著</strong> — 高通+15%（AI芯片需求）、谷歌+10%（Q1超预期+资本支出上调）；英伟达-4%（获利了结）、Meta-8%（Q1指引低于部分预期）<span class="source">（财联社）</span></li>
+    <li><strong>A股五一休市</strong>（5月1-5日），节前半导体/AI板块Q1业绩爆发 <span class="source">（36氪）</span></li>
+    <li><strong>宁德时代H股配售完成</strong> — 募资约392亿港元，显示新能源电池龙头国际化加速 <span class="source">（36氪）</span></li>
+    <li><strong>苹果Q2营收1112亿美元</strong>，净利296亿美元+19%，均超预期 <span class="source">（财联社）</span></li>
+    <li><strong>WTI原油105.07美元</strong>（-1.69%），布伦特114.01美元（-3.41%），虽日内回调但仍在高位 <span class="source">（财联社）</span></li>
   </ul>
 </div>
 
+<!-- 七、战略预警 -->
 <div class="section">
-  <div class="section-title orange">📈 A股季报行情</div>
-  <ul>
-    <li><strong>多家半导体/AI公司Q1业绩爆发</strong>：寒武纪+185%，兆易创新+523%，通富微电+225%，长飞光纤+226%。（来源：财联社）</li>
-    <li><strong>新能源业绩分化</strong>：大全能源亏损8亿，通威股份亏损24亿；但盛新锂能、德明利等扭亏为盈。（来源：财联社）</li>
-    <li><strong>船舶周期爆发</strong>：中国船舶Q1净利润同比+252%。（来源：财联社）</li>
-    <li><strong>ST股退市潮延续</strong>：闻泰科技、威领股份、万科A等逾10家公司收到退市/风险警示。（来源：财联社）</li>
-  </ul>
-</div>
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 五、战略预警 / 机会提示</div>
 
-<div class="section">
-  <div class="section-title green">🏠 政策</div>
-  <ul>
-    <li><strong>深圳公积金贷款额度最高可上浮170%</strong>，个人最高可贷189万，家庭最高351万。（来源：财联社）</li>
-    <li><strong>国务院任命刘浩凌为证监会副主席</strong>。（来源：财联社）</li>
-  </ul>
-</div>
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    1. <strong>中东局势全面升级</strong> — 伊朗封锁霍尔木兹海峡，布伦特原油突破118美元后回落至114美元。若局势继续恶化，能源成本飙升将推高数据中心运营成本（电力成本占OPEX 50-60%），反而强化液冷方案的ROI优势。<br>
+    2. <strong>AI资本支出增速持续超预期</strong> — 谷歌/微软/Meta累计资本支出远超市场预期，液冷配套订单确定性强，密切关注二季度集成商业绩兑现。<br>
+    3. <strong>全球DRAM短缺加剧</strong> — Tim Cook预警"内存成本显著上升"，服务器成本压力增大，液冷降温带来的节能效益在经济账上更加突出。
+  </div>
 
-<div class="section">
-  <div class="section-title darkblue">🏢 利通科技（北交所839167）</div>
-  <ul>
-    <li>暂无最新公告。</li>
-  </ul>
-</div>
-
-<div class="warning">
-  <strong>⚠️ 今日关注：</strong>霍尔木兹局势急剧升温，伊朗宣布封锁波斯湾，布伦特原油突破118美元，能源危机全面升级。AI巨头季报强劲，Meta、Alphabet均超预期。ST股退市潮延续，个股风险持续承压。
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    1. <strong>五一后A股液冷板块</strong> — 关注节后液冷产业链相关公司（英维克/曙光数创/高澜股份/申菱环境）是否发布新订单或业绩预告。<br>
+    2. <strong>利通科技节后动态</strong> — 北交所五一后交易安排，关注是否有公告或投资者互动平台动态。<br>
+    3. <strong>英伟达GTC后续</strong> — Vera Rubin架构液冷方案细节，关注冷却管路技术路线变化。
+  </div>
 </div>
 
 </body>
