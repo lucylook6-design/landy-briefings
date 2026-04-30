@@ -1,9 +1,35 @@
 [
   {
+    "date": "2026-04-30",
+    "title": "AI研究员--Landy葉的简报",
+    "desc": "WTI原油突破100美元/桶，美股财报季开启",
+    "tags": [
+      "ai",
+      "stock",
+      "energy"
+    ],
+    "file": "reports/2026-04-30.html"
+  },
+  {
+    "date": "2026-05-01",
+    "title": "AI研究员简报",
+    "desc": "WTI原油暴涨至106.88美元，布伦特突破118美元",
+    "tags": [
+      "ai",
+      "stock",
+      "energy"
+    ],
+    "file": "reports/2026-05-01.html"
+  },
+  {
     "date": "2026-04-29",
     "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
+    "desc": "A股放量反弹 · 锂电产业链爆发+算力租赁活跃 · 韩国530亿韩元支持AI工厂项目",
+    "tags": [
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-29.html"
   },
   {
@@ -11,139 +37,109 @@
     "title": "今日简报",
     "desc": "最新AI、液冷、资本市场动态",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-28.html"
   },
   {
     "date": "2026-04-27",
     "title": "AI研究员简报",
-    "desc": "最新AI、液冷、资本市场动态",
+    "desc": "WTI原油突破100美元",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-27.html"
   },
   {
     "date": "2026-04-26",
     "title": "AI研究员简报",
-    "desc": "最新AI、液冷、资本市场动态",
+    "desc": "白宫记者晚宴枪击事件",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-26.html"
   },
   {
     "date": "2026-04-25",
     "title": "AI研究员简报",
-    "desc": "<strong>DeepSeek-V4-Pro API限时2.5折优惠</strong> · <strong>百度智能云上线DeepSeek-V4</strong> · <strong>元戎启行全面转向大模型自动驾驶路线</strong>",
+    "desc": "伊朗提出三阶段谈判方案",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-25.html"
   },
   {
     "date": "2026-04-24",
     "title": "AI研究员--Landy葉的简报",
-    "desc": "DeepSeek发布V4接口文档 · 霍尔木兹海峡局势升温 · 德州仪器Q2大超预期",
+    "desc": "美伊谈判陷入僵局",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-24.html"
   },
   {
     "date": "2026-04-23",
     "title": "AI研究员--Landy葉的简报",
-    "desc": "AI算力需求持续增长 · 液冷技术加速普及 · 新能源市场动态",
+    "desc": "A股季报行情分化",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-23.html"
   },
   {
     "date": "2026-04-22",
     "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>宁德时代发布第三代神行超充电池</strong> · <strong>宁德时代钠离子电池年内大规模量产</strong> · <strong>我国软件产业规模有望突破20万亿元大关</strong>",
+    "desc": "美伊局势缓和信号",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-22.html"
   },
   {
     "date": "2026-04-21",
     "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>金富科技液冷产能扩张</strong> · <strong>广东加大算电协同投资</strong> · <strong>中东局势推高油价</strong>",
+    "desc": "长江存储Q1收入超200亿元",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-21.html"
   },
   {
     "date": "2026-04-20",
     "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>阿里AI视频模型HappyHorse将于4月27日开放测试</strong> · <strong>国际能源署报告</strong> · <strong>沪深两市成交额连续第9个交易日突破2万亿</strong>",
+    "desc": "美股财报季开启",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-20.html"
   },
   {
     "date": "2026-04-19",
     "title": "液冷千人大会前瞻 · 英伟达Rubin强制液冷",
-    "desc": "霍尔木兹封锁冲击能源 · 机器人半马北京举办 · 力源信息Q1净利+240%",
+    "desc": "液冷赛道持续升温",
     "tags": [
-  {
-    "date": "2026-04-29",
-    "title": "AI研究员--Landy葉的简报",
-    "desc": "<strong>A股放量反弹 <strong>锂电产业链爆发+算力租赁活跃<strong>韩国今年提供530亿韩元支持AI工厂项目",
-    "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
-  },"ai", "stock", "energy", "robot"],
+      "ai",
+      "stock",
+      "energy"
+    ],
     "file": "reports/2026-04-19.html"
   }
 ]
