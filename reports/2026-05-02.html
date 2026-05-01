@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年5月2日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  /* 响应式设计 - 手机端 */
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    .date {
+      font-size: 15px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+    }
+    .section {
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 17px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    table {
+      font-size: 15px;
+    }
+    th, td {
+      padding: 10px 12px;
+    }
+    .highlight, .warning {
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+    .back-button {
+      font-size: 15px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+  }
+
+  /* 响应式设计 - 平板端 */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body {
+      max-width: 90%;
+      margin: 30px auto;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 21px;
+    }
+  }
+
+  /* 响应式设计 - 小屏幕手机 */
+  @media (max-width: 480px) {
+    body {
+      margin: 12px auto;
+      padding: 12px;
+      font-size: 17px;
+    }
+    h1 {
+      font-size: 19px;
+    }
+    .date {
+      font-size: 14px;
+    }
+    .section-title {
+      font-size: 18px;
+    }
+    table {
+      font-size: 14px;
+      display: block;
+      overflow-x: auto;
+    }
+  }
+
+  /* 响应式设计 - 大屏幕电脑 */
+  @media (min-width: 1200px) {
+    body {
+      max-width: 900px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年5月2日（周六）</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>美银预测2027年全球云计算AI资本开支将达1万亿美元</strong> — 2026年预计超8000亿美元，同比增67% <span class="source">（财联社/36氪）</span></li>
+    <li><strong>美股总市值首次突破75万亿美元</strong>，英伟达4.85万亿居首、谷歌4.66万亿、苹果3.98万亿 <span class="source">（财联社）</span></li>
+    <li><strong>存储概念股强势连涨五周</strong>，闪迪、希捷、美光均收于新高 <span class="source">（财联社）</span></li>
+    <li><strong>特朗普称将于下周对欧盟输美汽车加征25%关税</strong>，欧盟保留反制选项 <span class="source">（财联社）</span></li>
+    <li><strong>Meta收购AI机器人模型创企</strong>，加速具身智能布局 <span class="source">（The Verge）</span></li>
+    <li><strong>杭州施行全国首部具身智能机器人产业条例</strong>，集群产值达1068亿元 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 算力基建数据</strong>
+    <ul>
+      <li><strong>美银：全球超大规模云计算企业2026年AI资本开支或超8000亿美元</strong>，同比增67%；预计2027年突破1万亿美元，同比增约25% <span class="source">（财联社/36氪）</span></li>
+      <li>苹果第二财季营收<strong>1111.8亿美元</strong>超预期，批准<strong>1000亿美元</strong>股票回购计划 <span class="source">（36氪/界面）</span></li>
+      <li>美股总市值首次突破<strong>75万亿美元</strong>创历史新高，英伟达4.85万亿、谷歌4.66万亿、苹果3.98万亿居前三 <span class="source">（财联社）</span></li>
+      <li>纳斯达克指数本周累涨1.12%，存储概念强势连涨五周——闪迪、希捷、美光均创新高 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 宏观与政策</strong>
+    <ul>
+      <li>特朗普称对伊朗谈判方案"不满意"，波斯湾45艘商船被要求调头，霍尔木兹海峡通行受限 <span class="source">（财联社）</span></li>
+      <li>WTI原油本周累涨8%至101.94美元/桶，布伦特累涨9.1%至108.17美元 <span class="source">（财联社）</span></li>
+      <li>特朗普将于下周对欧盟输美汽车加征<strong>25%关税</strong>，欧盟称保留一切反制选项 <span class="source">（财联社）</span></li>
+      <li>特朗普批准建设新的加拿大-美国石油管道项目 <span class="source">（AP News）</span></li>
+      <li>美国SEC拟允许上市公司财报披露频率从季度降至半年一次，已通过白宫审查 <span class="source">（财联社）</span></li>
+      <li>A股2025年度现金分红总额达<strong>2.42万亿元</strong>创历史新高，分红比例44.87%同为最高 <span class="source">（36氪/证券时报）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🌍 产业大背景</strong>
+    <ul>
+      <li><strong>美银上调2026年全球云计算AI资本开支至8000亿美元+</strong>，印证AI基建投入仍在加速。液冷作为算力散热刚需环节，将同步受益于资本开闸 <span class="source">（财联社/美银）</span></li>
+      <li>苹果表示未来几个月部分Mac型号可能面临"供应限制"（涉及芯片供应链），侧面反映AI PC芯片需求旺盛 <span class="source">（The Verge）</span></li>
+      <li><strong>OpenAI、Meta等巨头对算力的需求持续推动数据中心升级</strong>，液冷渗透率提升趋势明确 <span class="source">（综合）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">🔬 技术方向</strong>
+    <ul>
+      <li><strong>杭州施行全国首部具身智能机器人产业条例</strong>，2025年产值达1068亿元，机器人行业对精密管路/液冷组件的需求将逐步释放 <span class="source">（36氪）</span></li>
+      <li>Meta收购AI机器人模型公司，具身智能赛道迎来科技巨头加码，机器人液冷方案或为新增长极 <span class="source">（The Verge）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
+    <ul>
+      <li><strong>美银：2026年全球超大规模云资本开支8000亿美元+，2027年或破1万亿美元</strong>——液冷管路需求与数据中心建设高度正相关，是最核心的终端驱动 <span class="source">（财联社/36氪）</span></li>
+      <li>美股存储概念（闪迪、希捷、美光）连涨五周，AI数据中心对海量存储的需求持续井喷 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li>蔚来公司4月交付<strong>29,356台</strong>，同比增长22.8%，前4月累计交付<strong>112,821台</strong>，同比增71% <span class="source">（36氪）</span></li>
+      <li>小鹏4月交付<strong>31,011台</strong>，五一推出多车型0首付+限时0息方案 <span class="source">（36氪）</span></li>
+      <li>新势力交付量持续增长，新能源车热管理市场稳步扩大，液冷管路需求随渗透率提升同步放量</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、集成商动态 -->
+<div class="section">
+  <div class="section-title purple">📡 四、集成商动态（渠道情报）</div>
+  <table>
+    <tr>
+      <th style="width:18%">企业</th>
+      <th>核心进展</th>
+    </tr>
+    <tr>
+      <td><strong>英维克</strong></td>
+      <td>本周暂无重大公告披露。美银8000亿美元资本开支预测验证数据中心散热赛道长期景气度。</td>
+    </tr>
+    <tr>
+      <td><strong>曙光数创</strong></td>
+      <td>本周暂无重大公告披露。液冷散热趋势确定，政策端持续利好。</td>
+    </tr>
+    <tr>
+      <td><strong>高澜股份</strong></td>
+      <td>本周暂无重大公告披露。电力电子/储能液冷方向同步受益于AI基建加速。</td>
+    </tr>
+    <tr>
+      <td><strong>申菱环境</strong></td>
+      <td>本周暂无重大公告披露。温控散热赛道整体受AI资本开支拉动。</td>
+    </tr>
+    <tr>
+      <td><strong>巨化股份</strong></td>
+      <td>本周暂无重大公告披露。冷却液/氟化工品的国产替代与数据中心液冷需求紧密相关。</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <ul>
+    <li><strong>A股年度分红2.42万亿创纪录</strong>，29家高股息且Q1净利润增20%+的公司中，中国石化回撤最大（-33.54%）但一季报利润增28.21% <span class="source">（36氪/人民财讯）</span></li>
+    <li><strong>美股总市值首次突破75万亿美元</strong>，英伟达4.85万亿居美股第一，美股存储（闪迪/希捷/美光）连涨五周创新高 <span class="source">（财联社）</span></li>
+    <li>苹果第二财季营收1111.8亿美元超预期，批准1000亿美元回购 + 提高派息至0.27美元/股 <span class="source">（36氪/界面）</span></li>
+    <li><strong>WTI原油期货本周累涨8%</strong>，布伦特累涨9.1%，中东局势持续推升能源价格 <span class="source">（财联社）</span></li>
+    <li>COMEX黄金本周累跌2.11%至4625.6美元/盎司，白银本周累涨0.2%至75.84美元 <span class="source">（财联社）</span></li>
+    <li>腾讯增持游戏科学至24%，英雄游戏退出；界面财联社入股小红书关联公司持股1% <span class="source">（36氪）</span></li>
+    <li>杭州云深处科技完成IPO辅导，具身智能赛道资本化加速 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li>财联社利通科技关键词页暂未获取到最新资讯，建议关注五一假期后的公告更新</li>
+    <li>本周液冷赛道宏观面利好持续：美银上调2026-2027年AI资本开支预期，液冷管路需求核心驱动逻辑未变</li>
+    <li>新能源汽车交付数据向好（蔚来+22.8%、小鹏4月3.1万台），新能源液冷管需求稳步增长</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>1. 美银8000亿美元AI资本开支预测</strong> — 这是目前对AI算力基建最乐观的预测，若成为行业共识，液冷管路作为"算力血管"的需求弹性将被放大。<br><br>
+    <strong>2. 存储芯片连涨五周</strong> — 闪迪/希捷/美光创新高，反映AI数据中心对存储的爆发需求，可同步关注液冷存储方案。<br><br>
+    <strong>3. 中东局势升温推高油价</strong> — WTI已破100美元，能源成本上涨可能影响数据中心运营成本，加速液冷节能方案的替换意愿。<br><br>
+    <strong>4. 具身智能机器人立法落地</strong> — 杭州率先立法，机器人液冷或成为液冷管的新增应用场景。
+  </div>
+
+  <div class="warning">
+    <strong>⚠️ 风险提示</strong><br>
+    美对欧汽车加征25%关税可能引发全球贸易摩擦升级，北交所流动性受宏观环境影响。建议关注五一假期后利通科技是否有新的公告或订单披露。
+  </div>
+</div>
+
+</body>
+</html>
