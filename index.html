@@ -342,6 +342,10 @@
       📚 知识库
       <span class="tab-badge">3</span>
     </button>
+    <button class="tab-btn" onclick="switchTab('research')">
+      🧠 行业调研
+      <span class="tab-badge" id="research-count">—</span>
+    </button>
   </div>
 
   <!-- 每日简报Tab -->
@@ -354,6 +358,14 @@
     </div>
 
     <div id="reports-container"></div>
+  </div>
+
+  <!-- 行业调研Tab -->
+  <div id="tab-research" class="tab-content">
+    <div class="page-title">行业调研</div>
+    <div class="page-sub" style="margin-bottom: 20px;">参谋猪葛亮 · 深度研究 · 产业链分析</div>
+
+    <div id="research-container"></div>
   </div>
 
   <!-- 知识库Tab -->
@@ -415,13 +427,31 @@ function switchTab(tabName) {
   document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
   
-  // 添加active类到选中的tab
-  event.target.classList.add('active');
+  // 查找并激活对应按钮
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    if (btn.getAttribute('onclick').includes(tabName)) {
+      btn.classList.add('active');
+    }
+  });
   document.getElementById('tab-' + tabName).classList.add('active');
 }
 
 // ── 简报数据（从 reports-data.json 加载） ──
 let REPORTS = [];
+let RESEARCH = [];
+
+// 异步加载调研数据
+fetch('research-data.json')
+  .then(response => response.json())
+  .then(data => {
+    RESEARCH = data;
+    renderResearch(RESEARCH);
+    document.getElementById('research-count').textContent = RESEARCH.length;
+  })
+  .catch(error => {
+    console.error('加载调研数据失败:', error);
+    document.getElementById('research-count').textContent = '0';
+  });
 
 // 异步加载简报数据
 fetch('reports-data.json')
@@ -506,8 +536,35 @@ function filterReports() {
   renderReports(filtered);
 }
 
-// 初始化（数据从JSON加载后会自动渲染）
-// renderReports(REPORTS); // 移除，改为在fetch回调中调用
+function renderResearch(list) {
+  const container = document.getElementById('research-container');
+  if (!list || list.length === 0) {
+    container.innerHTML = '<div class="empty"><div class="empty-icon">🧠</div><div>暂无调研报告，参谋猪葛亮正在路上…</div></div>';
+    return;
+  }
+  let html = '';
+  list.sort((a,b) => b.date.localeCompare(a.date)).forEach(r => {
+    const d = new Date(r.date + 'T00:00:00');
+    const month = MONTHS[d.getMonth()];
+    const day = String(d.getDate()).padStart(2,'0');
+    html += `
+      <a class="report-card" href="${r.file}" target="_blank">
+        <div class="card-date-block">
+          <div class="card-month">${month}</div>
+          <div class="card-day">${day}</div>
+        </div>
+        <div class="card-body">
+          <div class="card-title">${r.title}</div>
+          <div class="card-desc">${r.desc}</div>
+          <div class="card-tags">${(r.tags||[]).map(t => '<span class="tag tag-robot">'+t+'</span>').join('')}</div>
+        </div>
+        <div class="card-arrow">›</div>
+      </a>`;
+  });
+  container.innerHTML = html;
+}
+
+// 初始化
 document.getElementById("total-count").textContent = "—";
 document.getElementById("briefing-count").textContent = "—";
 document.getElementById("latest-date").textContent = "—";
