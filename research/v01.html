@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智算中心进展研究报告 | 火箭军情报部</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fb; color: #1a1a2e; line-height: 1.6; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+    /* Header */
+    .header { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: #fff; padding: 32px 40px; border-radius: 16px; margin-bottom: 24px; position: relative; overflow: hidden; }
+    .header::after { content: '🦅'; position: absolute; right: 30px; top: 20px; font-size: 48px; opacity: 0.3; }
+    .header h1 { font-size: 24px; margin-bottom: 6px; letter-spacing: 1px; }
+    .header .sub { font-size: 14px; opacity: 0.8; display: flex; justify-content: space-between; }
+    .badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 2px 12px; border-radius: 20px; font-size: 12px; margin-right: 8px; }
+
+    /* Core conclusion card */
+    .core-card { background: #fff; border-left: 5px solid #e74c3c; padding: 20px 24px; border-radius: 0 12px 12px 0; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .core-card .label { font-size: 12px; color: #e74c3c; font-weight: 700; letter-spacing: 2px; margin-bottom: 4px; }
+    .core-card p { font-size: 16px; font-weight: 500; color: #2d3436; }
+
+    /* Section titles */
+    .section { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .section h2 { font-size: 18px; color: #2d3436; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; position: relative; }
+    .section h2::before { content: ''; position: absolute; bottom: -2px; left: 0; width: 40px; height: 2px; background: #6c5ce7; }
+    .section h3 { font-size: 15px; color: #2d3436; margin: 16px 0 10px; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+    thead th { background: #f8f9fa; color: #636e72; font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid #e0e0e0; }
+    tbody td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    tbody tr:hover { background: #f8f9fa; }
+    .tag { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+    .tag-operational { background: #d4edda; color: #155724; }
+    .tag-construction { background: #fff3cd; color: #856404; }
+    .tag-planning { background: #cce5ff; color: #004085; }
+    .tag-expansion { background: #e8daef; color: #6c3483; }
+
+    /* Data points */
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 12px 0; }
+    .data-card { background: #f8f9fa; border-radius: 10px; padding: 16px; text-align: center; }
+    .data-card .num { font-size: 24px; font-weight: 700; color: #2d3436; }
+    .data-card .num.highlight { color: #e74c3c; }
+    .data-card .desc { font-size: 11px; color: #636e72; margin-top: 4px; }
+
+    /* Trend cards */
+    .trend-list { list-style: none; }
+    .trend-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+    .trend-list li:last-child { border: none; }
+    .trend-list li .trend-title { font-weight: 600; color: #2d3436; }
+    .trend-list li .trend-desc { font-size: 13px; color: #636e72; margin-top: 4px; }
+    .trend-icon { display: inline-block; width: 24px; text-align: center; margin-right: 8px; }
+
+    /* Source footer */
+    .footnote { background: #f8f9fa; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 12px; color: #636e72; line-height: 1.8; }
+    .footnote strong { color: #2d3436; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container { padding: 12px; }
+      .header { padding: 20px; }
+      .section { padding: 16px; }
+      table { font-size: 11px; }
+      .data-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>📊 智算中心建设进展研究报告（第1期）</h1>
+      <div class="sub">
+        <span><span class="badge">📅 2026年5月2日</span><span class="badge">🦅 火箭军情报部</span><span class="badge">🧠 参谋猪葛亮</span></span>
+        <span>Vol.01</span>
+      </div>
+    </div>
+
+    <!-- Core Conclusion -->
+    <div class="core-card">
+      <div class="label">⚡ 核心结论</div>
+      <p>全球算力基建正从「规模扩张」全面转向「效率驱动」——液冷从可选变为强制、算电协同成新范式、光纤暴涨650%折射AI基础设施瓶颈扩散。2026Q2关键里程碑：字节跳动45亿落子内蒙古、尚航惠山200亿超级节点揭牌、泰国EEC 86+项目进入密集开工期。</p>
+    </div>
+
+    <!-- Section 1: Key Numbers -->
+    <div class="section">
+      <h2>📈 关键数据全景</h2>
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="num highlight">45亿</div>
+          <div class="desc">字节跳动内蒙古4公司注册资本</div>
+        </div>
+        <div class="data-card">
+          <div class="num highlight">700亿</div>
+          <div class="desc">字节乌兰察布1GW AIDC集群</div>
+        </div>
+        <div class="data-card">
+          <div class="num highlight">200亿+</div>
+          <div class="desc">尚航无锡惠山智算中心</div>
+        </div>
+        <div class="data-card">
+          <div class="num highlight">150亿</div>
+          <div class="desc">阿里河源数据中心集群</div>
+        </div>
+        <div class="data-card">
+          <div class="num">88亿</div>
+          <div class="desc">润泽西南国际信息港</div>
+        </div>
+        <div class="data-card">
+          <div class="num">450P</div>
+          <div class="desc">安徽宿州AI算力平台</div>
+        </div>
+        <div class="data-card">
+          <div class="num highlight">+650%</div>
+          <div class="desc">光纤G.657.A2年度涨幅</div>
+        </div>
+        <div class="data-card">
+          <div class="num">120MW</div>
+          <div class="desc">首个AIDC绿电储能项目</div>
+        </div>
+        <div class="data-card">
+          <div class="num">86+</div>
+          <div class="desc">泰国数据中心实体</div>
+        </div>
+        <div class="data-card">
+          <div class="num">2,311–2,596MW</div>
+          <div class="desc">泰国可比功率容量</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Domestic AIDC Projects -->
+    <div class="section">
+      <h2>🏗️ 中国智算中心重大项目跟踪</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:16%">项目名称</th>
+            <th style="width:10%">投资额</th>
+            <th style="width:14%">规模/算力</th>
+            <th style="width:12%">所在地</th>
+            <th style="width:14%">关键时间点</th>
+            <th style="width:10%">状态</th>
+            <th style="width:24%">核心看点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>尚航无锡惠山智算中心</strong></td>
+            <td>200亿+</td>
+            <td>89亩 / 11,000+ GPU / 10,000+ PFLOPS / 140MW</td>
+            <td>江苏无锡</td>
+            <td>2026年4月揭牌</td>
+            <td><span class="tag tag-operational">投运</span></td>
+            <td>"东数西算"苏南算力集聚区首个节点；PUE国内领先水平（来源：idcquan 206949）</td>
+          </tr>
+          <tr>
+            <td><strong>润泽西南国际信息港</strong></td>
+            <td>88亿</td>
+            <td>296亩 / 32,000机柜 / 320,000m²</td>
+            <td>重庆九龙坡</td>
+            <td>一期投运 / P-6动力中心2026年封顶</td>
+            <td><span class="tag tag-construction">在建</span></td>
+            <td>AIDC One Pro设计；二期A5/A6栋智算中心施工中（来源：idcquan 206893）</td>
+          </tr>
+          <tr>
+            <td><strong>阿里巴巴河源数据中心</strong></td>
+            <td>150亿</td>
+            <td>320,000m² / 30万+服务器</td>
+            <td>广东河源</td>
+            <td>2020年开服 / 2026年源城扩建公示</td>
+            <td><span class="tag tag-expansion">扩建中</span></td>
+            <td>源城机房入选"国家绿色数据中心"；三期布局高新/江东/源城（来源：idcquan 206956）</td>
+          </tr>
+          <tr>
+            <td><strong>字节跳动乌兰察布AIDC</strong></td>
+            <td>700亿</td>
+            <td>1,000MW（1GW）</td>
+            <td>内蒙古乌兰察布</td>
+            <td>推进中</td>
+            <td><span class="tag tag-planning">推进中</span></td>
+            <td>全球最大单体AIDC集群之一（来源：idcquan 206842）</td>
+          </tr>
+          <tr>
+            <td><strong>字节火山引擎和林格尔</strong></td>
+            <td>120亿</td>
+            <td>—</td>
+            <td>内蒙古和林格尔</td>
+            <td>推进中</td>
+            <td><span class="tag tag-planning">推进中</span></td>
+            <td>东数西算核心枢纽节点（来源：idcquan 206842）</td>
+          </tr>
+          <tr>
+            <td><strong>字节内蒙古4公司布局</strong></td>
+            <td>45亿</td>
+            <td>4家公司注册资本</td>
+            <td>呼和浩特/乌兰察布</td>
+            <td>2026年2-4月密集注册</td>
+            <td><span class="tag tag-operational">已注册</span></td>
+            <td>含"非居住房地产租赁"为算力基地底座提供支撑；利用蒙西电网电价优势+冷凉气候（来源：idcquan 206842）</td>
+          </tr>
+          <tr>
+            <td><strong>安徽宿州AI算力平台</strong></td>
+            <td>4.08亿</td>
+            <td>450P算力</td>
+            <td>安徽宿州</td>
+            <td>2026年4月通过验收</td>
+            <td><span class="tag tag-operational">已投运</span></td>
+            <td>安徽三大智算中心城市之一；含智算服务器+网络+调度平台+大模型平台（来源：idcquan 206890）</td>
+          </tr>
+          <tr>
+            <td><strong>双登×江天AIDC储能</strong></td>
+            <td>—</td>
+            <td>120MW/240MWh</td>
+            <td>—</td>
+            <td>2026年4月双登中标</td>
+            <td><span class="tag tag-construction">建设中</span></td>
+            <td>国内首个大型AIDC"绿电直连、源网荷储"一体化；标志着"算电协同"新时代（来源：idcquan 206886）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 3: Thailand / SE Asia -->
+    <div class="section">
+      <h2>🌏 东南亚算力基建：泰国EEC深度扫描</h2>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="num">86+</div>
+          <div class="desc">泰国数据中心实体</div>
+        </div>
+        <div class="data-card">
+          <div class="num">50+</div>
+          <div class="desc">核心运营品牌</div>
+        </div>
+        <div class="data-card">
+          <div class="num">37</div>
+          <div class="desc">已运营项目</div>
+        </div>
+        <div class="data-card">
+          <div class="num">17</div>
+          <div class="desc">在建项目</div>
+        </div>
+        <div class="data-card">
+          <div class="num">19</div>
+          <div class="desc">BOI已批准</div>
+        </div>
+        <div class="data-card">
+          <div class="num">7,280亿</div>
+          <div class="desc">泰铢2025年BOI申请总额</div>
+        </div>
+      </div>
+
+      <h3>七大核心发现</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:25%">发现</th>
+            <th>核心内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. 双中心结构成型</strong></td>
+            <td>"曼谷云服务前台 + EEC算力底座后台"——曼谷46+数据中心，EEC 24个大型项目，春武里+罗勇承载79%新增MW容量</td>
+          </tr>
+          <tr>
+            <td><strong>2. ZDATA 333MW星座布局</strong></td>
+            <td>三实体（Vistas I 50MW、Vistas II 80MW、Stratus 203MW）、两府、三园区，跨春武里与罗勇</td>
+          </tr>
+          <tr>
+            <td><strong>3. Amata City超500MW集中</strong></td>
+            <td>NTT BKK2-5、DayOne CTP1-2、ZDATA、T.C.C.等8项目聚集，风险与效率并存</td>
+          </tr>
+          <tr>
+            <td><strong>4. 资本三足鼎立</strong></td>
+            <td>国际资本46% / 中资关联27% / 东南亚+本地26%。GIP-BlackRock绑定CP/True，Stonepeak通过Digital Edge入场</td>
+          </tr>
+          <tr>
+            <td><strong>5. Ft电价4月暴涨67%</strong></td>
+            <td>燃料调整费从0.0972→0.1623 THB/kWh（2026年5-8月），长期运营成本锁定成挑战</td>
+          </tr>
+          <tr>
+            <td><strong>6. 绿电Direct PPA仍处试点</strong></td>
+            <td>2024年6月获批2,000MW上限，但截至2026年初未进入成熟可复制签约阶段</td>
+          </tr>
+          <tr>
+            <td><strong>7. B.Grimm Power：关键非运营商节点</strong></td>
+            <td>Digital Edge 96-100MW股权JV伙伴 + NTT BKK4的100MW PPA供应方，能源集团成外资入场门槛</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px; color:#636e72; margin-top:8px;">数据来源：idcquan 206952（泰国EEC七个重要发现）</p>
+    </div>
+
+    <!-- Section 4: Fiber / Supply Chain -->
+    <div class="section">
+      <h2>🔌 AI需求引发产业链"木桶效应"</h2>
+
+      <h3>光纤价格暴涨</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>品种</th>
+            <th>涨价前</th>
+            <th>当前价格</th>
+            <th>涨幅</th>
+            <th>驱动因素</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>G.657.A2</td>
+            <td>32元/芯公里</td>
+            <td><strong>240元/芯公里</strong></td>
+            <td><strong>+650%</strong></td>
+            <td>AI数据中心弯曲不敏感需求</td>
+          </tr>
+          <tr>
+            <td>G.652.D（国内）</td>
+            <td>＜20元/芯公里</td>
+            <td><strong>83.4元/芯公里</strong></td>
+            <td><strong>+400%</strong></td>
+            <td>AI算力建设挤占供给</td>
+          </tr>
+          <tr>
+            <td>G.652.D（欧洲）</td>
+            <td>3.37欧元/公里(1月)</td>
+            <td><strong>7.94欧元/公里(3月)</strong></td>
+            <td><strong>+136%</strong></td>
+            <td>全球需求同步拉升</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px; color:#636e72; margin-top:6px;">来源：idcquan 206889（AI引爆光纤涨价潮）</p>
+
+      <h3>核心数据</h3>
+      <ul style="font-size:13px; margin:8px 0 0 20px; color:#2d3436;">
+        <li>全球光纤出货：2025年6.5亿芯公里 → 2026年预期突破<strong>8亿芯公里</strong>，供应缺口5%-10%</li>
+        <li>CRU预测2027年全球需求达<strong>8.8亿芯公里</strong></li>
+        <li>2026-2027年供需缺口或扩大至<strong>15%</strong></li>
+        <li>光棒扩产周期：<strong>18-24个月</strong>硬约束，新增产能最快2027年释放</li>
+        <li>康宁×Meta：<strong>60亿美元</strong>多年期长协，反映"长协锁价"行业新常态</li>
+        <li>AI数据中心单机柜光纤消耗是传统机柜的<strong>5-10倍</strong>（来源：开源证券/国盛证券）</li>
+        <li>Wind光纤指数2026年至今涨幅<strong>85.1%</strong>，接近去年全年98.32%涨幅</li>
+      </ul>
+
+      <h3>🥇 光棒自产企业加速扩产</h3>
+      <ul style="font-size:13px; margin:8px 0 0 20px; color:#2d3436;">
+        <li><strong>亨通光电</strong>：预期2026年提升产能50%+</li>
+        <li><strong>长飞光纤</strong>：潜江园区年产5,600吨光棒，计划2026年推动50+空芯光纤商用及试点</li>
+        <li><strong>中国光纤产业</strong>：全球产能占比60%+，覆盖棒-纤-缆全产业链（来源：中国信通院）</li>
+      </ul>
+    </div>
+
+    <!-- Section 5: Trends -->
+    <div class="section">
+      <h2>🔮 趋势判断</h2>
+      <ul class="trend-list">
+        <li>
+          <div><span class="trend-icon">1️⃣</span><strong class="trend-title">从"规模扩张"到"效率驱动"——智算下半场正式开启</strong></div>
+          <div class="trend-desc">大模型狂奔三年后，产业底层逻辑剧变。"绿色低碳"与"极致能效"成为新主题，液冷技术从可选变为强制标配，算电协同成为新范式。2026年8月上海绿色科技年会、6月深圳智算生态年会均聚焦此方向（来源：idcquan 206954）</div>
+        </li>
+        <li>
+          <div><span class="trend-icon">2️⃣</span><strong class="trend-title">"算电协同"（Computing-Electricity Coordination）成为AIDC新范式</strong></div>
+          <div class="trend-desc">双登×江天120MW/240MWh项目的"绿电直连、源网荷储"一体化模式，标志着算力与能源双轮驱动正式落地。未来AIDC园区将标配储能+绿电直连方案（来源：idcquan 206886）</div>
+        </li>
+        <li>
+          <div><span class="trend-icon">3️⃣</span><strong class="trend-title">光纤涨价本质是AI产业链"木桶效应"的扩散</strong></div>
+          <div class="trend-desc">从GPU→HBM→光模块→光纤，瓶颈逐层扩散。1:1无阻塞架构使单机柜光纤消耗5-10倍于传统数据中心，AI对价格不敏感、持续性强，与以往电信周期截然不同（来源：开源证券/国盛证券）</div>
+        </li>
+        <li>
+          <div><span class="trend-icon">4️⃣</span><strong class="trend-title">泰国EEC：从"概念招商"到"大规模施工"的关键拐点</strong></div>
+          <div class="trend-desc">在建+规划储备容量约为已运营容量的30倍；电力和绿电机制成为决定"已批准"项目能否转化为"已交付"的核心变量。2026年5月27日DIFGC论坛是观察窗口（来源：idcquan 206952/206838/206928）</div>
+        </li>
+        <li>
+          <div><span class="trend-icon">5️⃣</span><strong class="trend-title">头部互联网企业"重资产化"——字节/阿里都在自建超级AIDC</strong></div>
+          <div class="trend-desc">字节45亿注册资本+700亿乌兰察布1GW集群+120亿和林格尔，阿里150亿河源集群，均指向自我掌控算力基础设施已成为AI军备竞赛的必然选择</div>
+        </li>
+        <li>
+          <div><span class="trend-icon">6️⃣</span><strong class="trend-title">东南亚数据中心产业链价值系统性重估</strong></div>
+          <div class="trend-desc">上游（电力开发/PPA/绿电）→ 中游（园区/土建/冷却/光纤）→ 下游（云服务/AI租户/合规），增量利润出现在交叉环节；全球PE绑定本地电信能源巨头是新主流模式（来源：idcquan 206952）</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 6: Upcoming Events -->
+    <div class="section">
+      <h2>📅 2026年Q2-Q3关键行业活动</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>时间</th>
+            <th>活动名称</th>
+            <th>地点</th>
+            <th>核心议题</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>5月27日</td>
+            <td><strong>DIFGC 2026 · THAILAND</strong><br>数字基础设施全球合作发展曼谷论坛</td>
+            <td>曼谷香格里拉</td>
+            <td>AI数据中心"基建时刻"；泰国EEC落地；绿电PPA；液冷；模块化；中泰资本对接</td>
+          </tr>
+          <tr>
+            <td>6月30日</td>
+            <td><strong>2026中国智算产业生态发展年会</strong></td>
+            <td>深圳</td>
+            <td>"AI入场景，Token大时代"；算力供需对接；大模型+智算基础设施</td>
+          </tr>
+          <tr>
+            <td>8月27日</td>
+            <td><strong>2026中国智算产业绿色科技年会</strong></td>
+            <td>上海</td>
+            <td>"算力绿色化+极致能效"；液冷技术演进；算电协同；Token经济学</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 7: Summary Chart -->
+    <div class="section" style="background: #f0e6ff;">
+      <h2>📊 一张图看懂：智算中心产业链竞争格局</h2>
+      <pre style="font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.5; background: #fff; padding: 16px; border-radius: 8px; overflow-x: auto;">
+┌─────────────────────────────────────────────────────────────────┐
+│                   AI算力基建 · 产业链竞争地图                       │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  上游       光棒/光纤         ── 长飞、亨通、康宁                  │
+│  (供给      (涨价+650%)             ↑ 扩产需18-24个月             │
+│   约束)     电力/储能         ── 双登、阳光电源                     │
+│             (算电协同)              ↑ 绿电直连成标配                │
+│                                                                  │
+│  中游       智算中心建设      ── 润泽、尚航、万国数据、世纪互联      │
+│  (基建      (AIDC One Pro)         ↑ 液冷渗透率加速提升           │
+│   交付)     GPU集群部署       ── 英伟达、华为昇腾、海光            │
+│             (万卡-十万卡)           ↑ PUE竞争从1.4→1.1           │
+│                                                                  │
+│  下游       互联网/AI厂商     ── 字节(700亿)、阿里(150亿)          │
+│  (算力      (自建趋势明确)          ↑ 先付钱再排产                │
+│   需求)     AI应用落地        ── 紫东太初、OPC社区                │
+│             (AI4S/具身智能)         ↑ 一人即一团队                │
+│                                                                  │
+│  海外      泰国EEC(86+项目)   ── 国际资本46%/中资27%/本地26%       │
+│  布局      日本NTT TKY12     ── 200-250MW东京外围                 │
+│            东南亚"最后一公里"── 拿地容易通电难                     │
+│                                                                  │
+├─────────────────────────────────────────────────────────────────┤
+│  关键警示：光纤+光棒是当前最紧缺环节，扩产刚需，18个月内无法缓解     │
+│  核心机会：液冷管路、UQD、储能集成、Green PPA、模块化交付          │
+└─────────────────────────────────────────────────────────────────┘
+</pre>
+    </div>
+
+    <!-- Footer -->
+    <div class="footnote">
+      <strong>📋 数据来源（全部来自idcquan.com中国IDC圈）：</strong><br>
+      206952 - 泰国EEC数据中心产业链七个重要发现<br>
+      206893 - 润泽西南国际信息港二期P-6动力中心封顶（88亿元/3.2万机柜）<br>
+      206956 - 阿里巴巴广东云计算数据中心河源源城区项目扩建（150亿元）<br>
+      206949 - 尚航科技助力东数西算苏南算力集聚区惠山节点揭牌（200亿+/11,000+ GPU）<br>
+      206890 - 安徽宿州AI算力平台项目验收（4.08亿元/450P）<br>
+      206886 - 首个大型AIDC园区绿电直连储能项目落地（120MW/240MWh）<br>
+      206842 - 字节跳动密集落子内蒙古（45亿元/1GW乌兰察布+120亿和林格尔）<br>
+      206889 - AI引爆光纤涨价潮，最高涨幅达650%<br>
+      206887 - 东南亚算力产业竞争白热化 出海胜负手<br>
+      206838 - 拿地容易通电难：东南亚数据中心产业链"最后一公里"<br>
+      206928 - DIFGC 2026·THAILAND 5月27日曼谷论坛<br>
+      206954 - 2026中国智算产业绿色科技年会定档上海（8月27日）<br>
+      206888 - NTT计划在东京外围打造日本最大超大规模计算集群（250MW）<br>
+      206837 - 紫东太初AI4S产业生态赋能大会暨OPC社区启动<br>
+      <br>
+      <strong>报告编号：</strong>weekly_01_智算中心进展_20260502<br>
+      <strong>编制机构：</strong>🦅 火箭军 · 参谋猪葛亮 🧠
+    </div>
+
+  </div>
+</body>
+</html>
