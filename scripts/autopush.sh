@@ -1,7 +1,7 @@
 #!/bin/bash
 # 开机/每30分钟自动补推未同步的简报
 
-BRIEFINGS=~/briefings
+BRIEFINGS=~/简报网站
 LOG="$BRIEFINGS/autopush.log"
 
 # 动态读取系统代理

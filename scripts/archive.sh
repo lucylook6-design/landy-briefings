@@ -3,7 +3,7 @@
 # 💡 协作规范：不修改 index.html，只修改 reports-data.json + reports/*.html
 
 WORKSPACE=~/.openclaw/workspace
-BRIEFINGS=~/briefings
+BRIEFINGS=~/简报网站
 REPORTS=$BRIEFINGS/reports
 JSON="$BRIEFINGS/reports-data.json"
 
@@ -89,7 +89,7 @@ if [ "$PUSH_OK" = true ]; then
   echo "🚀 已推送到 GitHub Pages"
 else
   echo "⚠️  推送 3 次均失败，需要手动处理"
-  echo "  请执行: cd ~/briefings && git status"
+  echo "  请执行: cd ~/简报网站 && git status"
 fi
 
 echo ""
