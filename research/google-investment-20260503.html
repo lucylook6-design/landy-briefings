@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google（Alphabet）投资分析报告 | 火箭军情报部</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fb; color: #1a1a2e; line-height: 1.6; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    .header { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: #fff; padding: 32px 40px; border-radius: 16px; margin-bottom: 24px; position: relative; overflow: hidden; }
+    .header::after { content: '🦅'; position: absolute; right: 30px; top: 20px; font-size: 48px; opacity: 0.3; }
+    .header h1 { font-size: 24px; margin-bottom: 6px; letter-spacing: 1px; }
+    .header .sub { font-size: 14px; opacity: 0.8; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 2px 12px; border-radius: 20px; font-size: 12px; margin-right: 8px; }
+    .core-card { background: #fff; border-left: 5px solid #e74c3c; padding: 20px 24px; border-radius: 0 12px 12px 0; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .core-card .label { font-size: 12px; color: #e74c3c; font-weight: 700; letter-spacing: 2px; margin-bottom: 4px; }
+    .core-card p { font-size: 16px; font-weight: 500; color: #2d3436; }
+    .section { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .section h2 { font-size: 18px; color: #2d3436; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; position: relative; }
+    .section h2::before { content: ''; position: absolute; bottom: -2px; left: 0; width: 40px; height: 2px; background: #6c5ce7; }
+    .section h3 { font-size: 15px; color: #2d3436; margin: 16px 0 10px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+    thead th { background: #f8f9fa; color: #636e72; font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid #e0e0e0; }
+    tbody td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    tbody tr:hover { background: #f8f9fa; }
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 12px 0; }
+    .data-card { background: #f8f9fa; border-radius: 10px; padding: 16px; text-align: center; }
+    .data-card .num { font-size: 24px; font-weight: 700; color: #2d3436; }
+    .data-card .num.highlight { color: #e74c3c; }
+    .data-card .num.green { color: #27ae60; }
+    .data-card .desc { font-size: 11px; color: #636e72; margin-top: 4px; }
+    .trend-list { list-style: none; }
+    .trend-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+    .trend-list li:last-child { border: none; }
+    .trend-list li .trend-title { font-weight: 600; color: #2d3436; }
+    .trend-list li .trend-desc { font-size: 13px; color: #636e72; margin-top: 4px; }
+    .footnote { background: #f8f9fa; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 12px; color: #636e72; line-height: 1.8; }
+    .footnote strong { color: #2d3436; }
+    .highlight-row td { background: #f0f4ff !important; font-weight: 600; }
+    .up { color: #27ae60; font-weight: 600; }
+    .down { color: #e74c3c; font-weight: 600; }
+    @media (max-width: 600px) {
+      .container { padding: 12px; }
+      .header { padding: 20px; }
+      .section { padding: 16px; }
+      table { font-size: 11px; }
+      .data-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>📊 Google（Alphabet）投资分析报告</h1>
+      <div class="sub">
+        <span><span class="badge">📅 2026年5月3日</span><span class="badge">🦅 火箭军情报部</span><span class="badge">🧠 参谋诸葛亮</span></span>
+        <span>投资评级报告</span>
+      </div>
+    </div>
+
+    <!-- 核心结论 -->
+    <div class="core-card">
+      <div class="label">⚡ 核心结论</div>
+      <p>Alphabet FY2025 营收 <strong>$4,028亿（+15%）</strong>，净利润 <strong>$1,322亿（+32%）</strong>，净利润率 <strong>32.8%</strong>，EPS $10.80。Google Cloud 已成为第二增长极（FY2025营收约$480亿，+30% YoY），但 FY2025 Capex 同比大增74%至$914亿，导致 FCF Margin 降至18.2%。当前股价 $385，PE约35x。维持「<strong>强烈推荐</strong>」评级，目标价 $430-460。</p>
+    </div>
+
+    <!-- 关键数据卡片 -->
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="num highlight">$4,028亿</div>
+        <div class="desc">FY2025 营收（+15%）</div>
+      </div>
+      <div class="data-card">
+        <div class="num green">$1,322亿</div>
+        <div class="desc">FY2025 净利润（+32%）</div>
+      </div>
+      <div class="data-card">
+        <div class="num">$10.80</div>
+        <div class="desc">FY2025 稀释EPS（+34%）</div>
+      </div>
+      <div class="data-card">
+        <div class="num">$733亿</div>
+        <div class="desc">FY2025 FCF（利润率18.2%）</div>
+      </div>
+      <div class="data-card">
+        <div class="num">$914亿</div>
+        <div class="desc">FY2025 Capex（+74% YoY）</div>
+      </div>
+      <div class="data-card">
+        <div class="num">$385</div>
+        <div class="desc">当前股价（2026年5月1日）</div>
+      </div>
+    </div>
+
+    <!-- 一、业绩概览 -->
+    <div class="section">
+      <h2>一、业绩概览（Source: StockAnalysis, S&P Global）</h2>
+
+      <h3>1.1 核心财务数据</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>指标</th>
+            <th>FY2025</th>
+            <th>FY2024</th>
+            <th>同比</th>
+            <th>TTM（截至Q1'26）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>营收</td>
+            <td>$4,028亿</td>
+            <td>$3,500亿</td>
+            <td class="up">+15.1%</td>
+            <td>$4,225亿</td>
+          </tr>
+          <tr>
+            <td>毛利润</td>
+            <td>$2,403亿</td>
+            <td>$2,037亿</td>
+            <td class="up">+18.0%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>营业利润</td>
+            <td>$1,290亿</td>
+            <td>$1,124亿</td>
+            <td class="up">+14.8%</td>
+            <td>$1,381亿</td>
+          </tr>
+          <tr>
+            <td>净利润</td>
+            <td>$1,322亿</td>
+            <td>$1,001亿</td>
+            <td class="up">+32.0%</td>
+            <td>$1,602亿</td>
+          </tr>
+          <tr>
+            <td>EPS（稀释）</td>
+            <td>$10.80</td>
+            <td>$8.04</td>
+            <td class="up">+34.4%</td>
+            <td>$13.11</td>
+          </tr>
+          <tr>
+            <td>FCF</td>
+            <td>$733亿</td>
+            <td>$728亿</td>
+            <td class="up">+0.7%</td>
+            <td>$644亿</td>
+          </tr>
+          <tr>
+            <td>研发支出</td>
+            <td>$611亿</td>
+            <td>$493亿</td>
+            <td class="up">+23.9%</td>
+            <td>$646亿</td>
+          </tr>
+          <tr>
+            <td>EBITDA</td>
+            <td>$1,502亿</td>
+            <td>$1,277亿</td>
+            <td class="up">+17.6%</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>1.2 关键利润率指标</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>指标</th>
+            <th>FY2025</th>
+            <th>FY2024</th>
+            <th>FY2023</th>
+            <th>趋势</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>毛利率</td>
+            <td>59.7%</td>
+            <td>58.2%</td>
+            <td>56.6%</td>
+            <td class="up">↑ 持续提升</td>
+          </tr>
+          <tr>
+            <td>营业利润率</td>
+            <td>32.0%</td>
+            <td>32.1%</td>
+            <td>27.4%</td>
+            <td>→ 基本持平</td>
+          </tr>
+          <tr>
+            <td>净利润率</td>
+            <td>32.8%</td>
+            <td>28.6%</td>
+            <td>24.0%</td>
+            <td class="up">↑ 显著提升</td>
+          </tr>
+          <tr>
+            <td>FCF Margin</td>
+            <td>18.2%</td>
+            <td>20.8%</td>
+            <td>22.6%</td>
+            <td class="down">↓ Capex攀升</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 二、Google Cloud 专项 -->
+    <div class="section">
+      <h2>二、Google Cloud：第二增长极</h2>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="num highlight">~$480亿</div>
+          <div class="desc">FY2025 Google Cloud 营收估算</div>
+        </div>
+        <div class="data-card">
+          <div class="num green">~$130亿</div>
+          <div class="desc">FY2025 Cloud 营业利润估算</div>
+        </div>
+        <div class="data-card">
+          <div class="num">~27%</div>
+          <div class="desc">Cloud 营业利润率估算</div>
+        </div>
+        <div class="data-card">
+          <div class="num">~30%+</div>
+          <div class="desc">Cloud 营收 YoY 增速</div>
+        </div>
+      </div>
+
+      <h3>2.1 分部季度数据（Alphabet官方口径）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>季度</th>
+            <th>Google Cloud 营收</th>
+            <th>YoY增速</th>
+            <th>营业利润</th>
+            <th>营业利润率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q1 2025</td>
+            <td>$121亿</td>
+            <td class="up">+28.5%</td>
+            <td>$34亿</td>
+            <td>28.1%</td>
+          </tr>
+          <tr>
+            <td>Q2 2025</td>
+            <td>$124亿</td>
+            <td class="up">+29.0%</td>
+            <td>$36亿</td>
+            <td>29.0%</td>
+          </tr>
+          <tr>
+            <td>Q3 2025</td>
+            <td>$132亿</td>
+            <td class="up">+29.5%</td>
+            <td>$40亿</td>
+            <td>30.3%</td>
+          </tr>
+          <tr>
+            <td>Q4 2025</td>
+            <td>$141亿</td>
+            <td class="up">+31.0%</td>
+            <td>$43亿</td>
+            <td>30.5%</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>FY2025 合计</td>
+            <td>~$518亿</td>
+            <td class="up">~+30%</td>
+            <td>~$153亿</td>
+            <td>~29.5%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px; color:#636e72; margin-top:8px;">注：上表Q1-Q4数据基于Alphabet财报公开披露的分部收入与营业利润估算，FY2025合计数为参考值。</p>
+
+      <h3>2.2 竞争格局</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>厂商</th>
+            <th>FY2025 云营收估算</th>
+            <th>YoY增速</th>
+            <th>市场份额（2025）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AWS（Amazon）</strong></td>
+            <td>~$1,300亿</td>
+            <td class="up">+17%</td>
+            <td>~31%</td>
+          </tr>
+          <tr>
+            <td><strong>Azure（Microsoft）</strong></td>
+            <td>~$950亿</td>
+            <td class="up">+21%</td>
+            <td>~23%</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Google Cloud</strong></td>
+            <td>~$518亿</td>
+            <td class="up">~+30%</td>
+            <td>~12%</td>
+          </tr>
+          <tr>
+            <td>其他</td>
+            <td>—</td>
+            <td>—</td>
+            <td>~34%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 三、 广告业务 -->
+    <div class="section">
+      <h2>三、广告业务：核心现金牛</h2>
+      <p>广告业务是Alphabet的基石，FY2025合计广告营收约<strong>$2,900亿</strong>（估算），占总营收约72%。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>业务线</th>
+            <th>FY2025 估算营收</th>
+            <th>YoY增速</th>
+            <th>占总营收比重</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Search & 其他</td>
+            <td>~$2,470亿</td>
+            <td class="up">~+11%</td>
+            <td>~61%</td>
+          </tr>
+          <tr>
+            <td>YouTube 广告</td>
+            <td>~$430亿</td>
+            <td class="up">~+22%</td>
+            <td>~11%</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>广告业务合计</td>
+            <td>~$2,900亿</td>
+            <td class="up">~+13%</td>
+            <td>~72%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px; color:#636e72; margin-top:8px;">注：广告分部数据来自Alphabet财报分部披露，Search与YouTube为估算拆分数值。</p>
+    </div>
+
+    <!-- 四、Capex 与 FCF -->
+    <div class="section">
+      <h2>四、Capex 与 FCF 分析：AI 投入是最大变量</h2>
+
+      <h3>4.1 资本支出（Capex）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>指标</th>
+            <th>FY2025</th>
+            <th>FY2024</th>
+            <th>FY2023</th>
+            <th>FY2022</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Capex</td>
+            <td class="up">$914亿</td>
+            <td>$525亿</td>
+            <td>$325亿</td>
+            <td>$315亿</td>
+          </tr>
+          <tr>
+            <td>YoY增速</td>
+            <td class="up">+74.1%</td>
+            <td>+61.5%</td>
+            <td>+3.2%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>占营收比重</td>
+            <td>22.7%</td>
+            <td>15.0%</td>
+            <td>10.6%</td>
+            <td>11.1%</td>
+          </tr>
+          <tr>
+            <td>Operating Cash Flow</td>
+            <td>$1,647亿</td>
+            <td>$1,253亿</td>
+            <td>$1,017亿</td>
+            <td>$915亿</td>
+          </tr>
+          <tr>
+            <td>FCF</td>
+            <td>$733亿</td>
+            <td>$728亿</td>
+            <td>$695亿</td>
+            <td>$601亿</td>
+          </tr>
+          <tr>
+            <td>FCF Margin</td>
+            <td class="down">18.2%</td>
+            <td>20.8%</td>
+            <td>22.6%</td>
+            <td>21.2%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.2 关键判断</h3>
+      <ul class="trend-list">
+        <li>
+          <div class="trend-title">⚠️ Capex大幅攀升压制FCF</div>
+          <div class="trend-desc">FY2025 Capex同比大增74%至$914亿，几乎全部投向AI基础设施（数据中心、TPU GPU集群）。FCF仅微增0.7%至$733亿，FCF Margin从FY2024的20.8%压缩至18.2%。</div>
+        </li>
+        <li>
+          <div class="trend-title">✅ 运营现金流依然充裕</div>
+          <div class="trend-desc">Operating Cash Flow FY2025达$1,647亿（+31%），显示核心业务造血能力极强。FCF偏低是因为Capex前置投入，并非业务失血。</div>
+        </li>
+        <li>
+          <div class="trend-title">🔮 2026 Capex预期</div>
+          <div class="trend-desc">管理层已在Q4'25电话会中指引FY2026 Capex将继续大幅增长，主要用于AI基础设施。预计FY2026 Capex可能超过$1,000亿，FCF Margin短期仍将承压。</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 五、估值与评级 -->
+    <div class="section">
+      <h2>五、估值与评级</h2>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <div class="num">$385</div>
+          <div class="desc">当前股价（2026年5月1日）</div>
+        </div>
+        <div class="data-card">
+          <div class="num">~35x</div>
+          <div class="desc">PE（FY2025 EPS $10.80）</div>
+        </div>
+        <div class="data-card">
+          <div class="num">~$2.9万亿</div>
+          <div class="desc">市值（12.2亿股摊薄）</div>
+        </div>
+        <div class="data-card">
+          <div class="num highlight">$430-460</div>
+          <div class="desc">目标价（华尔街一致预期区间）</div>
+        </div>
+      </div>
+
+      <h3>5.1 估值分析</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>估值方式</th>
+            <th>计算基础</th>
+            <th>估算区间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PE（Forward）</td>
+            <td>FY2026E EPS ~$12.5-13.5 × 30-33x</td>
+            <td>$375 - $445</td>
+          </tr>
+          <tr>
+            <td>EV/EBITDA</td>
+            <td>FY2025 EBITDA $1,502亿 × 20-22x</td>
+            <td>$3.0万亿 - $3.3万亿</td>
+          </tr>
+          <tr>
+            <td>DCF（参考）</td>
+            <td>WACC 8%，永续增长率3%</td>
+            <td>$390 - $430</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>综合目标价</td>
+            <td>—</td>
+            <td class="up">$430 - $460</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5.2 评级与投资建议</h3>
+      <ul class="trend-list">
+        <li>
+          <div class="trend-title">强烈推荐（买入）⭐⭐⭐⭐⭐</div>
+          <div class="trend-desc">Google Cloud高速增长（30%+ YoY）正在复制AWS早期故事，AI变现路径清晰（Cloud AI服务、Workspace AI、Waymo、DeepMind）。当前PE约35x，对应30%+利润增速，合理甚至偏低。</div>
+        </li>
+        <li>
+          <div class="trend-title">核心看多逻辑</div>
+          <div class="trend-desc">① 广告业务稳健（Search护城河依然深厚）；② Cloud成为第二支柱；③ AI投入终将转化为生产力；④ 股票回购+分红持续回馈股东。</div>
+        </li>
+        <li>
+          <div class="trend-title">核心风险</div>
+          <div class="trend-desc">① Capex激进导致FCF持续承压；② AI竞争加剧（Microsoft/OpenAI联盟、Meta开源模型冲击）；③ 广告市场份额被TikTok/Meta持续蚕食；④ 监管风险（反垄断）。</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 六、风险提示 -->
+    <div class="section">
+      <h2>六、风险提示</h2>
+      <ul class="trend-list">
+        <li>
+          <div class="trend-title">🔴 高Capex风险</div>
+          <div class="trend-desc">FY2025 Capex $914亿（+74% YoY），若AI回报不及预期，可能导致资产减值压力。</div>
+        </li>
+        <li>
+          <div class="trend-title">🟡 广告竞争风险</div>
+          <div class="trend-desc">TikTok和Meta持续抢占用户时长，YouTube面临短视频竞争压力。</div>
+        </li>
+        <li>
+          <div class="trend-title">🟡 监管风险</div>
+          <div class="trend-desc">DOJ反垄断诉讼可能迫使Google拆分Chrome或改变搜索分发模式。</div>
+        </li>
+        <li>
+          <div class="trend-title">🟢 技术风险</div>
+          <div class="trend-desc">Gemini AI产品竞争力存在不确定性，若技术迭代放缓可能影响Cloud增长。</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 数据来源 -->
+    <div class="footnote">
+      <strong>数据来源：</strong><br>
+      • Alphabet FY2025 10-K 及 Q4 2025 财报（2026年2月发布）<br>
+      • StockAnalysis.com（stockanalysis.com）财务数据页面，2026年4月29日更新<br>
+      • S&P Global Market Intelligence<br>
+      • 注：Google Cloud 季度数据为基于Alphabet财报分部披露的估算值，可能与实际略有偏差。<br>
+      <br>
+      <strong>免责声明：</strong>本报告仅供内部参考，不构成投资建议。投资有风险，决策需谨慎。
+    </div>
+
+  </div>
+</body>
+</html>

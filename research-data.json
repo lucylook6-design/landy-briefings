@@ -10,5 +10,18 @@
       "东南亚",
       "光纤"
     ]
+  },
+  {
+    "date": "2026-05-03",
+    "title": "Google（Alphabet）投资分析报告",
+    "desc": "FY2025营收$4,028亿（+15%），净利润$1,322亿（+32%），净利润率32.8%。Google Cloud营收~$518亿（+30% YoY）成第二增长极。目标价$430-460，维持强烈推荐评级。",
+    "file": "research/google-investment-20260503.html",
+    "tags": [
+      "投资分析",
+      "Google",
+      "Alphabet",
+      "Cloud",
+      "AI"
+    ]
   }
 ]
