@@ -188,14 +188,13 @@
     display: flex;
     gap: 10px;
     margin-bottom: 32px;
-    position: relative;
   }
   .search-bar input {
     flex: 1;
     background: var(--surface);
     border: 2px solid var(--border);
     border-radius: var(--radius);
-    padding: 11px 16px 11px 40px;
+    padding: 11px 16px;
     color: var(--text);
     font-size: 14px;
     outline: none;
@@ -205,16 +204,6 @@
   .search-bar input:focus {
     border-color: var(--accent);
     box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
-  }
-  .search-bar::before {
-    content: '🔍';
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    pointer-events: none;
-    z-index: 1;
   }
 
   /* ── 年份分组 ── */
@@ -732,10 +721,13 @@ function renderReports(list) {
 }
 
 function filterReports() {
-  const q = document.getElementById("search-input").value.toLowerCase();
+  const q = document.getElementById("search-input").value.toLowerCase().trim();
   if (!q) { renderReports(REPORTS); return; }
   const filtered = REPORTS.filter(r =>
-    r.date.includes(q) || r.title.toLowerCase().includes(q) || r.desc.toLowerCase().includes(q)
+    r.date.includes(q) ||
+    r.title.toLowerCase().includes(q) ||
+    r.desc.toLowerCase().includes(q) ||
+    (r.tags||[]).some(t => t.toLowerCase().includes(q))
   );
   renderReports(filtered);
 }
