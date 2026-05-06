@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年5月6日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      margin: 20px auto;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    h1 { font-size: 20px; }
+    .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; }
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 10px; }
+    table { font-size: 15px; }
+    th, td { padding: 10px 12px; }
+    .highlight, .warning { padding: 14px 18px; font-size: 15px; }
+    .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body { max-width: 90%; margin: 30px auto; padding: 24px; }
+    h1 { font-size: 21px; }
+  }
+  @media (max-width: 480px) {
+    body { margin: 12px auto; padding: 12px; font-size: 17px; }
+    h1 { font-size: 19px; }
+    .date { font-size: 14px; }
+    .section-title { font-size: 18px; }
+    table { font-size: 14px; display: block; overflow-x: auto; }
+  }
+  @media (min-width: 1200px) {
+    body { max-width: 900px; }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年5月6日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>AMD Q1数据中心营收58亿美元</strong>，同比增38%，发布x86 ACE指令集缩小与GPU性能差距 <span class="source">（The Verge）</span></li>
+    <li><strong>韩国KOSPI涨5%</strong>，三星涨9.5%市值破万亿美元，SK海力士涨超9%创历史新高 <span class="source">（财联社）</span></li>
+    <li><strong>黄金突破4580美元/盎司</strong>，白银触及74美元，布油跌1%至107.7美元 <span class="source">（财联社）</span></li>
+    <li><strong>4月新能源车企销量：零跑7.1万辆领跑新势力</strong>，奇瑞新能源首破10万辆，上汽蝉联冠军 <span class="source">（第一电动）</span></li>
+    <li><strong>欧亚地缘：霍尔木兹海峡仍事实关闭</strong>，韩国前总统夫人案二审法官死于法院内 <span class="source">（财联社/央视）</span></li>
+  </ul>
+</div>
+
+<!-- 一、地缘·宏观 -->
+<div class="section">
+  <div class="section-title red">🔴 一、地缘·宏观</div>
+
+  <div style="margin-left:12px;">
+    <ul>
+      <li><strong>霍尔木兹海峡仍处于事实关闭状态</strong>，被困船只不信任美"自由计划"，5日未追踪到船只通过。布伦特原油跌1%至107.7美元/桶 <span class="source">（财联社/央视新闻）</span></li>
+      <li><strong>韩国KOSPI指数涨幅扩大至5%</strong>，三星电子涨9.5%市值达1万亿美元，SK海力士涨超9%创历史新高 <span class="source">（财联社）</span></li>
+      <li><strong>现货黄金突破4580美元/盎司</strong>（+0.5%），白银触及74美元/盎司（+1.68%），避险情绪升温 <span class="source">（财联社）</span></li>
+      <li><strong>MSCI亚太指数上涨1%</strong>至263.96点，日本股市休市 <span class="source">（财联社）</span></li>
+      <li><strong>外资一季度大手笔加仓通信等行业</strong>，QFII持有银行、电子、通信市值较高，电子行业持股量增长7.45亿股，通信行业持股市值增长100亿 <span class="source">（证券日报）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、AI·算力·数据中心 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 二、AI·算力·数据中心</div>
+
+  <div>
+    <strong style="color:#1a73e8;">💾 芯片与算力</strong>
+    <ul>
+      <li><strong>AMD Q1数据中心营收达58亿美元</strong>，整体营收同比增38%，CEO苏姿丰称数据中心已成为"营收与盈利增长的主要驱动力"。AMD与英特尔合作的x86生态系统组发布新指令集<strong>AI Compute Extensions (ACE)</strong>，旨在缩小与GPU的性能差距 <span class="source">（The Verge）</span></li>
+      <li><strong>北美学云厂商资本开支继续扩张</strong>，全球存储芯片龙头业绩全面超预期，纳斯达克、韩国综合指数领涨全球大类资产。券商认为5月A股科技主线有望延续 <span class="source">（36氪/上证报）</span></li>
+      <li><strong>Meta正开发面向普通用户的AI智能体"Hatch"</strong>，同时开发Instagram智能购物工具，计划Q4前发布 <span class="source">（The Verge/The Information）</span></li>
+      <li><strong>OpenAI与Anthropic合资企业洽谈收购AI服务公司</strong>，OpenAI的Deployment Company已从19家投资者处筹集约40亿美元，估值100亿美元，有三笔交易进入后期阶段 <span class="source">（36氪/新浪财经）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px;">
+    <strong style="color:#1a73e8;">🏭 数据中心基建</strong>
+    <ul>
+      <li><strong>中金公司：成长风格仍有优势</strong>，建议重点关注基础设施环节，如半导体、电子硬件、光通信等。AI龙头资本开支继续高增长 <span class="source">（财联社/中金研报）</span></li>
+      <li><strong>高景气驱动全球科技股共振</strong>，一季报显示AI产业链和资源能源板块仍是景气度高企的两大方向 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、储能·新能源·超充 -->
+<div class="section">
+  <div class="section-title green">🔋 三、储能·新能源·超充</div>
+
+  <div>
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li><strong>4月车企销量数据出炉</strong>，整体乘用车零售同比下滑24%，但新能源渗透率持续走高。上汽集团32.8万辆蝉联冠军，比亚迪32.1万辆（同比降15.5%），奇瑞25.1万辆（+25.2%，新能源首破10万），吉利23.5万辆（新能源占比58%） <span class="source">（第一电动）</span></li>
+      <li><strong>新势力梯队：零跑7.1万辆断层第一</strong>（+73.9%创新高），理想3.4万，鸿蒙智行3.3万，极氪3.2万（+132%），小米超3万辆，蔚来2.9万，小鹏3.1万 <span class="source">（第一电动）</span></li>
+      <li><strong>传统车企新能源子品牌集体高增：</strong>深蓝3.3万（+64.8%），长安启源3.2万（AQ系列+159%），极狐1.7万（+101.7%），岚图1.5万（+51%），智己1万（1-4月累涨130%） <span class="source">（第一电动）</span></li>
+      <li><strong>出口持续爆发：</strong>奇瑞4月出口17.8万辆（中国品牌单月纪录），上汽1-4月海外45.9万辆（+50.2%），长城海外5万辆，上汽通用五菱首破3万台 <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px;">
+    <strong style="color:#34a853;">⚡ 智能驾驶</strong>
+    <ul>
+      <li><strong>特斯拉FSD行驶总里程破百亿英里</strong>，日均行驶里程从年初1400万增至2900万英里。但欧洲监管审批受阻，荷兰RDW已批准监督版FSD，关键委员会听证会定于本周二举行。预计Q2或Q3获欧盟全域认证 <span class="source">（第一电动/路透社）</span></li>
+      <li><strong>华为乾崑智驾累计辅助驾驶里程破104.7亿公里</strong>，月活用户143万（占比94.8%），ADS安全性能超人类驾驶员4倍 <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px;">
+    <strong style="color:#34a853;">📅 展会前瞻</strong>
+    <ul>
+      <li><strong>第十七届上海国际新能源汽车技术博览会</strong>定于5月6日至9日举办 <span class="source">（财联社）</span></li>
+      <li><strong>2026上海国际无人机技术装备及低空经济博览会</strong>、第二届具身智能机器人产业创新峰会、第十一届中国国际人工智能大会均于5月6日上海开幕 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、A股·港股 -->
+<div class="section">
+  <div class="section-title darkblue">📈 四、A股·港股</div>
+  <ul>
+    <li><strong>中金公司：成长风格仍有优势</strong>，顺周期行业有望受益于供需再平衡。关注：1）景气成长：AI基础设施（半导体、电子硬件、光通信）、储能电池、创新药；2）周期改善：化工、能源金属、电网设备、工程机械 <span class="source">（财联社/中金研报）</span></li>
+    <li><strong>4月券商金股最牛股大涨93%</strong>，19家券商组合收益率超10%。5月金股中电子、电力设备、有色金属热度不减 <span class="source">（36氪/证券时报）</span></li>
+    <li><strong>全市场"固收+"基金规模突破3万亿元</strong>，Q1环比激增超30%，资金向稳健收益类资产迁移 <span class="source">（36氪/证券时报）</span></li>
+    <li><strong>近三成货基年化收益率"破1"</strong>，351只货基中97只低于1%，天弘余额宝降至0.973% <span class="source">（36氪/证券时报）</span></li>
+    <li><strong>A股限售股解禁：今日181.18亿元解禁</strong>，隆扬电子（124.31亿）、三博脑科（28.88亿）居前 <span class="source">（财联社）</span></li>
+    <li><strong>今日2只新股申购：</strong>深主板维通利（001393）、北交所嘉晨智能（920096） <span class="source">（财联社）</span></li>
+    <li><strong>500余家医药生物上市公司披露一季报</strong>，近八成实现盈利，创新药出海势头强劲 <span class="source">（财联社/上证报）</span></li>
+  </ul>
+</div>
+
+<!-- 五、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 五、液冷管赛道情报</div>
+
+  <div>
+    <strong style="color:#e87020;">⚡ 驱动逻辑更新</strong>
+    <ul>
+      <li><strong>AMD Q1数据中心营收58亿美元，同比+38%</strong> — 芯片功耗持续攀升路线明确。AMD发布ACE指令集意图缩小与GPU性能差距，意味着未来GPU/CPU功耗还将进一步走高，液冷从"可选"加速变为"强制" <span class="source">（The Verge）</span></li>
+      <li><strong>AI资本开支继续高增长</strong>，北美云厂商、OpenAI（Deployment Company筹资40亿）、Anthropic（筹资15亿）持续扩大算力基建投资 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px;">
+    <strong style="color:#e87020;">🏭 竞争格局</strong>
+    <ul>
+      <li><strong>中金重点推荐AI基础设施环节：</strong>半导体、电子硬件、光通信。液冷管作为AI算力基建的关键组件，产业链逻辑持续强化 <span class="source">（财联社/中金）</span></li>
+      <li><strong>4月科技股业绩全面超预期</strong>，半导体存储芯片龙头领涨，韩国SK海力士涨超9%创历史新高，反映AI算力需求持续井喷 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div class="highlight" style="margin-top:14px;">
+    <strong>🟡 液冷管核心逻辑依然稳固：</strong>AMD/英伟达芯片功耗持续攀升 → AI资本开支高增长 → 智算中心建设加速 → 液冷强制渗透 → 液冷管路需求高景气。数据中心的服务器散热用液冷管、储能系统热管理管路是利通科技的主要增长引擎。
+  </div>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li><strong>今日无新增利通科技公告/新闻报道。</strong>5月6日北交所嘉晨智能（920096）今日申购，近期北交所交易活跃度有所回升 <span class="source">（财联社）</span></li>
+    <li><strong>今日A股限售股解禁中，</strong>卓兆点胶（北交所）解禁市值8.29亿元，解禁比例30.04% <span class="source">（财联社）</span></li>
+    <li>利通科技所处液冷管路赛道逻辑全面加固：AMD财报超预期 + AI资本开支高增 + 韩国芯片股创历史新高 + 中金重点推AI基础设施，四重利好叠加</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 地缘风险</strong><br>
+    霍尔木兹海峡仍事实关闭，布油虽有回落但不排除再度紧张。伊朗局势、美"自由计划"成效将直接影响中东能源供应和全球通胀预期。
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 AI基建加速</strong><br>
+    AMD Q1数据中心营收58亿美元、AI资本开支持续扩张、韩国芯片股创历史新高 — 三重信号确认AI算力基建加速趋势。液冷管路（利通科技核心赛道）直接受益。
+  </div>
+
+  <div class="highlight" style="margin-top:10px;">
+    <strong>🟡 新能源出口产业链</strong><br>
+    4月出口爆发：奇瑞17.8万辆创纪录、上汽海外+50.2%、吉利海外+245%。新能源汽车出海带动的热管理/液冷管需求可持续跟踪。
+  </div>
+</div>
+
+</body>
+</html>
