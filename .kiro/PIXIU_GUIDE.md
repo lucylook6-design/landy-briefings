@@ -1,7 +1,7 @@
 # 貔貅简报更新指南
 
 ## 🎯 目标
-让貔貅能够独立更新每日简报，而不会与Kiro的改动冲突。
+让貔貅能够独立更新每日简报，而不会与维护者（Kiro/Claude）的改动冲突。
 
 ## 🚨 致命规则（违反将导致网站崩溃）
 
@@ -16,7 +16,7 @@
 每次推送前，确认以下文件都还在：
 ```bash
 ls -la index.html reports-data.json research-data.json
-# 三个文件都必须存在！如果任何一个缺失，停止操作，找 Kiro 求助！
+# 三个文件都必须存在！如果任何一个缺失，停止操作，找 Kiro 或 Claude 求助！
 ```
 
 ---
@@ -25,9 +25,9 @@ ls -la index.html reports-data.json research-data.json
 
 ```
 landy-briefings/
-├── index.html              # 页面结构（Kiro维护，貔貅绝对不要修改）
+├── index.html              # 页面结构（Kiro/Claude维护，貔貅绝对不要修改）
 ├── reports-data.json       # 简报数据（貔貅只修改这个文件）
-├── research-data.json      # 调研数据（Kiro维护）
+├── research-data.json      # 调研数据（Kiro/Claude维护）
 ├── reports/
 │   └── 2026-04-XX.html    # 每日简报HTML（貔貅创建）
 └── scripts/
@@ -41,7 +41,7 @@ landy-briefings/
 cd /Users/landylook/简报网站  # 绝对路径！
 git pull origin main --rebase
 ```
-如果 pull 失败或有冲突，**停下来**，找 Kiro 帮忙。不要自己解决冲突。
+如果 pull 失败或有冲突，**停下来**，找 Kiro 或 Claude 帮忙。不要自己解决冲突。
 
 ### 步骤2: 创建新简报HTML
 在 `reports/` 目录创建新文件，例如 `2026-05-06.html`
@@ -181,11 +181,11 @@ git push origin main
 
 ### 旧方式的问题
 - index.html 包含页面结构和数据
-- Kiro修改结构，貔貅修改数据
+- Kiro/Claude修改结构，貔貅修改数据
 - 两者同时修改同一文件 → 冲突
 
 ### 新方式的优势
-- index.html 只包含结构（Kiro维护）
+- index.html 只包含结构（Kiro/Claude维护）
 - reports-data.json 只包含数据（貔貅维护）
 - 两者修改不同文件 → 无冲突
 
@@ -194,10 +194,10 @@ git push origin main
 如果遇到问题：
 1. 查看 `.kiro/WORK_STATUS.md` 了解当前状态
 2. 查看 `.kiro/COLLABORATION.md` 了解协作规范
-3. 在聊天中询问Kiro
+3. 在聊天中询问 Kiro 或 Claude
 
 ---
 
 **创建时间**: 2026-04-27  
-**维护者**: Kiro  
+**维护者**: Kiro & Claude  
 **适用对象**: 貔貅
