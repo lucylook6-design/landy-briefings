@@ -3,26 +3,48 @@
 ## 🎯 目标
 让貔貅能够独立更新每日简报，而不会与Kiro的改动冲突。
 
+## 🚨 致命规则（违反将导致网站崩溃）
+
+### ❌ 绝对禁止的操作
+1. **永远不要使用 `git push --force`** — 这会删除整个网站！
+2. **永远不要使用 `git reset --hard`** — 这会丢失所有人的工作！
+3. **永远不要在仓库根目录执行 `git init`** — 这会破坏仓库！
+4. **永远不要删除 `index.html`** — 这是网站首页！
+5. **永远不要删除 `reports-data.json`** — 这是所有简报的索引！
+
+### ⚠️ 推送前自检
+每次推送前，确认以下文件都还在：
+```bash
+ls -la index.html reports-data.json research-data.json
+# 三个文件都必须存在！如果任何一个缺失，停止操作，找 Kiro 求助！
+```
+
+---
+
 ## 📁 新的文件结构
 
 ```
 landy-briefings/
-├── index.html              # 页面结构（Kiro维护，貔貅不要修改）
+├── index.html              # 页面结构（Kiro维护，貔貅绝对不要修改）
 ├── reports-data.json       # 简报数据（貔貅只修改这个文件）
-└── reports/
-    └── 2026-04-XX.html    # 每日简报HTML（貔貅创建）
+├── research-data.json      # 调研数据（Kiro维护）
+├── reports/
+│   └── 2026-04-XX.html    # 每日简报HTML（貔貅创建）
+└── scripts/
+    └── install-hooks.sh    # 安全钩子安装脚本
 ```
 
 ## ✅ 每日简报更新流程
 
 ### 步骤1: 拉取最新代码
 ```bash
-cd ~/briefings  # 或你的工作目录
+cd /Users/landylook/简报网站  # 绝对路径！
 git pull origin main --rebase
 ```
+如果 pull 失败或有冲突，**停下来**，找 Kiro 帮忙。不要自己解决冲突。
 
 ### 步骤2: 创建新简报HTML
-在 `reports/` 目录创建新文件，例如 `2026-04-29.html`
+在 `reports/` 目录创建新文件，例如 `2026-05-06.html`
 
 ### 步骤3: 更新 reports-data.json
 **重要**: 只修改 `reports-data.json` 文件，不要修改 `index.html`
@@ -31,33 +53,41 @@ git pull origin main --rebase
 ```json
 [
   {
-    "date": "2026-04-29",
-    "title": "今日简报",
+    "date": "2026-05-06",
+    "title": "AI研究员简报",
     "desc": "简报描述",
     "tags": ["ai", "stock", "energy"],
-    "file": "reports/2026-04-29.html"
+    "file": "reports/2026-05-06.html"
   },
-  {
-    "date": "2026-04-28",
-    ...
-  }
+  ...保持已有记录不变...
 ]
 ```
 
-### 步骤4: 提交并推送
+### 步骤4: 提交前检查
 ```bash
-# 再次拉取确保最新
-git pull origin main --rebase
+# 确认只修改了这些文件
+git status
 
-# 添加文件
-git add reports/2026-04-29.html reports-data.json
+# 确认关键文件存在
+ls -la index.html reports-data.json research-data.json
+```
+
+### 步骤5: 提交并推送
+```bash
+# 只添加你修改的两个文件！
+git add reports/2026-05-06.html reports-data.json
+
+# 确认暂存区只有这两个文件
+git diff --cached --name-only
 
 # 提交
-git commit -m "简报归档: 2026-04-29"
+git commit -m "简报归档: 2026-05-06"
 
-# 推送
+# 推送（不要加 --force！）
 git push origin main
 ```
+
+如果 push 被拒绝（提示需要 pull），执行 `git pull origin main --rebase` 后再次 push。绝不要 force push。
 
 ## ⚠️ 重要规则
 
