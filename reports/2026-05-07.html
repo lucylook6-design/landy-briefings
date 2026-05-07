@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年5月7日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 768px) {
+    body { margin: 20px auto; padding: 16px; font-size: 16px; line-height: 1.9; }
+    h1 { font-size: 20px; }
+    .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; }
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 10px; }
+    table { font-size: 15px; }
+    th, td { padding: 10px 12px; }
+    .highlight, .warning { padding: 14px 18px; font-size: 15px; }
+    .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body { max-width: 90%; margin: 30px auto; padding: 24px; }
+    h1 { font-size: 21px; }
+  }
+  @media (max-width: 480px) {
+    body { margin: 12px auto; padding: 12px; font-size: 17px; }
+    h1 { font-size: 19px; }
+    .date { font-size: 14px; }
+    .section-title { font-size: 18px; }
+    table { font-size: 14px; display: block; overflow-x: auto; }
+  }
+  @media (min-width: 1200px) {
+    body { max-width: 900px; }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年5月7日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>国际油价暴跌超12%</strong>，美伊停火协议传闻来袭，"绝妙空单"浮盈超1.25亿美元 <span class="source">（财联社）</span></li>
+    <li><strong>DeepSeek首轮融资估值450亿美元</strong>，国家大基金领投，腾讯/阿里参谈 <span class="source">（第一电动/金融时报）</span></li>
+    <li><strong>Kimi半年内融资超39亿美元</strong>，ARR突破2亿美元，美团龙珠领投 <span class="source">（晚点LatePost）</span></li>
+    <li><strong>特斯拉FSD v14.2推送中国员工</strong>，签署500万保密协议，预计Q3全量公推 <span class="source">（第一电动）</span></li>
+    <li><strong>俄乌宣布停火但仍在继续军事行动</strong>，俄罗斯5.9胜利日停火，泽连斯基也宣布单边停火 <span class="source">（财联社/央视新闻）</span></li>
+    <li><strong>日经225期货早盘涨4.3%</strong>，日本央行纪要显示委员担忧油价推高通胀 <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 一、地缘·宏观 -->
+<div class="section">
+  <div class="section-title red">🔴 一、地缘·宏观</div>
+
+  <div style="margin-left:12px;">
+    <ul>
+      <li><strong>国际油价暴跌超12%：</strong>据阿克西奥斯新闻报道称美国接近与伊朗达成结束战争的谅解备忘录，引爆原油市场全面重挫。可疑的是暴跌前约1小时，近1万份原油空头合约在无重大新闻时突然出现（名义价值9.2亿美元），浮盈超1.25亿美元。监管机构对此异常交易保持关注 <span class="source">（财联社/Kobeissi Letter）</span></li>
+      <li><strong>俄乌局势：</strong>俄罗斯宣布为纪念胜利日（5月9日），8日至9日实施停火。泽连斯基宣布自6日零时起单方面停火。但双方最新战报显示仍在多地展开军事行动，停火执行存在不确定性 <span class="source">（财联社/央视新闻）</span></li>
+      <li><strong>日本央行纪要：</strong>多位委员认为维持政策利率在0.75%适当，但担心油价上涨导致通胀再次升高。委员一致认为应根据经济和物价改善继续加息，政策利率仍远未达中性水平 <span class="source">（财联社）</span></li>
+      <li><strong>日经225期货涨4.3%</strong>，日本4月基础货币年率-11.3%（前值-11.6%） <span class="source">（财联社）</span></li>
+      <li><strong>汇兑损失左右上市公司一季报：</strong>三一重工8亿元汇兑损失致"增收不增利"，莱克电气归母净利骤降逾九成。人民币汇率双向波动已成为中国企业出海"必修课" <span class="source">（上证报）</span></li>
+      <li><strong>一季度险资重仓641只A股</strong>，较2025年底增24只，持股量净增42.4亿股。加仓银行股并新进多个高端制造企业 <span class="source">（证券日报）</span></li>
+      <li><strong>阿根廷发现新汉坦病毒病例</strong>，是否与"洪迪厄斯"号邮轮疫情有关仍待确认 <span class="source">（财联社/新华社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、AI·算力·数据中心 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 二、AI·算力·数据中心</div>
+
+  <div>
+    <strong style="color:#1a73e8;">🇨🇳 中国AI融资爆发</strong>
+    <ul>
+      <li><strong>DeepSeek首轮融资估值达450亿美元：</strong>国家集成电路产业投资基金（大基金第三期）正洽谈领投，腾讯、阿里均在讨论参投。创投梁文锋实控约89.5%股份，本轮将以个人名义出资。450亿估值远超此前200亿市场预期，两周内翻倍，直接催化剂为4月24日发布的V4系列模型（已针对华为昇腾950PR优化） <span class="source">（第一电动/金融时报）</span></li>
+      <li><strong>Kimi（月之暗面）半年内融资超39亿美元：</strong>最新一轮20亿美元，美团龙珠领投（超2亿美元），中国移动、CPE参投。估值从去年11月的43亿飙升至200亿美元+。ARR首季突破1亿美元，4月继续增长至超2亿美元。K2.6模型发布并开源，支持最多300个子Agent协作 <span class="source">（晚点LatePost）</span></li>
+      <li><strong>Kimi收入爆发：</strong>据Stripe数据，自1月底以来近20天收入超越2025全年总和。个人订阅用户1月支付订单环比增长超8000%，2月再涨超120%。Kimi海外API平台表现强劲 <span class="source">（晚点LatePost）</span></li>
+      <li><strong>AI Agent竞争白热化：</strong>Meta正开发面向30亿用户的AI助手"Hatch"（由Muse Spark模型驱动）；谷歌测试"Remy"AI智能体（对标OpenClaw），与Gmail/Chrome/Calendar深度打通，预计在Google I/O上发布。Meta计划Q4前将购物代理整合至Instagram <span class="source">（第一电动/金融时报）</span></li>
+      <li><strong>英飞凌上调全年业绩指引：</strong>2026财年Q2营收38.12亿欧元，对AI芯片和汽车电子需求前景乐观 <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px;">
+    <strong style="color:#1a73e8;">📋 市场要闻</strong>
+    <ul>
+      <li><strong>今日新股：</strong>天海电子（深主板001365）申购，振宏股份（北交所920200）上市 <span class="source">（财联社）</span></li>
+      <li><strong>A股限售解禁：</strong>31.24亿元，耐科装备（23.39亿）居前 <span class="source">（财联社）</span></li>
+      <li><strong>今日议程：</strong>北京香山论坛先导会、移动云大会（推出AI-eSIM）、AI Agent全球产业生态论坛均于今日开幕 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、储能·新能源·超充 -->
+<div class="section">
+  <div class="section-title green">🔋 三、储能·新能源·超充</div>
+
+  <div>
+    <strong style="color:#34a853;">🚗 新能源汽车动态</strong>
+    <ul>
+      <li><strong>吉利汽车4月销量235,164辆</strong>，新能源135,591辆（渗透率57.7%），出口83,186辆（+245%）创纪录，连续4个月出口同比翻倍 <span class="source">（第一电动）</span></li>
+      <li><strong>吉利收购福特西班牙工厂：</strong>收购福特瓦伦西亚工厂Body3产线，计划生产基于GEA架构的新能源车型（混动/插混/纯电）。此举旨在免除欧洲关税压力，若达成合作有望使年产量超30万辆 <span class="source">（第一电动/LaTribuna）</span></li>
+      <li><strong>极氪4月交付31,787辆（+132%再创历史新高）</strong>，全球累计交付突破75万辆，单车均价近35万元。极氪9X连续5个月蝉联50万级大型SUV销量冠军 <span class="source">（第一电动）</span></li>
+      <li><strong>广汽集团4月新能源增长显著</strong>，但具体数据待披露 <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px;">
+    <strong style="color:#34a853;">⚡ 超充与智能驾驶</strong>
+    <ul>
+      <li><strong>特斯拉FSD v14.2中国员工内测版推送：</strong>约1000+辆HW4.0员工车收到，已签署500万元保密协议。版本号与荷兰获批上路版相同（v14.2.2.5）。预计Q3面向公众推送，但量产版可能相对阉割（如自动倒车功能）；同时欧洲审批推进中 <span class="source">（第一电动）</span></li>
+      <li><strong>特斯拉向非多品牌车主开放超充网络：</strong>已开放1400+站点（1000+超充站+400+目的地站），超级充电桩峰值功率250kW，最快15分钟补能约250公里。第三方车主充电价格与特斯拉车主一致。截至4月内地已建成超2600座超充站、12000+根超充桩 <span class="source">（第一电动/快科技）</span></li>
+      <li><strong>V4超充桩配备液冷线缆技术：</strong>高电量下充电不降速，设备可用率99.95%。液冷线缆技术已规模化应用，对液冷管路构成直接下游需求 <span class="source">（第一电动/快科技）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:10px;">
+    <strong style="color:#34a853;">🔬 技术与供应链</strong>
+    <ul>
+      <li><strong>固态电池领域融资活跃：</strong>自去年以来全球已有57笔融资，46家公司获得新投资 <span class="source">（第一电动）</span></li>
+      <li><strong>比亚迪Q1出口目的地：</strong>巴西继续领跑（盖世汽车研究院） <span class="source">（第一电动）</span></li>
+      <li><strong>日系电容供货紧张，</strong>永铭抗震型固液混合电容提供全尺寸车规级国产替代 <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 四、液冷管赛道情报</div>
+
+  <div>
+    <strong style="color:#e87020;">⚡ 驱动逻辑更新</strong>
+    <ul>
+      <li><strong>DeepSeek大模型获国家大基金垂青，估值450亿美元</strong> — 中国AI产业资本爆发，算力需求确定性强。大模型"模型+芯片"国产闭环成型（DeepSeek已适配华为昇腾），智算中心建设将持续加速，液冷需求是受益环节 <span class="source">（金融时报）</span></li>
+      <li><strong>英飞凌上调全年指引</strong> — AI芯片需求持续旺盛，汽车电子景气度回升。芯片功耗上升趋势不变，液冷管路长期逻辑稳固 <span class="source">（第一电动）</span></li>
+      <li><strong>特斯拉V4超充桩液冷线缆规模化</strong> — 超充桩液冷管路是利通科技下游场景之一，特斯拉超充站年内突破2600座，V4液冷线缆技术已量产 <span class="source">（第一电动/快科技）</span></li>
+    </ul>
+  </div>
+
+  <div class="highlight" style="margin-top:14px;">
+    <strong>🟡 液冷管赛道三重催化：</strong>1）中国AI大模型融资爆发（DeepSeek 450亿+Kimi 200亿+），智算中心资本开支确定性增强；2）特斯拉超充站+液冷线缆规模化，超充桩液冷管需求明确；3）英飞凌上调指引，AI芯片需求强劲，芯片功耗持续攀升趋势不变。
+  </div>
+</div>
+
+<!-- 五、A股·港股 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、A股·港股</div>
+  <ul>
+    <li><strong>油价暴跌直接利好化工/交通成本下游，</strong>但需警惕美伊停火协议进展不确定性。布油跌破58美元/桶（-12%）是一季度以来最大单日跌幅 <span class="source">（财联社）</span></li>
+    <li><strong>日经225期货涨4.3%，</strong>亚太科技板块有望共振。韩国芯片股昨日已大涨，短期情绪面利好 <span class="source">（财联社）</span></li>
+    <li><strong>一季度险资加仓银行+高端制造：</strong>险资重仓641只A股，配置模式为"高股息夯实压舱石+成长股增强收益弹性" <span class="source">（证券日报）</span></li>
+    <li><strong>汇兑损失成Q1报表重要因素：</strong>出海企业（三一重工、莱克电气等）受人民币汇率波动影响显著，汇率风险管理成必修课 <span class="source">（上证报）</span></li>
+    <li><strong>今日关注：</strong>北京香山论坛先导会（5/7-9）、移动云大会（AI-eSIM发布）、AI Agent产业生态论坛 <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li><strong>今日无新增利通科技公告。</strong>振宏股份（920200）今日北交所上市 <span class="source">（财联社）</span></li>
+    <li><strong>液冷管路赛道利好叠加：</strong>中国AI产业资本大爆发（DeepSeek+国家大基金、Kimi半年39亿美元）、特斯拉超充桩液冷线缆规模化、英飞凌上调全年指引，三重催化同时作用于液冷管赛道</li>
+    <li><strong>超充桩场景跟踪：</strong>特斯拉已开放1400+超充站，V4液冷线缆技术规模化应用，设备可用率99.95%。液冷超充桩是利通科技液冷管的下游增量场景之一</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 油价暴跌+美伊停火协议不确定性</strong><br>
+    美伊接近达成谅解备忘录消息引发油价暴跌12%，但可疑空单出现于消息前1小时。布油跌至58美元以下将显著影响能源股、但利好化工板块及运输成本。需密切关注美伊谈判进展。
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 中国AI资本大爆发</strong><br>
+    DeepSeek 450亿+Kimi 200亿+国家大基金首次入局大模型 — 这是中国AI产业里程碑式事件。智算中心/液冷/算力基建板块有望受益。大模型"模型+芯片"国产闭环（DeepSeek适配华为昇腾）进一步强化国产算力链条确定性。
+  </div>
+
+  <div class="highlight" style="margin-top:10px;">
+    <strong>🟡 特斯拉FSD入华+超充站开放</strong><br>
+    FSD v14.2员工内测Q3推公众版，1400+超充站开放，V4液冷线缆规模化——利好超充桩液冷管需求，同时FSD入华将带动车载热管理等液冷管路场景扩展。
+  </div>
+</div>
+
+</body>
+</html>
