@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年5月8日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 768px) {
+    body { margin: 20px auto; padding: 16px; font-size: 16px; line-height: 1.9; }
+    h1 { font-size: 20px; }
+    .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; }
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 10px; }
+    table { font-size: 15px; }
+    th, td { padding: 10px 12px; }
+    .highlight, .warning { padding: 14px 18px; font-size: 15px; }
+    .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body { max-width: 90%; margin: 30px auto; padding: 24px; }
+    h1 { font-size: 21px; }
+  }
+  @media (max-width: 480px) {
+    body { margin: 12px auto; padding: 12px; font-size: 17px; }
+    h1 { font-size: 19px; }
+    .date { font-size: 14px; }
+    .section-title { font-size: 18px; }
+    table { font-size: 14px; display: block; overflow-x: auto; }
+  }
+  @media (min-width: 1200px) {
+    body { max-width: 900px; }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年5月8日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>美伊霍尔木兹冲突升级</strong> — 美军拦截并反击伊朗袭击，油价押注70亿美元，地缘风险溢价再起 <span class="source">（财联社）</span></li>
+    <li><strong>A股总市值突破120万亿</strong> — 截至5月7日收盘报120.04万亿，年内累计增长约11.29万亿，电子板块贡献4.68万亿 <span class="source">（财联社）</span></li>
+    <li><strong>A股AI产业链爆发</strong> — 机器人、消费电子、光纤光通信、存储芯片、算力等板块涨幅居前，多只个股涨停创新高 <span class="source">（36氪）</span></li>
+    <li><strong>特朗普10%全球关税被美法院裁定违法</strong> — 美国国际贸易法院称其法律依据不成立 <span class="source">（The Verge/财联社）</span></li>
+    <li><strong>黄金储备18连升</strong> — 4月末黄金储备7364万盎司，环比增26万盎司，外汇储备3.41万亿美元 <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 一、大势研判</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">📈 行业数据</strong>
+    <ul>
+      <li>A股总市值突破<strong>120万亿</strong>（5月7日），较年初累计增长约<strong>11.29万亿</strong> <span class="source">（财联社）</span></li>
+      <li>电子板块年内A股市值累计增长<strong>4.68万亿</strong>，占全部增长的<strong>超四成</strong>，贡献最大 <span class="source">（财联社）</span></li>
+      <li>偏股混合型基金指数创历史新高，迈过2021年2月高点 <span class="source">（36氪）</span></li>
+      <li>深圳机器人产业产值超<strong>2400亿</strong>元，人形机器人专利达<strong>1.2万件</strong> <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">⚡ 政策动态</strong>
+    <ul>
+      <li><strong>重庆</strong>出台高速公路L3级自动驾驶测试管理细则，规范高阶智驾高速场景全流程 <span class="source">（财联社）</span></li>
+      <li>全国首个大模型多病种AI医疗产品（胸部CT辅助诊断）进入国家药监局创新医疗器械特别审查程序 <span class="source">（财联社）</span></li>
+      <li>巴西宣布对中国公民免签入境（5月11日起，持普通护照）<span class="source">（财联社）</span></li>
+      <li>欧盟禁止对使用中国"高风险国家"逆变器项目提供资金支持 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🔬 产业背景</strong>
+    <ul>
+      <li>AI大模型迭代带动算力需求刚性扩张，数据中心与智算中心建设提速 <span class="source">（36氪）</span></li>
+      <li>半导体行业上游材料、晶圆代工及封装环节需求旺盛，形成全产业链价格走高之势 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#e87020;">📦 竞争格局</strong>
+    <ul>
+      <li>液冷散热系统集成商（英维克、高澜、曙光数创等）持续受益于智算中心建设提速 <span class="source">（行业观察）</span></li>
+      <li>注：液冷管路直接订单/中标公告今日未见公开披露，持续跟踪集成商公告</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🖥️ 数据中心/算力中心</strong>
+    <ul>
+      <li>AI大模型迭代带动算力需求刚性扩张，头部科技企业AI领域资本投入大幅增加 <span class="source">（36氪）</span></li>
+      <li>液冷散热方案在智算中心渗透率持续提升</li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🔋 储能行业</strong>
+    <ul>
+      <li>中信建投研报：锂电储能板块向上信号明确，温和通胀但扩产克制，产品价格和出货量共振 <span class="source">（36氪）</span></li>
+      <li>光伏行业实现<strong>7个季度以来首次收入同比增长</strong> <span class="source">（36氪）</span></li>
+      <li>大储板块同比下滑，但储能整体需求新动力已形成 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li><strong>蔚来</strong>五一高速补能占全国<strong>16.3%</strong>，5天换电突破<strong>100万次</strong> <span class="source">（第一电动）</span></li>
+      <li><strong>华境S</strong>今晚上市，15万级大六座SUV，卷华为全家桶 <span class="source">（第一电动）</span></li>
+      <li>比亚迪、吉利、奇瑞筹备进入加拿大市场，已在招聘员工考察门店 <span class="source">（第一电动）</span></li>
+      <li><strong>保时捷Taycan Turbo GT</strong>纽北最速量产电动车（6分55秒）夺回冠军 <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">⚡ 液冷超充桩</strong>
+    <ul>
+      <li>超充桩建设随新能源汽车保有量增长持续推进，高压平台热管理需求持续</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 四、二级市场 & 资本动向</div>
+  <ul>
+    <li>A股AI产业链<strong>5月7日延续强势</strong>，机器人、消费电子、光纤、光通信、存储芯片、算力等板块涨幅居前，多只个股涨停并刷新历史新高 <span class="source">（36氪）</span></li>
+    <li>险资一季度调仓：加仓银行股"压舱石"，同时布局交通运输、公用事业板块寻求收益弹性 <span class="source">（36氪）</span></li>
+    <li>中小银行呼吁AIC（金融资产投资公司）试点扩容，突破传统信贷瓶颈 <span class="source">（36氪）</span></li>
+    <li>创新药产业链强势发力，有望带动医药板块触底反弹 <span class="source">（36氪）</span></li>
+    <li>万得偏股混合型基金指数创历史新高，迈过2021年2月高点 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 五、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 五、利通科技（839167）动态</div>
+  <ul>
+    <li>今日未见公开公告或新闻披露</li>
+    <li>持续跟踪北交所公告及财联社利通科技专项动态</li>
+  </ul>
+</div>
+
+<!-- 六、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 六、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    <strong>美伊霍尔木兹冲突</strong> — 美军拦截伊朗袭击并反击，原油价格押注规模达70亿美元。霍尔木兹海峡是全球油运要道，地缘风险溢价若持续，可能影响储能大储项目成本端（铜、锂等大宗商品波动），同时算力中心建设节奏亦受关注。
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>液冷管路集成商中标动态</strong> — 今日未见英维克、高澜、曙光数创等集成商公开液冷管路订单公告。AI算力产业链爆发或传导至上游液冷管需求，建议密切跟踪5月份集成商大单落地情况。
+  </div>
+</div>
+
+</body>
+</html>
