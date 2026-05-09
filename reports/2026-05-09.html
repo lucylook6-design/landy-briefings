@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年5月9日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  li strong {
+    font-weight: 600;
+  }
+  .source {
+    color: #888;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .highlight {
+    background: #fff8e1;
+    padding: 12px 16px;
+    border-left: 4px solid #f9a825;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .warning {
+    background: #fce8e6;
+    padding: 12px 16px;
+    border-left: 4px solid #ea4335;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-button:hover {
+    background-color: #f5f5f5;
+  }
+  .back-button span {
+    margin-right: 6px;
+  }
+
+  @media (max-width: 768px) {
+    body { margin: 20px auto; padding: 16px; font-size: 16px; line-height: 1.9; }
+    h1 { font-size: 20px; }
+    .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; }
+    .section { margin-bottom: 24px; }
+    .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 10px; }
+    table { font-size: 15px; }
+    th, td { padding: 10px 12px; }
+    .highlight, .warning { padding: 14px 18px; font-size: 15px; }
+    .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body { max-width: 90%; margin: 30px auto; padding: 24px; }
+    h1 { font-size: 21px; }
+  }
+  @media (max-width: 480px) {
+    body { margin: 12px auto; padding: 12px; font-size: 17px; }
+    h1 { font-size: 19px; }
+    .date { font-size: 14px; }
+    .section-title { font-size: 18px; }
+    table { font-size: 14px; display: block; overflow-x: auto; }
+  }
+  @media (min-width: 1200px) {
+    body { max-width: 900px; }
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年5月9日</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>美伊冲突再升级</strong> — 美军战斗机击伊朗6艘民用船，6人受伤6人失踪 <span class="source">（财联社）</span></li>
+    <li><strong>美银大幅修正预期</strong> — 美联储2027年前不太可能降息，伊朗战争+关税+AI多重冲击 <span class="source">（财联社）</span></li>
+    <li><strong>汽车出口爆发</strong> — 1-4月汽车出口**328万辆**，同比+**52%**；出口额**569亿美元**，同比+**54%** <span class="source">（财联社）</span></li>
+    <li><strong>中国造船业一季度开门红</strong> — 新接订单**5953万载重吨**，同比+**195.2%**，全球份额**84.9%** <span class="source">（36氪）</span></li>
+    <li><strong>AI芯片Cerebras拟上调IPO定价</strong> — 已吸引超**20倍认购**，拟每股125-135美元 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 一、形势与宏观 -->
+<div class="section">
+  <div class="section-title lightblue">🔴 一、形势与宏观</div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#1a73e8;">🌍 地缘政治</strong>
+    <ul>
+      <li><strong>美伊冲突</strong>：伊朗称美军战斗机8日晚在阿曼海塞卜港附近打击伊朗6艘民用船，6人受伤6人失踪。此前美军已拦截并反击伊朗袭击 <span class="source">（财联社）</span></li>
+      <li><strong>普京会见哈萨克斯坦总统</strong>托卡耶夫，讨论双边关系及国际热点，俄哈关系稳固 <span class="source">（财联社）</span></li>
+      <li><strong>英国工党选举失利</strong>，多名议员要求首相斯塔默一年内下台 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-top:12px;">
+    <strong style="color:#1a73e8;">📈 宏观数据</strong>
+    <ul>
+      <li><strong>美银：美联储2027年前不会降息</strong> — 伊朗战争、关税、AI兴起使利率预测更困难。不再预期今年任何降息 <span class="source">（财联社）</span></li>
+      <li>日本政府债务**1343.84万亿日元**，连续**10年**创历史新高 <span class="source">（财联社）</span></li>
+      <li>中国1-3月出口到"一带一路"沿线汽车商品**383亿美元**，同比+**31.6%** <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、AI·算力·数据中心 -->
+<div class="section">
+  <div class="section-title orange">🤖 二、AI·算力·数据中心</div>
+
+  <ul>
+    <li>阶跃StepAudio 2.5TTS语音模型成**Artificial Analysis Speech Arena中国第一**，全球前三 <span class="source">（财联社）</span></li>
+    <li><strong>AI芯片Cerebras拟上调IPO价格区间</strong>至125-135美元，募集**35亿美元**，已吸引超**20倍认购** <span class="source">（36氪）</span></li>
+    <li>东土科技等成立**湖北省智能机器人产业发展公司**，注册资本**3.5亿**元 <span class="source">（36氪）</span></li>
+    <li>小雨智造完成**数亿元B+轮融资**，北汽产投/复星锐正等联合投资 <span class="source">（36氪）</span></li>
+    <li>我国"太极计划"获关键突破 — 空间引力波探测光学平台通过测试，测量精度达**皮米级** <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 三、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title purple">💧 三、液冷管赛道情报</div>
+
+  <ul>
+    <li>AI算力需求持续旺盛，芯片AI产业链热度不减，间接撑起液冷散热需求刚性。今日未见液冷管直接订单/中标公告 <span class="source">（行业观察）</span></li>
+    <li>持续跟踪英维克/高澜/曙光数创等集成商5月大单落地动态</li>
+  </ul>
+</div>
+
+<!-- 四、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 四、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车/出口</strong>
+    <ul>
+      <li>今年1-4月汽车出口**328万辆**，同比+**52%**，创近年新高；出口金额**569亿美元**，同比+**54%** <span class="source">（财联社）</span></li>
+      <li>1-3月一带一路汽车商品出口**383亿美元**，+**31.6%**；新能源汽车出口**46.9万辆**，+**27.9%** <span class="source">（财联社）</span></li>
+      <li>比亚迪、广汽埃安、小鹏汽车均发文否认被"约谈"或"立案调查"传言 <span class="source">（36氪/财联社）</span></li>
+      <li>特斯拉召回**173辆**Cybertruck（制动部件结构性缺陷）<span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">🖥️ 半导体/封测</strong>
+    <ul>
+      <li><strong>长电科技Q1产能利用率超80%</strong>，产能供不应求。原材料涨价背景下优选客户优化产品结构 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
+  <ul>
+    <li>Dunkin'母公司Inspire Brands秘密提交IPO，寻求约**200亿美元**估值，或成餐饮行业最大IPO之一 <span class="source">（36氪）</span></li>
+    <li>吾流文化完成**亿元级融资**，凯辉基金/五源资本联合领投 <span class="source">（36氪）</span></li>
+    <li>北辰航天完成**数千万元天使轮**，云启资本独家投资 <span class="source">（36氪）</span></li>
+    <li>星识科技连续完成**天使+轮和天使++轮**，累计融资金额达数千万元 <span class="source">（36氪）</span></li>
+    <li>温州1宗宅地溢价近**80%**成交，瑞安中瑞房地产1.1亿竞得 <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 六、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
+  <ul>
+    <li>今日未见公开公告或新闻披露</li>
+    <li>持续关注北交所公告及液冷管赛道集成商订单动态</li>
+  </ul>
+</div>
+
+<!-- 七、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
+  <div class="warning">
+    <strong>🔴 高度关注</strong><br>
+    <strong>美伊冲突持续升级</strong> — 从美军拦截反击升级至打击民用船，地缘风险显著升温。霍尔木兹海峡通行安全影响全球原油运输，伴随美银"2027年前不降息"预期，通胀和利率环境持续偏紧。持续跟踪对大宗商品（铜/铝/锂）和算力基建成本的影响。
+  </div>
+
+  <div class="highlight">
+    <strong>🟡 持续跟踪</strong><br>
+    <strong>AI产业链爆发</strong> — AI芯片Cerebras超20倍认购、封测产能供不应求、机器人融资密集，算力基建景气度持续向上，有望传导至液冷管路需求。建议重点关注5月液冷集成商大单落地情况。
+  </div>
+</div>
+
+</body>
+</html>
