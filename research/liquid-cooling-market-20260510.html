@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>液冷管路·软管·快接头市场全景核算 | 专项调研</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fb; color: #1a1a2e; line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+    .header { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: #fff; padding: 36px 44px; border-radius: 16px; margin-bottom: 24px; position: relative; overflow: hidden; }
+    .header::after { content: '🧊'; position: absolute; right: 30px; top: 20px; font-size: 48px; opacity: 0.25; }
+    .header h1 { font-size: 22px; margin-bottom: 4px; letter-spacing: 0.5px; }
+    .header .sub { font-size: 13px; opacity: 0.8; display: flex; justify-content: space-between; margin-top: 6px; flex-wrap: wrap; gap: 8px; }
+    .badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 3px 14px; border-radius: 20px; font-size: 12px; margin-right: 8px; }
+
+    .core-card { background: #fff; border-left: 5px solid #e74c3c; padding: 20px 24px; border-radius: 0 12px 12px 0; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .core-card .label { font-size: 12px; color: #e74c3c; font-weight: 700; letter-spacing: 2px; margin-bottom: 4px; }
+    .core-card p { font-size: 16px; font-weight: 500; color: #2d3436; }
+
+    .section { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .section h2 { font-size: 18px; color: #2d3436; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; position: relative; }
+    .section h2::before { content: ''; position: absolute; bottom: -2px; left: 0; width: 40px; height: 2px; background: #6c5ce7; }
+    .section h3 { font-size: 15px; color: #2d3436; margin: 24px 0 12px; }
+    .section h3:first-of-type { margin-top: 0; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+    thead th { background: #f8f9fa; color: #636e72; font-weight: 600; padding: 10px 12px; text-align: left; border-bottom: 2px solid #e0e0e0; white-space: nowrap; }
+    thead th.center, tbody td.center { text-align: center; }
+    tbody td { padding: 9px 12px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    tbody tr:hover { background: #fafbff; }
+    tbody tr.row-highlight { background: #fffdf5; }
+    tbody tr.row-highlight:hover { background: #fff9e0; }
+    .num { font-weight: 600; text-align: right; white-space: nowrap; }
+    .num.up { color: #e74c3c; }
+    .num.green { color: #27ae60; }
+    .tag-verdict { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+    .tag-correct { background: #d4edda; color: #155724; }
+    .tag-wrong { background: #f8d7da; color: #721c24; }
+    .tag-partial { background: #fff3cd; color: #856404; }
+
+    .data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; margin: 12px 0; }
+    .data-card { background: #f8f9fa; border-radius: 10px; padding: 16px; text-align: center; }
+    .data-card .num { font-size: 24px; font-weight: 700; color: #2d3436; text-align: center; }
+    .data-card .num.highlight { color: #e74c3c; }
+    .data-card .num.green { color: #27ae60; }
+    .data-card .desc { font-size: 11px; color: #636e72; margin-top: 4px; }
+
+    .chart-bar { display: flex; align-items: center; gap: 10px; margin: 6px 0; font-size: 13px; }
+    .chart-bar .label { width: 140px; text-align: right; flex-shrink: 0; color: #636e72; }
+    .chart-bar .bar-wrap { flex: 1; background: #f0f0f0; border-radius: 6px; height: 22px; overflow: hidden; position: relative; }
+    .chart-bar .bar-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #6c5ce7, #a29bfe); display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-weight: 600; color: #fff; font-size: 11px; min-width: fit-content; }
+    .chart-bar .bar-fill.red { background: linear-gradient(90deg, #e74c3c, #fd79a8); }
+    .chart-bar .bar-fill.green { background: linear-gradient(90deg, #27ae60, #55efc4); }
+    .chart-bar .bar-fill.blue { background: linear-gradient(90deg, #0984e3, #74b9ff); }
+    .chart-bar .total { font-weight: 600; color: #2d3436; width: 100px; flex-shrink: 0; }
+
+    .timeline-row { display: flex; gap: 12px; margin: 12px 0; }
+    .timeline-card { flex: 1; background: #f8f9fa; border-radius: 10px; padding: 16px; text-align: center; }
+    .timeline-card .year { font-size: 18px; font-weight: 700; color: #6c5ce7; margin-bottom: 4px; }
+    .timeline-card .value { font-size: 15px; font-weight: 600; color: #2d3436; }
+    .timeline-card .sub { font-size: 11px; color: #636e72; margin-top: 2px; }
+
+    .note-box { background: #fffdf5; border: 1px solid #ffeaa7; border-radius: 10px; padding: 14px 18px; font-size: 13px; color: #856404; margin: 12px 0; }
+    .note-box.blue { background: #f0f7ff; border-color: #b8daff; color: #004085; }
+
+    .footnote { background: #f8f9fa; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 12px; color: #636e72; line-height: 1.8; }
+    .footnote strong { color: #2d3436; }
+
+    @media (max-width: 600px) {
+      .container { padding: 12px; }
+      .header { padding: 20px; }
+      .section { padding: 16px; }
+      table { font-size: 11px; }
+      thead th, tbody td { padding: 6px 8px; }
+      .data-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>🧊 液冷管路 · 软管 · 快接头 —— 全球市场全景核算</h1>
+      <div class="sub">
+        <span><span class="badge">📅 2026年5月10日</span><span class="badge">🏭 利通科技专项</span><span class="badge">🦅 火箭军情报部</span></span>
+        <span>Vol. 专研-01</span>
+      </div>
+    </div>
+
+    <!-- Core conclusion -->
+    <div class="core-card">
+      <div class="label">▎一句话结论</div>
+      <p>液冷管路（软管+UQD+MQD）全球市场 <strong>2025年 ~46亿 → 2026年 ~122亿 → 2027年 ~212亿 人民币</strong>，三年 CAGR ~115%。GB200→GB300→Rubin 每代升级驱动单柜管路用量和价值翻倍，这是「量价齐升」的确定性赛道。</p>
+    </div>
+
+    <!-- ====== SECTION 1 ====== -->
+    <div class="section">
+      <h2>一、四个关键数据核查：朋友说法 vs 实际情况</h2>
+      <table>
+        <thead><tr><th>指标</th><th>朋友说法</th><th>实际情况</th><th>判定</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>液冷总市场</strong></td>
+            <td class="num">1300 亿</td>
+            <td>2025年约 300 亿，<strong>2029年</strong>才达 1300 亿（中国信通院预测）</td>
+            <td><span class="tag-verdict tag-partial">时间错位</span></td>
+          </tr>
+          <tr>
+            <td><strong>管路细分市场</strong></td>
+            <td class="num">183 亿</td>
+            <td>2027年全球 UQD+MQD+软管 ≈ 188亿（接近！），但<strong>2025年仅 46亿</strong></td>
+            <td><span class="tag-verdict tag-partial">远期值当近期</span></td>
+          </tr>
+          <tr>
+            <td><strong>渗透率</strong></td>
+            <td class="num">95%</td>
+            <td>AI训练GPU服务器 ≈100%，但<strong>全国数据中心整体 ≈20%</strong></td>
+            <td><span class="tag-verdict tag-wrong">场景混淆</span></td>
+          </tr>
+          <tr>
+            <td><strong>年增长</strong></td>
+            <td class="num">30%</td>
+            <td>管路细分 2025→2027 CAGR <strong>~115%</strong>，30% 严重低估</td>
+            <td><span class="tag-verdict tag-wrong">大幅低估</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ====== SECTION 2 ====== -->
+    <div class="section">
+      <h2>二、核心基准：各平台单柜组件用量拆解</h2>
+      <p style="font-size:13px;color:#636e72;margin-bottom:12px;">这是全部核算的基础——不同平台、不同代际，单柜的管路/接头用量差异巨大。</p>
+      <table>
+        <thead>
+          <tr><th>参数</th><th class="center">GB200 NVL72</th><th class="center">GB300 NVL36</th><th class="center">GB300 NVL72</th><th class="center">Rubin NVL72</th><th class="center">华为 Atlas</th><th class="center">ASIC 通用</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GPU/芯片数</td><td class="center">72</td><td class="center">36</td><td class="center">72</td><td class="center">72</td><td class="center">~32</td><td class="center">~48</td></tr>
+          <tr><td>Compute Tray</td><td class="center">18</td><td class="center">9</td><td class="center">18</td><td class="center">18</td><td class="center">—</td><td class="center">—</td></tr>
+          <tr><td>Switch Tray</td><td class="center">9</td><td class="center">9</td><td class="center">9</td><td class="center">9</td><td class="center">—</td><td class="center">—</td></tr>
+          <tr><td>冷板数量</td><td class="center">45</td><td class="center">63</td><td class="center">117</td><td class="center">~150</td><td class="center">~32</td><td class="center">~48</td></tr>
+          <tr class="row-highlight"><td><strong>UQD（冷板侧快接头）</strong></td><td class="center num up">126 对</td><td class="center num">126 对</td><td class="center num up">270 对</td><td class="center num up">306 对</td><td class="center num">24 对</td><td class="center num">48 对</td></tr>
+          <tr class="row-highlight"><td><strong>MQD（歧管侧快接头）</strong></td><td class="center num">54 对</td><td class="center num">36 对</td><td class="center num">54 对</td><td class="center num">54 对</td><td class="center num">16 对</td><td class="center num">24 对</td></tr>
+          <tr><td>冷板侧软管</td><td class="center">~50 m</td><td class="center">~44 m</td><td class="center num up">~95 m</td><td class="center">~92 m</td><td class="center">~28 m</td><td class="center">~38 m</td></tr>
+          <tr><td>歧管侧软管</td><td class="center">~81 m</td><td class="center">~54 m</td><td class="center">~81 m</td><td class="center">~97 m</td><td class="center">~22 m</td><td class="center">~34 m</td></tr>
+          <tr><td>CDU 软管</td><td class="center">~12 m</td><td class="center">~12 m</td><td class="center">~12 m</td><td class="center">~16 m</td><td class="center">~5 m</td><td class="center">~8 m</td></tr>
+          <tr><td><strong>软管总长</strong></td><td class="center">~143 m</td><td class="center">~110 m</td><td class="center num up">~188 m</td><td class="center num up">~205 m</td><td class="center">~55 m</td><td class="center">~80 m</td></tr>
+          <tr class="row-highlight"><td><strong>管路总价值（¥）</strong></td><td class="center num up">~14 万</td><td class="center num">~9 万</td><td class="center num up">~17 万</td><td class="center num up">~18 万</td><td class="center num">~3.5 万</td><td class="center num">~5.6 万</td></tr>
+        </tbody>
+      </table>
+      <div class="note-box blue">
+        <strong>关键洞察：</strong>GB200→GB300 每柜 UQD 从 126→270 对（+114%），软管从 143→188m（+31%）；Rubin 再到 306 对 UQD + 205m 软管。NVIDIA 每一代升级都在<strong>翻倍</strong>你的单柜价值量。华为体系单柜价值量较低（3.5万），但出货量增速快。
+      </div>
+    </div>
+
+    <!-- ====== SECTION 3 ====== -->
+    <div class="section">
+      <h2>三、全球液冷机柜出货量预测（按平台 × 区域）</h2>
+      <h3>2025 年 · 实际</h3>
+      <table>
+        <thead><tr><th>平台</th><th class="center">全球</th><th class="center">北美 ~80%</th><th class="center">欧洲 ~10%</th><th class="center">中国</th><th class="center">其他</th></tr></thead>
+        <tbody>
+          <tr><td>GB200 NVL72</td><td class="center num">25,000</td><td class="center">20,000</td><td class="center">2,500</td><td class="center">—</td><td class="center">2,500</td></tr>
+          <tr><td>GB300 NVL72</td><td class="center num">2,000</td><td class="center">1,600</td><td class="center">200</td><td class="center">—</td><td class="center">200</td></tr>
+          <tr><td>NVL36</td><td class="center num">3,000</td><td class="center">2,100</td><td class="center">300</td><td class="center">—</td><td class="center">600</td></tr>
+          <tr><td>华为 Atlas</td><td class="center num">5,000</td><td class="center">—</td><td class="center">—</td><td class="center">5,000</td><td class="center">—</td></tr>
+          <tr><td>AMD + ASIC</td><td class="center num">9,500</td><td class="center">8,200</td><td class="center">650</td><td class="center">—</td><td class="center">650</td></tr>
+          <tr style="font-weight:700;background:#f8f9fa;"><td><strong>合计</strong></td><td class="center num up">44,500</td><td class="center">31,900</td><td class="center">3,650</td><td class="center">5,000</td><td class="center">3,950</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2026 年 · 预测</h3>
+      <table>
+        <thead><tr><th>平台</th><th class="center">全球</th><th class="center">北美 ~78%</th><th class="center">欧洲 ~10%</th><th class="center">中国</th><th class="center">其他</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td>GB300 NVL72</td><td class="center num up">45,000</td><td class="center">35,100</td><td class="center">4,500</td><td class="center">—</td><td class="center">5,400</td></tr>
+          <tr><td>GB200 NVL72</td><td class="center num">10,000</td><td class="center">7,800</td><td class="center">1,000</td><td class="center">—</td><td class="center">1,200</td></tr>
+          <tr><td>NVL36</td><td class="center num">8,000</td><td class="center">5,600</td><td class="center">800</td><td class="center">—</td><td class="center">1,600</td></tr>
+          <tr><td>Rubin NVL72</td><td class="center num">3,000</td><td class="center">2,400</td><td class="center">300</td><td class="center">—</td><td class="center">300</td></tr>
+          <tr><td>华为 Atlas</td><td class="center num">15,000</td><td class="center">—</td><td class="center">—</td><td class="center">15,000</td><td class="center">—</td></tr>
+          <tr><td>国产其他</td><td class="center num">3,000</td><td class="center">—</td><td class="center">—</td><td class="center">3,000</td><td class="center">—</td></tr>
+          <tr><td>AMD + ASIC</td><td class="center num">25,000</td><td class="center">20,000</td><td class="center">2,500</td><td class="center">—</td><td class="center">2,500</td></tr>
+          <tr style="font-weight:700;background:#f8f9fa;"><td><strong>合计</strong></td><td class="center num up">109,000</td><td class="center">70,900</td><td class="center">9,100</td><td class="center">18,000</td><td class="center">11,000</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2027 年 · 远景</h3>
+      <table>
+        <thead><tr><th>平台</th><th class="center">全球</th><th class="center">北美 ~72%</th><th class="center">欧洲 ~12%</th><th class="center">中国</th><th class="center">其他</th></tr></thead>
+        <tbody>
+          <tr><td>GB300 NVL72</td><td class="center num">25,000</td><td class="center">18,000</td><td class="center">3,000</td><td class="center">—</td><td class="center">4,000</td></tr>
+          <tr class="row-highlight"><td>Rubin NVL72</td><td class="center num up">50,000</td><td class="center">36,000</td><td class="center">6,000</td><td class="center">—</td><td class="center">8,000</td></tr>
+          <tr><td>Rubin NVL144</td><td class="center num">10,000</td><td class="center">7,200</td><td class="center">1,200</td><td class="center">—</td><td class="center">1,600</td></tr>
+          <tr><td>华为 Atlas</td><td class="center num">30,000</td><td class="center">—</td><td class="center">—</td><td class="center">30,000</td><td class="center">—</td></tr>
+          <tr><td>国产其他</td><td class="center num">8,000</td><td class="center">—</td><td class="center">—</td><td class="center">8,000</td><td class="center">—</td></tr>
+          <tr><td>AMD + ASIC</td><td class="center num">52,000</td><td class="center">39,000</td><td class="center">7,000</td><td class="center">—</td><td class="center">6,000</td></tr>
+          <tr style="font-weight:700;background:#f8f9fa;"><td><strong>合计</strong></td><td class="center num up">175,000</td><td class="center">100,200</td><td class="center">17,200</td><td class="center">38,000</td><td class="center">19,600</td></tr>
+        </tbody>
+      </table>
+      <div class="note-box">⚠️ 中国因 US 出口管制，无法获得 NVIDIA NVL 机柜。华为昇腾 + 国产替代成为唯一通道。</div>
+    </div>
+
+    <!-- ====== SECTION 4 ====== -->
+    <div class="section">
+      <h2>四、你的目标市场：软管 + UQD + MQD 合计</h2>
+      <div class="data-grid">
+        <div class="data-card"><div class="num">~46 亿 ¥</div><div class="desc">2025 年全球</div></div>
+        <div class="data-card"><div class="num up">~122 亿 ¥</div><div class="desc">2026 年全球 (+164%)</div></div>
+        <div class="data-card"><div class="num up">~212 亿 ¥</div><div class="desc">2027 年全球 (+74%)</div></div>
+        <div class="data-card"><div class="num green">~5.8 亿 ¥</div><div class="desc">2026 年中国市场</div></div>
+      </div>
+      <table>
+        <thead><tr><th>年份</th><th class="center">液冷软管</th><th class="center">UQD（冷板侧）</th><th class="center">MQD（歧管侧）</th><th class="center">合计（美元）</th><th class="center">合计（人民币）</th><th class="center">YoY 增速</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td class="num">$1.0 亿</td><td class="num">$3.2 亿</td><td class="num">$2.4 亿</td><td class="num">$6.6 亿</td><td class="num up">~46 亿</td><td class="center">—</td></tr>
+          <tr class="row-highlight"><td><strong>2026</strong></td><td class="num">$2.7 亿</td><td class="num">$9.2 亿</td><td class="num">$5.5 亿</td><td class="num">$17.4 亿</td><td class="num up">~122 亿</td><td class="center up">+164%</td></tr>
+          <tr><td><strong>2027</strong></td><td class="num">$5.4 亿</td><td class="num">$15.8 亿</td><td class="num">$9.1 亿</td><td class="num">$30.3 亿</td><td class="num up">~212 亿</td><td class="center up">+74%</td></tr>
+        </tbody>
+      </table>
+      <div class="note-box blue"><strong>朋友说的「183亿」与核算对比：</strong>183 亿实际上对应 <strong>2027 年全球 UQD+MQD+软管合计</strong>（~188 亿），数字接近，但时间错位了 2 年。</div>
+    </div>
+
+    <!-- ====== SECTION 5 ====== -->
+    <div class="section">
+      <h2>五、中国市场单独核算（华为昇腾 + 国产替代）</h2>
+      <table>
+        <thead><tr><th>年份</th><th>出货量</th><th>主力平台</th><th>管路市场</th><th>占全球比例</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td class="center">7,000 台</td><td>华为 Atlas + NV HGX (合规)</td><td class="num">~1.6 亿 ¥</td><td class="center">3.5%</td></tr>
+          <tr class="row-highlight"><td><strong>2026</strong></td><td class="center">21,000 台</td><td>华为 Atlas 放量 + 寒武纪/燧原</td><td class="num up">~5.8 亿 ¥</td><td class="center">4.8%</td></tr>
+          <tr><td><strong>2027</strong></td><td class="center">43,000 台</td><td>华为 Atlas 新代 + 国产全面起量</td><td class="num up">~13.9 亿 ¥</td><td class="center">6.6%</td></tr>
+        </tbody>
+      </table>
+      <div class="note-box">🇨🇳 中国被排除在 NVIDIA NVL 机柜之外，但华为昇腾 2026 年放量 + 国产芯片自主化（寒武纪、燧原、昆仑芯等）带来替代性增量。华为目标 2027 年液冷供应链国产化率 85%。</div>
+    </div>
+
+    <!-- ====== SECTION 6 ====== -->
+    <div class="section">
+      <h2>六、增速 vs 朋友说的 30%</h2>
+      <div class="data-grid">
+        <div class="data-card"><div class="num up">38%</div><div class="desc">UQD 市场 CAGR<br>(2025-2027, 中信证券)</div></div>
+        <div class="data-card"><div class="num up">~40%</div><div class="desc">液冷软管 CAGR<br>(行业估算)</div></div>
+        <div class="data-card"><div class="num up">46.8%</div><div class="desc">中国液冷服务器 CAGR<br>(2024-2029, IDC)</div></div>
+        <div class="data-card"><div class="num up">~115%</div><div class="desc">管路+接头总市场<br>(2025→2027)</div></div>
+      </div>
+      <div class="note-box blue"><strong>结论：</strong>30% 严重低估。你所在赛道所有可靠数据源给出的增速都在 38-48%。即使在 BP 中保守使用 30%，也建议在附录注明「行业共识 CAGR 38-48%」以体现专业性。</div>
+    </div>
+
+    <!-- ====== SECTION 7 ====== -->
+    <div class="section">
+      <h2>七、推荐 BP/PPT 口径</h2>
+      <table>
+        <thead><tr><th>维度</th><th>推荐表述</th></tr></thead>
+        <tbody>
+          <tr><td><strong>液冷总市场</strong></td><td>中国智算液冷 2025 年 ~300 亿 → 2029 年 1300 亿（CAGR 40%+）</td></tr>
+          <tr><td><strong>管路+快接头赛道</strong></td><td>全球软管+UQD+MQD 2026 年 ~122 亿 → 2027 年 ~212 亿人民币（CAGR ~75%）</td></tr>
+          <tr><td><strong>单柜价值跃升</strong></td><td>GB200→GB300→Rubin：单柜管路价值 ¥14万 → ¥17万 → ¥37万，量价齐升</td></tr>
+          <tr><td><strong>渗透率</strong></td><td>中国数据中心液冷渗透从 2025 年 ~20% → 2030 年 ~80%</td></tr>
+          <tr><td><strong>中国市场</strong></td><td>华为+国产替代驱动，2026 年 ~5.8 亿 → 2027 年 ~13.9 亿</td></tr>
+          <tr><td><strong>增速</strong></td><td>管路/快接头赛道 CAGR 38-48%（中信/IDC/美银）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ====== SECTION 8 ====== -->
+    <div class="section">
+      <h2>八、关键假设速查</h2>
+      <table>
+        <thead><tr><th>参数</th><th class="center">GB200 NVL72</th><th class="center">GB300 NVL72</th><th class="center">Rubin NVL72</th><th class="center">华为 Atlas</th><th class="center">ASIC 通用</th></tr></thead>
+        <tbody>
+          <tr><td>冷板数/柜</td><td class="center">45</td><td class="center">117</td><td class="center">~150</td><td class="center">~32</td><td class="center">~48</td></tr>
+          <tr><td>UQD 对数/柜</td><td class="center">126</td><td class="center">270</td><td class="center">306</td><td class="center">24</td><td class="center">48</td></tr>
+          <tr><td>MQD 对数/柜</td><td class="center">54</td><td class="center">54</td><td class="center">54</td><td class="center">16</td><td class="center">24</td></tr>
+          <tr><td>软管总长/柜 (m)</td><td class="center">143</td><td class="center">188</td><td class="center">205</td><td class="center">55</td><td class="center">80</td></tr>
+          <tr><td>管路总价值/柜 (¥)</td><td class="center">~14 万</td><td class="center">~17 万</td><td class="center">~18 万</td><td class="center">~3.5 万</td><td class="center">~5.6 万</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sources -->
+    <div class="footnote">
+      <strong>📚 数据来源：</strong>
+      NVIDIA 官方规格书（GB200/GB300 NVL72）、中信证券《快插接头UQD五问五答》、东吴证券《千亿液冷元年已至》、天风证券 GB300 液冷拆解、国海证券液冷行业深度、Morgan Stanley / UBS / Wolfe Research 出货量预测、TrendForce 渗透率数据、IDC 中国液冷服务器报告、中国信通院智算中心白皮书、川环科技/中航光电公司公告、九阳公社产业调研、IEK 产业情报网成本拆解（2025-2026 年公开研报及公司披露）
+      <br><br><strong>⚠️ 免责声明：</strong>软管长度和部分单价为基于公开 BOM 占比和工程经验的合理估算，精确数值需以 ODM 厂商内部 BOM 为准。市场出货量预测基于券商共识区间中位数，存在 ±20% 不确定性。
+    </div>
+
+  </div>
+</body>
+</html>
