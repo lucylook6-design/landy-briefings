@@ -27,17 +27,8 @@
     border-bottom: 1px solid #eee;
     padding-bottom: 18px;
   }
-  .section {
-    margin-bottom: 28px;
-  }
-  .section-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #111;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    border-bottom: 2px solid #222;
-  }
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 16px; font-weight: bold; color: #111; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #222; }
   .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
   .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
   .section-title.green { border-bottom-color: #34a853; color: #34a853; }
@@ -49,114 +40,173 @@
   li { margin-bottom: 8px; }
   li strong { font-weight: 600; }
   .source { color: #888; font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+  th { background: #f5f5f5; text-align: left; padding: 8px 10px; border: 1px solid #ddd; font-weight: 600; }
+  td { padding: 8px 10px; border: 1px solid #ddd; vertical-align: top; }
   .highlight { background: #fff8e1; padding: 12px 16px; border-left: 4px solid #f9a825; margin-top: 10px; font-size: 14px; }
   .warning { background: #fce8e6; padding: 12px 16px; border-left: 4px solid #ea4335; margin-top: 10px; font-size: 14px; }
   .back-button { display: inline-flex; align-items: center; color: #1a73e8; text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 20px; padding: 8px 12px; border-radius: 4px; transition: background-color 0.2s; }
   .back-button:hover { background-color: #f5f5f5; }
   .back-button span { margin-right: 6px; }
-  @media (max-width: 768px) { body { margin: 20px auto; padding: 16px; font-size: 16px; line-height: 1.9; } h1 { font-size: 20px; } .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; } .section { margin-bottom: 24px; } .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; } ul { padding-left: 24px; } li { margin-bottom: 10px; } .highlight, .warning { padding: 14px 18px; font-size: 15px; } .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; } }
+  @media (max-width: 768px) { body { margin: 20px auto; padding: 16px; font-size: 16px; line-height: 1.9; } h1 { font-size: 20px; } .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; } .section { margin-bottom: 24px; } .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; } ul { padding-left: 24px; } li { margin-bottom: 10px; } table { font-size: 15px; } th, td { padding: 10px 12px; } .highlight, .warning { padding: 14px 18px; font-size: 15px; } .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; } }
+  @media (min-width: 769px) and (max-width: 1024px) { body { max-width: 90%; margin: 30px auto; padding: 24px; } h1 { font-size: 21px; } }
+  @media (max-width: 480px) { body { margin: 12px auto; padding: 12px; font-size: 17px; } h1 { font-size: 19px; } .date { font-size: 14px; } .section-title { font-size: 18px; } table { font-size: 14px; display: block; overflow-x: auto; } }
+  @media (min-width: 1200px) { body { max-width: 900px; } }
 </style>
 </head>
 <body>
-<div><a href="/landy-briefings/" class="back-button"><span>←</span> 返回简报列表</a></div>
+
+<div>
+  <a href="/landy-briefings/" class="back-button">
+    <span>←</span> 返回简报列表
+  </a>
+</div>
+
 <h1>AI研究员--Landy葉的简报</h1>
-<div class="date">2026年5月10日（周末版）</div>
+<div class="date">2026年5月10日 · 周末版</div>
 
 <!-- 今日速览 -->
 <div class="section">
   <div class="section-title">📊 今日速览</div>
   <ul>
-    <li><strong>美伊霍尔木兹对峙升级</strong> — 伊朗革命卫队警告"已锁定美国目标"，美方称继续反击，地缘风险溢价持续 <span class="source">（财联社）</span></li>
-    <li><strong>英伟达年内股权投资超400亿美元</strong> — 全面布局AI生态，从芯片到模型打造完整闭环 <span class="source">（36氪）</span></li>
-    <li><strong>百度文心大模型5.1发布</strong> — 预训练成本仅业界同规模6%，登陆LMArena搜索榜国内第一 <span class="source">（36氪）</span></li>
-    <li><strong>港交所前四个月IPO集资金额1514亿港元</strong>，同比暴增<strong>604%</strong> <span class="source">（36氪）</span></li>
-    <li><strong>4月新能源汽车出口再创纪录</strong> — 奇瑞断层领跑，比亚迪、上汽齐破纪录 <span class="source">（第一电动）</span></li>
+    <li><strong>英伟达今年股权投资已超400亿美元</strong> — 全面布局AI生态，打造从芯片到AI模型的完整闭环 <span class="source">（36氪）</span></li>
+    <li><strong>特斯拉最后一辆Model S和Model X下线</strong> — 弗里蒙特工厂正式停产两款旗舰车型 <span class="source">（财联社）</span></li>
+    <li><strong>港交所前四个月IPO集资金额1514亿港元</strong>，同比飙升<strong>604%</strong>，49只新股 <span class="source">（36氪）</span></li>
+    <li><strong>伊朗继续强硬表态</strong> — 将继续行使自卫权，警惕美军在霍尔木兹海峡的"挑衅行为" <span class="source">（财联社）</span></li>
+    <li><strong>硫磺价格年内涨约80%</strong> — 下游钛白粉、磷肥企业多措并举控成本 <span class="source">（36氪）</span></li>
   </ul>
 </div>
 
-<!-- 一、大势研判 -->
+<!-- 一、地缘·宏观 -->
 <div class="section">
-  <div class="section-title lightblue">🌐 一、大势研判 / 地缘与宏观</div>
-  <ul>
-    <li><strong>美伊霍尔木兹海峡对峙持续</strong> — 伊朗革命卫队警告已锁定地区内美国目标，美方称将继续反击。美国务院称航母编队正常活动，地区局势高度紧张 <span class="source">（财联社）</span></li>
-    <li><strong>俄中协作维护国际稳定</strong> — 普京：中俄协作是防止核扩散和维持稳定的重要因素，双边贸易额持续增长 <span class="source">（财联社）</span></li>
-    <li><strong>特朗普考虑从德国撤军</strong> — 或将部分驻德美军转驻波兰，意大利表示"无法理解" <span class="source">（财联社）</span></li>
-    <li><strong>朝鲜人民军方队参加俄罗斯红场阅兵</strong> — 81周年胜利日阅兵，普京会见朝方指挥官 <span class="source">（财联社）</span></li>
-  </ul>
-</div>
-
-<!-- 二、液冷管赛道情报 -->
-<div class="section">
-  <div class="section-title orange">💧 二、液冷管赛道情报</div>
-  <ul>
-    <li>英伟达AI投资加速产业链整合，<strong>年内股权投资超400亿美元</strong>，算力芯片需求持续刚性 <span class="source">（36氪）</span></li>
-    <li>液冷散热在智算中心渗透率持续提升，液冷集成商（英维克、高澜、曙光数创）持续受益 <span class="source">（行业观察）</span></li>
-    <li>注：液冷管路直接订单/中标公告今日未见公开披露，持续跟踪</li>
-  </ul>
-</div>
-
-<!-- 三、下游应用战场 -->
-<div class="section">
-  <div class="section-title green">🔋 三、下游应用战场</div>
+  <div class="section-title red">🔴 地缘·宏观</div>
 
   <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <strong style="color:#ea4335;">🌍 地缘政治</strong>
     <ul>
-      <li><strong>4月出口再创新高</strong> — 奇瑞断层领跑，比亚迪、上汽齐破纪录 <span class="source">（第一电动）</span></li>
-      <li><strong>合资车企批量出海</strong> — 多家合资品牌加速海外布局 <span class="source">（第一电动）</span></li>
-      <li>奥迪成为Momenta L3量产首发品牌，E7X开启预售全系搭载Momenta辅助驾驶 <span class="source">（第一电动）</span></li>
-      <li>阿维塔07L正式定名，定位智美家庭豪华大五座SUV，三季度上市 <span class="source">（第一电动）</span></li>
-      <li>特斯拉Semi电动卡车电池揭晓：搭载4680电池，最高<strong>822kWh</strong> <span class="source">（第一电动）</span></li>
+      <li><strong>伊朗多名官员强硬回应</strong>美军在霍尔木兹海峡的"挑衅行为"，表示将继续行使自卫权，警惕美军再次采取敌对行动。伊朗当前优先事项是恢复霍尔木兹海峡正常通航 <span class="source">（财联社）</span></li>
+      <li><strong>特朗普表示"仍在考虑"调整驻意美军</strong>，并威胁继续削减驻德美军。意大利国防部长表示"无法理解" <span class="source">（财联社）</span></li>
+      <li><strong>朝鲜人民军方队参加红场阅兵</strong>，普京称赞俄中协作是维护国际关系稳定的最重要因素 <span class="source">（财联社）</span></li>
+      <li><strong>以军空袭黎南部致15人死亡</strong>，黎巴嫩真主党发射火箭弹回应 <span class="source">（财联社）</span></li>
+      <li>欧盟危机管理专员：黎巴嫩的人道主义援助进入仍受到严重阻碍 <span class="source">（财联社）</span></li>
     </ul>
   </div>
 
   <div style="margin-left:12px; margin-bottom:14px;">
-    <strong style="color:#34a853;">🔋 储能/新材料</strong>
+    <strong style="color:#ea4335;">📊 宏观数据</strong>
     <ul>
-      <li><strong>硫磺价格年内涨幅约80%</strong> — 5月8日报价6867元/吨，下游钛白粉、磷肥企业多措并举控成本 <span class="source">（36氪）</span></li>
+      <li>一季度全国结婚登记<strong>169.7万对</strong>，离婚62.2万对 <span class="source">（财联社）</span></li>
+      <li><strong>4月北上深租金环比继续上涨</strong>，核心城市需求韧性较强 <span class="source">（财联社/中指研究院）</span></li>
+      <li>4月全国自然灾害造成<strong>305万人次</strong>受灾，直接经济损失41.88亿元 <span class="source">（财联社/应急管理部）</span></li>
+      <li><strong>SK能源将向加油站补贴</strong>应对高油价，每月最高200亿韩元 <span class="source">（财联社）</span></li>
+      <li><strong>世卫官员</strong>：建议对涉疫邮轮人员监测42天，汉坦病毒公众风险仍然低 <span class="source">（财联社）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 二、AI·算力·数据中心 -->
+<div class="section">
+  <div class="section-title lightblue">🤖 二、AI·算力·数据中心</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#1a73e8;">🧠 产业投资</strong>
+    <ul>
+      <li><strong>英伟达今年股权投资已突破400亿美元</strong>，全面布局AI生态，从芯片到AI模型构建完整闭环 <span class="source">（36氪/财联社）</span></li>
+      <li>欧洲央行管委Escrivá表示，<strong>AI风险促使检视金融基础设施</strong>，必须重新评估金融基础设施的网络安全韧性 <span class="source">（财联社）</span></li>
+      <li>DeepSeek融资传闻：<strong>阿里和DeepSeek谈崩了被辟谣</strong>，市场人士透露阿里应没有进行谈判 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 三、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 三、液冷管赛道情报</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#e87020;">🔬 产业背景</strong>
+    <ul>
+      <li>英伟达持续重金投入AI生态，AI大模型迭代驱动算力需求刚性扩张，数据中心与智算中心建设持续发力 <span class="source">（行业观察）</span></li>
+      <li>液冷管作为AI算力基础设施的"血管"，渗透率提升趋势不变</li>
     </ul>
   </div>
 
   <div style="margin-left:12px;">
-    <strong style="color:#34a853;">💡 AI/科技</strong>
+    <strong style="color:#e87020;">📦 竞争格局</strong>
     <ul>
-      <li><strong>百度文心大模型5.1发布</strong> — 预训练成本仅业界同规模6%，LMArena搜索榜国内第一 <span class="source">（36氪）</span></li>
-      <li><strong>英伟达年内AI股权投资超400亿美元</strong> — 打造从芯片到AI模型完整生态 <span class="source">（36氪）</span></li>
-      <li>字节跳动申请注册"火山词元""arktoken"商标 <span class="source">（36氪）</span></li>
-      <li>荣耀在宁波成立新公司，注册资本100万 <span class="source">（36氪）</span></li>
+      <li>本周未见集成商（英维克/高澜/曙光数创/申菱）液冷管路公开订单公告，静待5月中下旬大单落地</li>
     </ul>
   </div>
 </div>
 
-<!-- 四、二级市场 -->
+<!-- 四、下游应用战场 -->
 <div class="section">
-  <div class="section-title darkblue">📈 四、二级市场 & 资本动向</div>
+  <div class="section-title green">🔋 四、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车 & 超充</strong>
+    <ul>
+      <li><strong>特斯拉最后一辆Model S和Model X已在弗里蒙特工厂下线</strong>，两款旗舰车型正式停产 <span class="source">（财联社）</span></li>
+      <li><strong>特斯拉Semi电动卡车电池揭晓：</strong>全部使用<strong>4680电芯</strong>，最高822kWh <span class="source">（第一电动）</span></li>
+      <li><strong>4月出口再飙新高：</strong>奇瑞断层领跑，比亚迪、上汽齐破纪录 <span class="source">（第一电动）</span></li>
+      <li>网传"新能源车企因锁电问题被约谈、立案"为<strong>不实信息</strong> <span class="source">（第一电动/央视）</span></li>
+      <li><strong>合资车企，开始批量出海</strong> <span class="source">（第一电动）</span></li>
+      <li><strong>特来电36天建岛，</strong>全球首座"来电岛"发布 <span class="source">（第一电动）</span></li>
+      <li><strong>阿维塔07L</strong>正式定名，定位智美家庭豪华大五座SUV，三季度上市 <span class="source">（第一电动）</span></li>
+      <li><strong>宝马达成200万辆纯电动汽车产量里程碑</strong> <span class="source">（第一电动）</span></li>
+      <li><strong>丰田一季度营业利润大跌近50%</strong>，雷诺因工会纠纷暂停西班牙生产 <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">🔋 锂电 & 储能</strong>
+    <ul>
+      <li><strong>SK海力士回应人均奖金610万</strong>传闻：业绩尚未确定，已建立以营业利润10%为资金来源的分红制度 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 五、二级市场 & 资本动向 -->
+<div class="section">
+  <div class="section-title darkblue">📈 五、二级市场 & 资本动向</div>
   <ul>
-    <li><strong>港交所前四个月IPO集资金额1514亿港元</strong>，同比暴增<strong>604%</strong>，新上市公司49家（同比+158%） <span class="source">（36氪）</span></li>
-    <li><strong>百度文心大模型5.1发布</strong> — 百度AI能力再加码，基础效果达同规模领先水平 <span class="source">（36氪）</span></li>
-    <li>SK海力士员工人均奖金610万？公司回应：年度业绩尚未确定无法预测 <span class="source">（36氪）</span></li>
+    <li><strong>港交所前四个月IPO集资金额1514亿港元</strong>，同比飙升<strong>604%</strong>，49家新上市公司（去年仅19家），平均每日成交金额2711亿港元 <span class="source">（36氪/港交所）</span></li>
+    <li><strong>硫磺价格年内涨幅约80%</strong>（5月8日报6867元/吨），市场散单突破8000元/吨，云天化、湖北宜化等积极采取控成本措施 <span class="source">（36氪/财联社）</span></li>
+    <li><strong>英伟达股权投资突破400亿美元</strong>，大手笔布局上下游企业 <span class="source">（36氪）</span></li>
+    <li>保时捷宣布<strong>精简三家子公司</strong>，超500名员工受影响，重新聚焦核心业务 <span class="source">（36氪）</span></li>
+    <li>光帆科技全感AI耳机（全球首款带摄像头AI耳机）将于<strong>5月15日开售</strong> <span class="source">（36氪）</span></li>
   </ul>
 </div>
 
-<!-- 五、利通科技 -->
+<!-- 六、利通科技 -->
 <div class="section">
-  <div class="section-title gray">🏢 五、利通科技（839167）动态</div>
+  <div class="section-title gray">🏢 六、利通科技（839167）动态</div>
   <ul>
-    <li>今日为周末（非交易日），未见公开公告</li>
-    <li>持续跟踪北交所公告及财联社利通科技专项动态</li>
+    <li>今日（5月10日）为周日，无交易及公告发布</li>
+    <li>节后关注点：北交所在港交所IPO暴增背景下，流动性改善预期；硫磺涨价80%对化工行业影响；液冷管下游英伟达持续加码AI投资</li>
   </ul>
 </div>
 
-<!-- 六、战略预警 -->
+<!-- 七、战略预警 -->
 <div class="section">
-  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 六、战略预警 / 机会提示</div>
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 七、战略预警 / 机会提示</div>
+
   <div class="warning">
     <strong>🔴 持续关注</strong><br>
-    <strong>美伊霍尔木兹海峡对峙</strong> — 伊朗革命卫队称已锁定美国目标，地区局势高度紧张。原油风险溢价若持续，储能大储项目成本端承压，同时算力中心建设节奏需关注。
+    <strong>霍尔木兹海峡局势</strong> — 伊朗强硬表态继续行使自卫权，美国调整驻欧兵力部署，叠加特朗普关税政策被法院裁定违法。地缘风险溢价可能传导至大宗商品（布伦特/铜/硫磺），关注对储能项目成本影响。
   </div>
+
   <div class="highlight">
-    <strong>🟡 机会关注</strong><br>
-    <strong>英伟达AI生态投资超400亿美元</strong> — 算力需求刚性持续，液冷散热作为算力基础设施核心环节，中长期受益明确。液冷管路国产替代逻辑持续验证中。
+    <strong>🟡 机会信号</strong><br>
+    <strong>1) 英伟达AI生态投资400亿美元</strong> — AI算力基础设施需求确定性极高，液冷管需求只增不减<br>
+    <strong>2) 港股IPO大爆发</strong> — 前4月同比+604%，北向资金活跃，A股流动性改善预期<br>
+    <strong>3) 特斯拉Model S/X停产</strong> — 标志性事件，新能源汽车行业进入"后旗舰时代"，超充和储能配套加速
+  </div>
+
+  <div class="highlight">
+    <strong>&gt;&gt; 本周末无重大液冷管直接事件，下周重点追踪：</strong><br>
+    · 北交所利通科技公告<br>
+    · 英维克/高澜/曙光数创中标公示<br>
+    · 智算中心建设招标信息
   </div>
 </div>
 
