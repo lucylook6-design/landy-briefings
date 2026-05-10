@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>AI研究员--Landy葉的简报 | 2026年5月10日</title>
+<style>
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    color: #222;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #111;
+  }
+  .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 18px;
+  }
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #222;
+  }
+  .section-title.lightblue { border-bottom-color: #1a73e8; color: #1a73e8; }
+  .section-title.orange { border-bottom-color: #e87020; color: #e87020; }
+  .section-title.green { border-bottom-color: #34a853; color: #34a853; }
+  .section-title.purple { border-bottom-color: #9334e6; color: #9334e6; }
+  .section-title.red { border-bottom-color: #ea4335; color: #ea4335; }
+  .section-title.darkblue { border-bottom-color: #0f9d58; color: #0f9d58; }
+  .section-title.gray { border-bottom-color: #5f6368; color: #5f6368; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  li strong { font-weight: 600; }
+  .source { color: #888; font-size: 12px; }
+  .highlight { background: #fff8e1; padding: 12px 16px; border-left: 4px solid #f9a825; margin-top: 10px; font-size: 14px; }
+  .warning { background: #fce8e6; padding: 12px 16px; border-left: 4px solid #ea4335; margin-top: 10px; font-size: 14px; }
+  .back-button { display: inline-flex; align-items: center; color: #1a73e8; text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 20px; padding: 8px 12px; border-radius: 4px; transition: background-color 0.2s; }
+  .back-button:hover { background-color: #f5f5f5; }
+  .back-button span { margin-right: 6px; }
+  @media (max-width: 768px) { body { margin: 20px auto; padding: 16px; font-size: 16px; line-height: 1.9; } h1 { font-size: 20px; } .date { font-size: 15px; margin-bottom: 24px; padding-bottom: 16px; } .section { margin-bottom: 24px; } .section-title { font-size: 17px; margin-bottom: 14px; padding-bottom: 8px; } ul { padding-left: 24px; } li { margin-bottom: 10px; } .highlight, .warning { padding: 14px 18px; font-size: 15px; } .back-button { font-size: 15px; padding: 10px 14px; margin-bottom: 16px; } }
+</style>
+</head>
+<body>
+<div><a href="/landy-briefings/" class="back-button"><span>←</span> 返回简报列表</a></div>
+<h1>AI研究员--Landy葉的简报</h1>
+<div class="date">2026年5月10日（周末版）</div>
+
+<!-- 今日速览 -->
+<div class="section">
+  <div class="section-title">📊 今日速览</div>
+  <ul>
+    <li><strong>美伊霍尔木兹对峙升级</strong> — 伊朗革命卫队警告"已锁定美国目标"，美方称继续反击，地缘风险溢价持续 <span class="source">（财联社）</span></li>
+    <li><strong>英伟达年内股权投资超400亿美元</strong> — 全面布局AI生态，从芯片到模型打造完整闭环 <span class="source">（36氪）</span></li>
+    <li><strong>百度文心大模型5.1发布</strong> — 预训练成本仅业界同规模6%，登陆LMArena搜索榜国内第一 <span class="source">（36氪）</span></li>
+    <li><strong>港交所前四个月IPO集资金额1514亿港元</strong>，同比暴增<strong>604%</strong> <span class="source">（36氪）</span></li>
+    <li><strong>4月新能源汽车出口再创纪录</strong> — 奇瑞断层领跑，比亚迪、上汽齐破纪录 <span class="source">（第一电动）</span></li>
+  </ul>
+</div>
+
+<!-- 一、大势研判 -->
+<div class="section">
+  <div class="section-title lightblue">🌐 一、大势研判 / 地缘与宏观</div>
+  <ul>
+    <li><strong>美伊霍尔木兹海峡对峙持续</strong> — 伊朗革命卫队警告已锁定地区内美国目标，美方称将继续反击。美国务院称航母编队正常活动，地区局势高度紧张 <span class="source">（财联社）</span></li>
+    <li><strong>俄中协作维护国际稳定</strong> — 普京：中俄协作是防止核扩散和维持稳定的重要因素，双边贸易额持续增长 <span class="source">（财联社）</span></li>
+    <li><strong>特朗普考虑从德国撤军</strong> — 或将部分驻德美军转驻波兰，意大利表示"无法理解" <span class="source">（财联社）</span></li>
+    <li><strong>朝鲜人民军方队参加俄罗斯红场阅兵</strong> — 81周年胜利日阅兵，普京会见朝方指挥官 <span class="source">（财联社）</span></li>
+  </ul>
+</div>
+
+<!-- 二、液冷管赛道情报 -->
+<div class="section">
+  <div class="section-title orange">💧 二、液冷管赛道情报</div>
+  <ul>
+    <li>英伟达AI投资加速产业链整合，<strong>年内股权投资超400亿美元</strong>，算力芯片需求持续刚性 <span class="source">（36氪）</span></li>
+    <li>液冷散热在智算中心渗透率持续提升，液冷集成商（英维克、高澜、曙光数创）持续受益 <span class="source">（行业观察）</span></li>
+    <li>注：液冷管路直接订单/中标公告今日未见公开披露，持续跟踪</li>
+  </ul>
+</div>
+
+<!-- 三、下游应用战场 -->
+<div class="section">
+  <div class="section-title green">🔋 三、下游应用战场</div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🚗 新能源汽车</strong>
+    <ul>
+      <li><strong>4月出口再创新高</strong> — 奇瑞断层领跑，比亚迪、上汽齐破纪录 <span class="source">（第一电动）</span></li>
+      <li><strong>合资车企批量出海</strong> — 多家合资品牌加速海外布局 <span class="source">（第一电动）</span></li>
+      <li>奥迪成为Momenta L3量产首发品牌，E7X开启预售全系搭载Momenta辅助驾驶 <span class="source">（第一电动）</span></li>
+      <li>阿维塔07L正式定名，定位智美家庭豪华大五座SUV，三季度上市 <span class="source">（第一电动）</span></li>
+      <li>特斯拉Semi电动卡车电池揭晓：搭载4680电池，最高<strong>822kWh</strong> <span class="source">（第一电动）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px; margin-bottom:14px;">
+    <strong style="color:#34a853;">🔋 储能/新材料</strong>
+    <ul>
+      <li><strong>硫磺价格年内涨幅约80%</strong> — 5月8日报价6867元/吨，下游钛白粉、磷肥企业多措并举控成本 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+
+  <div style="margin-left:12px;">
+    <strong style="color:#34a853;">💡 AI/科技</strong>
+    <ul>
+      <li><strong>百度文心大模型5.1发布</strong> — 预训练成本仅业界同规模6%，LMArena搜索榜国内第一 <span class="source">（36氪）</span></li>
+      <li><strong>英伟达年内AI股权投资超400亿美元</strong> — 打造从芯片到AI模型完整生态 <span class="source">（36氪）</span></li>
+      <li>字节跳动申请注册"火山词元""arktoken"商标 <span class="source">（36氪）</span></li>
+      <li>荣耀在宁波成立新公司，注册资本100万 <span class="source">（36氪）</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 四、二级市场 -->
+<div class="section">
+  <div class="section-title darkblue">📈 四、二级市场 & 资本动向</div>
+  <ul>
+    <li><strong>港交所前四个月IPO集资金额1514亿港元</strong>，同比暴增<strong>604%</strong>，新上市公司49家（同比+158%） <span class="source">（36氪）</span></li>
+    <li><strong>百度文心大模型5.1发布</strong> — 百度AI能力再加码，基础效果达同规模领先水平 <span class="source">（36氪）</span></li>
+    <li>SK海力士员工人均奖金610万？公司回应：年度业绩尚未确定无法预测 <span class="source">（36氪）</span></li>
+  </ul>
+</div>
+
+<!-- 五、利通科技 -->
+<div class="section">
+  <div class="section-title gray">🏢 五、利通科技（839167）动态</div>
+  <ul>
+    <li>今日为周末（非交易日），未见公开公告</li>
+    <li>持续跟踪北交所公告及财联社利通科技专项动态</li>
+  </ul>
+</div>
+
+<!-- 六、战略预警 -->
+<div class="section">
+  <div class="section-title" style="border-bottom-color:#f9a825; color:#f9a825;">📌 六、战略预警 / 机会提示</div>
+  <div class="warning">
+    <strong>🔴 持续关注</strong><br>
+    <strong>美伊霍尔木兹海峡对峙</strong> — 伊朗革命卫队称已锁定美国目标，地区局势高度紧张。原油风险溢价若持续，储能大储项目成本端承压，同时算力中心建设节奏需关注。
+  </div>
+  <div class="highlight">
+    <strong>🟡 机会关注</strong><br>
+    <strong>英伟达AI生态投资超400亿美元</strong> — 算力需求刚性持续，液冷散热作为算力基础设施核心环节，中长期受益明确。液冷管路国产替代逻辑持续验证中。
+  </div>
+</div>
+
+</body>
+</html>
