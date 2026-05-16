@@ -531,6 +531,9 @@
       🧠 行业调研
       <span class="tab-badge" id="research-count">—</span>
     </button>
+    <button class="tab-btn" data-tab="internal" onclick="switchTab('internal')">
+      🔒 内部文件
+    </button>
   </div>
 
   <!-- 每日简报Tab -->
@@ -606,6 +609,14 @@
       <div class="training-arrow">›</div>
     </a>
   </div>
+</div>
+
+<!-- 内部文件Tab -->
+<div id="tab-internal" class="tab-content">
+  <div class="page-title">内部文件</div>
+  <div class="page-sub">受密码保护 · 仅内部员工可访问</div>
+  <div id="internal-container"></div>
+</div>
 </main>
 
 <footer>
@@ -614,6 +625,7 @@
     <a href="#" onclick="switchTab('briefings');return false">每日简报</a>
     <a href="#" onclick="switchTab('knowledge');return false">知识库</a>
     <a href="#" onclick="switchTab('research');return false">行业调研</a>
+    <a href="internal/hr-plan.html" target="_blank">内部文件</a>
   </div>
   Landy 陸葉 · AI研究员简报系统 · 数据仅供参考，不构成投资建议
 </footer>
@@ -760,10 +772,33 @@ function renderResearch(list) {
   container.innerHTML = html;
 }
 
+// 内部文件Tab
+function renderInternal() {
+  const container = document.getElementById('internal-container');
+  const internalFiles = [
+    { name: '人力资源建设方案', desc: '2026年5月 · 董事会审批文件', link: 'internal/hr-plan.html' }
+  ];
+  let html = '';
+  internalFiles.forEach(f => {
+    html += `<a class="report-card" href="${f.link}" target="_blank">
+      <div class="card-icon" style="background: linear-gradient(135deg,#4361ee,#7209b7);font-size:20px;">🔒</div>
+      <div class="card-content">
+        <div class="card-title">${f.name}</div>
+        <div class="card-desc">${f.desc}</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </a>`;
+  });
+  container.innerHTML = html;
+}
+
 // 初始化
 document.getElementById("total-count").textContent = "—";
 document.getElementById("briefing-count").textContent = "—";
 document.getElementById("latest-date").textContent = "—";
+
+// 加载内部文件
+renderInternal();
 
 </script>
 </body>
