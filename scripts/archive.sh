@@ -35,9 +35,27 @@ TARGET="$REPORTS/$FORMATTED_DATE.html"
 cp "$LATEST" "$TARGET"
 echo "✅ 已归档: $TARGET"
 
-# 提取标题和描述
-TITLE=$(grep -oE '<h1[^>]*>[^<]+' "$TARGET" | sed 's/<[^>]*>//' | head -1 | xargs)
-DESC=$(grep -oE '<li><strong>[^<]+' "$TARGET" | sed 's/<[^>]*>//' | head -3 | paste -sd ' · ' -)
+# 提取标题和描述（使用 python3 避免 grep/sed 编码问题）
+TITLE=$(python3 -c "
+with open('$TARGET', 'r', encoding='utf-8') as f:
+    content = f.read()
+import re
+m = re.search(r'<h1[^>]*>([^<]+)', content)
+if m:
+    t = m.group(1).strip()
+    # 移除 HTML 标签
+    t = re.sub(r'<[^>]+>', '', t)
+    print(t)
+else:
+    print('')
+" 2>/dev/null)
+DESC=$(python3 -c "
+with open('$TARGET', 'r', encoding='utf-8') as f:
+    content = f.read()
+import re
+items = re.findall(r'<li>\\s*<strong>([^<]+)', content)[:3]
+print(' · '.join(items))
+" 2>/dev/null)
 [ -z "$TITLE" ] && TITLE="每日简报"
 [ -z "$DESC" ] && DESC="液冷 · AI · 资本市场情报"
 
@@ -49,7 +67,26 @@ if [ -f "$JSON" ]; then
   else
     NEW_RECORD="  {\n    \"date\": \"$FORMATTED_DATE\",\n    \"title\": \"$TITLE\",\n    \"desc\": \"$DESC\",\n    \"tags\": [\"ai\", \"stock\", \"energy\"],\n    \"file\": \"reports/$FORMATTED_DATE.html\"\n  },"
     # 在第一个 [ 后插入新记录（数组开头）
-    LC_ALL=C sed -i.bak "s|\[|[\n$NEW_RECORD|" "$JSON"
+    # 使用 python3 替换避免 LC_ALL=C sed 损坏 UTF-8
+    python3 -c "
+import json
+with open('$JSON', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+new_entry = {
+    'date': '$FORMATTED_DATE',
+    'title': '''$TITLE''',
+    'desc': '''$DESC''',
+    'tags': ['ai', 'stock', 'energy'],
+    'file': 'reports/$FORMATTED_DATE.html'
+}
+data.insert(0, new_entry)
+with open('$JSON', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+    f.write('\n')
+" 2>&1 || {
+      echo '⚠️  python3 插入失败，回退到 sed 方法'
+      LC_ALL=C sed -i.bak "s|\[|[\n$NEW_RECORD|" "$JSON"
+    }
     echo "✅ 已更新 reports-data.json"
   fi
 else

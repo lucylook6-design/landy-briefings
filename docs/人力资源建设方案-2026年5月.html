@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人力资源建设方案 - 2026年5月</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .header-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .header-meta span {
+            display: block;
+        }
+        .header-meta strong {
+            display: block;
+            font-size: 12px;
+            opacity: 0.7;
+            margin-bottom: 2px;
+        }
+        .doc-info {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .doc-info-row {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            padding: 12px 0;
+        }
+        .doc-info-row:last-child {
+            border-bottom: none;
+        }
+        .doc-info-label {
+            width: 140px;
+            color: #666;
+            font-size: 14px;
+        }
+        .doc-info-value {
+            flex: 1;
+            font-weight: 500;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .section h2 {
+            font-size: 20px;
+            color: #1a73e8;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e8f0fe;
+        }
+        .section h3 {
+            font-size: 16px;
+            color: #333;
+            margin: 20px 0 10px;
+        }
+        .section h4 {
+            font-size: 15px;
+            color: #555;
+            margin: 15px 0 10px;
+        }
+        .section p {
+            margin-bottom: 10px;
+            color: #444;
+        }
+        ul, ol {
+            margin: 10px 0 10px 20px;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        th {
+            background: #f8f9fa;
+            color: #333;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+        }
+        td {
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background: #fafbfc;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .highlight-red {
+            background: #fde8e8;
+            border-left-color: #dc3545;
+        }
+        .highlight-green {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+        .job-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .job-card h4 {
+            color: #1a73e8;
+            margin-top: 0;
+            font-size: 17px;
+        }
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 10px 0;
+            font-size: 13px;
+        }
+        .job-meta span {
+            background: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        .job-meta .highlight-tag {
+            background: #e8f0fe;
+            color: #1a73e8;
+            border-color: #c2d9fc;
+        }
+        .job-meta .salary-tag {
+            background: #fff3e0;
+            color: #e65100;
+            border-color: #ffcc80;
+        }
+        .checkbox-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .checkbox-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checkbox-list li::before {
+            content: "☑";
+            color: #1a73e8;
+            font-size: 18px;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 13px;
+        }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .summary-card:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .summary-card:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .summary-card:nth-child(4) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .summary-card .number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .summary-card .label {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>人力资源建设方案</h1>
+            <div class="header-meta">
+                <span><strong>文件编号</strong>HR-2026-001</span>
+                <span><strong>文件版本</strong>V1.0</span>
+                <span><strong>制定日期</strong>2026年5月</span>
+                <span><strong>制定人</strong>总经理</span>
+            </div>
+        </div>
+
+        <div class="doc-info">
+            <div class="doc-info-row">
+                <span class="doc-info-label">审批对象</span>
+                <span class="doc-info-value">董事会</span>
+            </div>
+            <div class="doc-info-row">
+                <span class="doc-info-label">适用范围</span>
+                <span class="doc-info-value">公司内部</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>一、方案背景与目的</h2>
+            <h3>1.1 背景</h3>
+            <p>根据公司战略定位调整，确定液冷软管及快接头为核心业务方向，重点突破AIDC（AI数据中心）市场。当前团队结构无法支撑业务快速发展需求，亟需构建专业化的售前技术团队和市场营销体系。</p>
+            <h3>1.2 目的</h3>
+            <p>本方案旨在向董事会汇报人力资源建设规划，明确：</p>
+            <ul>
+                <li>当前团队现状与能力差距</li>
+                <li>2026年5-6月人员编制规划</li>
+                <li>各岗位职责、任职要求、薪酬预算</li>
+                <li>人力资源投入产出预期</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>二、团队现状分析</h2>
+            <h3>2.1 当前人员结构</h3>
+            <table>
+                <tr>
+                    <th>岗位</th>
+                    <th>在岗人数</th>
+                    <th>主要职责</th>
+                    <th>能力评估</th>
+                </tr>
+                <tr>
+                    <td>总经理</td>
+                    <td>1</td>
+                    <td>战略规划、资源统筹、客户关系</td>
+                    <td>✓ 具备</td>
+                </tr>
+                <tr>
+                    <td>技术/售前支撑</td>
+                    <td>0</td>
+                    <td>方案设计、技术支持、供应商评估</td>
+                    <td>✗ 缺失</td>
+                </tr>
+                <tr>
+                    <td>商务拓展</td>
+                    <td>0</td>
+                    <td>商机跟进、客户对接、合同推进</td>
+                    <td>✗ 缺失</td>
+                </tr>
+                <tr>
+                    <td>市场运营</td>
+                    <td>0</td>
+                    <td>网站/公众号、内容生产、线上获客</td>
+                    <td>✗ 缺失</td>
+                </tr>
+            </table>
+            <div class="highlight highlight-red">
+                <strong>核心问题：</strong>团队仅有总经理一人承担全部职能，缺乏专业分工，业务承接能力严重不足。
+            </div>
+            <h3>2.2 能力缺口分析</h3>
+            <table>
+                <tr>
+                    <th>能力领域</th>
+                    <th>现状</th>
+                    <th>目标</th>
+                    <th>差距</th>
+                </tr>
+                <tr>
+                    <td>液冷技术专业能力</td>
+                    <td>无</td>
+                    <td>具备独立方案设计能力</td>
+                    <td>急需填补</td>
+                </tr>
+                <tr>
+                    <td>售前项目推进能力</td>
+                    <td>总经理兼职</td>
+                    <td>专人专职推进</td>
+                    <td>需补充</td>
+                </tr>
+                <tr>
+                    <td>内容生产与营销能力</td>
+                    <td>无</td>
+                    <td>持续输出专业内容</td>
+                    <td>需补充</td>
+                </tr>
+                <tr>
+                    <td>供应商技术鉴别能力</td>
+                    <td>无</td>
+                    <td>具备评估审核能力</td>
+                    <td>需补充</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>三、人员编制规划</h2>
+            <h3>3.1 编制原则</h3>
+            <ol>
+                <li><strong>精简高效：</strong>初期控制规模，避免冗员，人均产出最大化</li>
+                <li><strong>核心优先：</strong>优先填补技术支撑岗位，确保业务承接能力</li>
+                <li><strong>灵活用工：</strong>非核心职能可采用外包、兼职、顾问形式</li>
+                <li><strong>渐进扩充：</strong>根据业务增长逐步扩充团队规模</li>
+            </ol>
+            <h3>3.2 编制规划表（2026年5-6月）</h3>
+            <table>
+                <tr>
+                    <th>岗位类别</th>
+                    <th>岗位名称</th>
+                    <th>编制人数</th>
+                    <th>到岗时间</th>
+                    <th>用工形式</th>
+                    <th>优先级</th>
+                </tr>
+                <tr>
+                    <td>技术支撑</td>
+                    <td>液冷技术工程师</td>
+                    <td>1-2</td>
+                    <td>5月底</td>
+                    <td>全职/顾问</td>
+                    <td>★★★ 最高</td>
+                </tr>
+                <tr>
+                    <td>商务拓展</td>
+                    <td>售前项目经理</td>
+                    <td>1</td>
+                    <td>6月中旬</td>
+                    <td>全职</td>
+                    <td>★★☆ 高</td>
+                </tr>
+                <tr>
+                    <td>市场运营</td>
+                    <td>内容运营专员</td>
+                    <td>1</td>
+                    <td>6月中旬</td>
+                    <td>全职/兼职</td>
+                    <td>★☆☆ 中</td>
+                </tr>
+            </table>
+            <div class="highlight highlight-green">
+                <strong>总编制：</strong>3-4人（不含总经理）
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>四、岗位职责与任职要求</h2>
+
+            <div class="job-card">
+                <h4>4.1 液冷技术工程师</h4>
+                <div class="job-meta">
+                    <span class="highlight-tag">汇报对象：总经理</span>
+                    <span class="highlight-tag">所属部门：技术支撑部</span>
+                    <span class="salary-tag">20,000-35,000元/月</span>
+                </div>
+                <p><strong>岗位定位：</strong>团队核心技术支柱，负责对外技术方案输出与对内供应商技术评估</p>
+                <p><strong>岗位职责：</strong></p>
+                <ul>
+                    <li>根据客户需求输出液冷连接解决方案及选型建议书</li>
+                    <li>负责快接头、软管产品的技术参数匹配与方案设计</li>
+                    <li>为客户及内部团队提供技术答疑与培训</li>
+                    <li>主导供应商产品技术评估与样品测试</li>
+                    <li>跟踪液冷行业技术发展趋势，建立技术知识库</li>
+                    <li>配合售前团队完成技术方案演示与客户沟通</li>
+                </ul>
+                <p><strong>任职资格：</strong></p>
+                <ul>
+                    <li><strong>学历：</strong>本科及以上，机械工程、热能工程、流体力学等相关专业</li>
+                    <li><strong>经验：</strong>3年以上液冷/数据中心热管理/流体连接相关工作经验</li>
+                    <li><strong>知识：</strong>熟悉数据中心液冷系统架构、理解流体力学基础、熟悉主流快接头品牌</li>
+                </ul>
+                <p><strong>优先条件：</strong>有AIDC项目实施经验、华为/中兴/曙光/超聚变等厂商经历、主流液冷快接头品牌使用经验</p>
+                <p><strong>绩效考核：</strong>方案输出及时率100%、客户技术满意度≥90%、供应商评估报告质量通过审核</p>
+            </div>
+
+            <div class="job-card">
+                <h4>4.2 售前项目经理</h4>
+                <div class="job-meta">
+                    <span class="highlight-tag">汇报对象：总经理</span>
+                    <span class="highlight-tag">所属部门：商务拓展部</span>
+                    <span class="salary-tag">12,000-20,000元/月+提成</span>
+                </div>
+                <p><strong>岗位定位：</strong>商机管理与客户推进的核心执行者，连接技术与商务的桥梁</p>
+                <p><strong>岗位职责：</strong></p>
+                <ul>
+                    <li>负责目标客户信息收集、商机挖掘与跟进</li>
+                    <li>协调技术工程师输出解决方案，推进方案演示与商务谈判</li>
+                    <li>管理商机管道，定期输出商机进度报告</li>
+                    <li>负责客户关系维护，建立长期合作基础</li>
+                    <li>跟踪合同签订、订单交付、回款等商务流程</li>
+                    <li>建立和维护客户档案、商机管理台账</li>
+                </ul>
+                <p><strong>任职资格：</strong></p>
+                <ul>
+                    <li><strong>学历：</strong>大专及以上，专业不限</li>
+                    <li><strong>经验：</strong>2年以上工业品/B2B设备销售经验，有IDC/AIDC行业经验优先</li>
+                    <li><strong>能力：</strong>客户沟通、CRM使用、抗压能力、适应出差</li>
+                </ul>
+                <p><strong>优先条件：</strong>有AIDC/IDC/服务器厂商客户资源、数据中心基础设施项目经验、团队管理经验</p>
+                <p><strong>绩效考核：</strong>商机开发≥5个/月、转化率≥20%、客户拜访≥10次/月</p>
+            </div>
+
+            <div class="job-card">
+                <h4>4.3 内容运营专员</h4>
+                <div class="job-meta">
+                    <span class="highlight-tag">汇报对象：总经理</span>
+                    <span class="highlight-tag">所属部门：市场营销部</span>
+                    <span class="salary-tag">8,000-15,000元/月</span>
+                </div>
+                <p><strong>岗位定位：</strong>线上营销体系的内容生产与运营执行者</p>
+                <p><strong>岗位职责：</strong></p>
+                <ul>
+                    <li>负责公司网站、公众号的内容策划与日常运营</li>
+                    <li>撰写行业技术科普、产品介绍、应用案例等内容</li>
+                    <li>跟踪行业动态，输出市场洞察类内容</li>
+                    <li>管理线上询盘渠道，及时响应并转交售前团队</li>
+                    <li>定期输出运营数据报告，优化内容策略</li>
+                    <li>配合商务需求制作宣传物料</li>
+                </ul>
+                <p><strong>任职资格：</strong></p>
+                <ul>
+                    <li><strong>学历：</strong>大专及以上，理工科背景优先</li>
+                    <li><strong>经验：</strong>1年以上B2B/工业品内容运营经验</li>
+                    <li><strong>能力：</strong>技术内容转化、排版工具使用、快速学习能力</li>
+                </ul>
+                <p><strong>优先条件：</strong>有数据中心/工业品行业内容经验、视频剪辑/设计能力、线上获客成功案例</p>
+                <p><strong>绩效考核：</strong>内容发布≥4篇/月、阅读量增长≥10%/月、线上询盘转化≥3个/月</p>
+            </div>
+
+            <div class="job-card">
+                <h4>4.4 总经理岗位职责说明</h4>
+                <div class="job-meta">
+                    <span class="highlight-tag">汇报对象：董事会</span>
+                </div>
+                <p><strong>岗位定位：</strong>公司战略决策者与资源统筹者，负责业务方向把控与核心客户关系</p>
+                <p><strong>岗位职责：</strong></p>
+                <ul>
+                    <li>制定公司战略规划与年度经营目标，报董事会审批</li>
+                    <li>统筹公司资源配置，组建与管理核心团队</li>
+                    <li>负责战略客户关系的建立与维护</li>
+                    <li>参与重大项目的方案审核与商务谈判</li>
+                    <li>对接集团总部，协调技术支持与资源协同</li>
+                    <li>向董事会定期汇报经营状况与重大事项</li>
+                </ul>
+                <p><strong>考核机制：</strong>由董事会根据年度经营目标进行考核</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>五、薪酬与预算</h2>
+            <h3>5.1 月度人力成本预算</h3>
+            <table>
+                <tr>
+                    <th>岗位</th>
+                    <th>编制</th>
+                    <th>月薪范围（元）</th>
+                    <th>社保公积金（元）</th>
+                    <th>月度总成本（元）</th>
+                </tr>
+                <tr>
+                    <td>液冷技术工程师</td>
+                    <td>1-2</td>
+                    <td>20,000-35,000</td>
+                    <td>约6,000-10,000</td>
+                    <td>26,000-45,000</td>
+                </tr>
+                <tr>
+                    <td>售前项目经理</td>
+                    <td>1</td>
+                    <td>12,000-20,000</td>
+                    <td>约4,000-6,000</td>
+                    <td>16,000-26,000</td>
+                </tr>
+                <tr>
+                    <td>内容运营专员</td>
+                    <td>1</td>
+                    <td>8,000-15,000</td>
+                    <td>约3,000-5,000</td>
+                    <td>11,000-20,000</td>
+                </tr>
+                <tr>
+                    <td><strong>合计</strong></td>
+                    <td><strong>3-4</strong></td>
+                    <td><strong>40,000-70,000</strong></td>
+                    <td><strong>约13,000-21,000</strong></td>
+                    <td><strong>53,000-91,000</strong></td>
+                </tr>
+            </table>
+            <p style="font-size:13px;color:#666;">说明：薪资范围为税前月薪，具体根据候选人能力面议。社保公积金按天津地区标准估算。销售提成、绩效奖金不计入固定人力成本。</p>
+
+            <h3>5.2 季度人力成本预算（5-7月）</h3>
+            <table>
+                <tr>
+                    <th>项目</th>
+                    <th>金额（元）</th>
+                </tr>
+                <tr>
+                    <td>固定薪资支出</td>
+                    <td>120,000 - 210,000</td>
+                </tr>
+                <tr>
+                    <td>社保公积金支出</td>
+                    <td>39,000 - 63,000</td>
+                </tr>
+                <tr>
+                    <td>招聘费用（猎头、招聘平台）</td>
+                    <td>20,000 - 40,000</td>
+                </tr>
+                <tr>
+                    <td>培训与团建费用</td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td><strong>合计</strong></td>
+                    <td><strong>189,000 - 323,000</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>六、招聘计划</h2>
+            <h3>6.1 招聘渠道</h3>
+            <table>
+                <tr>
+                    <th>岗位</th>
+                    <th>推荐渠道</th>
+                    <th>预计费用</th>
+                </tr>
+                <tr>
+                    <td>液冷技术工程师</td>
+                    <td>猎头定向搜索、BOSS直聘、行业展会</td>
+                    <td>猎头费约1个月薪资</td>
+                </tr>
+                <tr>
+                    <td>售前项目经理</td>
+                    <td>BOSS直聘、猎聘、内部推荐</td>
+                    <td>招聘平台会员费</td>
+                </tr>
+                <tr>
+                    <td>内容运营专员</td>
+                    <td>BOSS直聘、智联招聘</td>
+                    <td>招聘平台会员费</td>
+                </tr>
+            </table>
+            <h3>6.2 招聘时间表</h3>
+            <table>
+                <tr>
+                    <th>时间节点</th>
+                    <th>关键任务</th>
+                </tr>
+                <tr>
+                    <td>5月第1-2周</td>
+                    <td>发布岗位JD，启动猎头搜索</td>
+                </tr>
+                <tr>
+                    <td>5月第2-3周</td>
+                    <td>简历筛选、初试面试</td>
+                </tr>
+                <tr>
+                    <td>5月第4周</td>
+                    <td>复试、薪酬谈判、发offer</td>
+                </tr>
+                <tr>
+                    <td>6月第1-2周</td>
+                    <td>技术工程师到岗（或签署顾问协议）</td>
+                </tr>
+                <tr>
+                    <td>6月第2-3周</td>
+                    <td>售前项目经理、内容运营专员到岗</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>七、培训与发展</h2>
+            <h3>7.1 新员工培训计划</h3>
+            <table>
+                <tr>
+                    <th>培训内容</th>
+                    <th>时长</th>
+                    <th>方式</th>
+                    <th>负责人</th>
+                </tr>
+                <tr>
+                    <td>公司文化与制度</td>
+                    <td>1天</td>
+                    <td>内部培训</td>
+                    <td>总经理</td>
+                </tr>
+                <tr>
+                    <td>液冷行业与产品知识</td>
+                    <td>2-3天</td>
+                    <td>内部培训+自学</td>
+                    <td>技术工程师/集团技术团队</td>
+                </tr>
+                <tr>
+                    <td>客户与市场情况</td>
+                    <td>1天</td>
+                    <td>内部培训</td>
+                    <td>总经理</td>
+                </tr>
+                <tr>
+                    <td>岗位职责与流程</td>
+                    <td>1天</td>
+                    <td>内部培训</td>
+                    <td>总经理</td>
+                </tr>
+                <tr>
+                    <td>供应商与合作伙伴介绍</td>
+                    <td>1天</td>
+                    <td>内部培训</td>
+                    <td>总经理</td>
+                </tr>
+            </table>
+            <h3>7.2 能力发展路径</h3>
+            <table>
+                <tr>
+                    <th>岗位</th>
+                    <th>初级阶段（0-6个月）</th>
+                    <th>中级阶段（6-12个月）</th>
+                    <th>高级阶段（1年以上）</th>
+                </tr>
+                <tr>
+                    <td>技术工程师</td>
+                    <td>能独立完成标准方案设计</td>
+                    <td>能主导复杂项目方案</td>
+                    <td>成为行业技术专家</td>
+                </tr>
+                <tr>
+                    <td>售前项目经理</td>
+                    <td>能独立跟进商机</td>
+                    <td>能主导商务谈判</td>
+                    <td>能管理团队、开拓新市场</td>
+                </tr>
+                <tr>
+                    <td>内容运营专员</td>
+                    <td>能独立完成内容生产</td>
+                    <td>能策划专题、优化获客</td>
+                    <td>能主导品牌建设</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>八、绩效考核机制</h2>
+            <h3>8.1 考核原则</h3>
+            <ol>
+                <li><strong>结果导向：</strong>以业绩目标达成为核心</li>
+                <li><strong>过程管理：</strong>关注关键行为与能力提升</li>
+                <li><strong>公平透明：</strong>考核标准明确、结果可追溯</li>
+                <li><strong>激励导向：</strong>考核结果与薪酬、晋升挂钩</li>
+            </ol>
+            <h3>8.2 考核周期</h3>
+            <table>
+                <tr>
+                    <th>岗位</th>
+                    <th>考核周期</th>
+                    <th>考核维度</th>
+                </tr>
+                <tr>
+                    <td>技术工程师</td>
+                    <td>季度考核</td>
+                    <td>方案质量、响应效率、知识建设</td>
+                </tr>
+                <tr>
+                    <td>售前项目经理</td>
+                    <td>月度+季度考核</td>
+                    <td>商机数量、转化率、合同金额</td>
+                </tr>
+                <tr>
+                    <td>内容运营专员</td>
+                    <td>月度考核</td>
+                    <td>内容产出、数据增长、询盘转化</td>
+                </tr>
+            </table>
+            <h3>8.3 激励机制</h3>
+            <ul>
+                <li><strong>销售提成：</strong>售前项目经理按合同金额提成，具体方案另行制定</li>
+                <li><strong>绩效奖金：</strong>季度考核优秀者发放绩效奖金</li>
+                <li><strong>股权激励：</strong>核心骨干可纳入股权激励计划（待董事会批准）</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>九、风险与应对</h2>
+            <table>
+                <tr>
+                    <th>风险项</th>
+                    <th>风险描述</th>
+                    <th>应对措施</th>
+                </tr>
+                <tr>
+                    <td>技术人才稀缺</td>
+                    <td>液冷技术人才市场供给不足，招聘周期长</td>
+                    <td>同步推进全职招聘与顾问合作，借助集团技术团队过渡</td>
+                </tr>
+                <tr>
+                    <td>薪酬竞争力不足</td>
+                    <td>候选人期望薪资超出预算</td>
+                    <td>考虑股权激励、弹性福利等非薪酬激励</td>
+                </tr>
+                <tr>
+                    <td>人员流失风险</td>
+                    <td>新员工试用期离职或被竞品挖角</td>
+                    <td>完善培训与关怀机制，建立竞业限制条款</td>
+                </tr>
+                <tr>
+                    <td>团队磨合期</td>
+                    <td>新团队协作效率待提升</td>
+                    <td>建立明确的沟通机制与协作流程</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>十、预期效果与ROI</h2>
+            <h3>10.1 预期效果</h3>
+            <table>
+                <tr>
+                    <th>维度</th>
+                    <th>当前状态</th>
+                    <th>3个月后预期</th>
+                    <th>6个月后预期</th>
+                </tr>
+                <tr>
+                    <td>团队能力</td>
+                    <td>仅总经理1人</td>
+                    <td>核心团队3-4人到位</td>
+                    <td>团队协作成熟</td>
+                </tr>
+                <tr>
+                    <td>商机管道</td>
+                    <td>无系统管理</td>
+                    <td>建立商机管道，≥10个商机</td>
+                    <td>转化≥2个订单</td>
+                </tr>
+                <tr>
+                    <td>方案能力</td>
+                    <td>无</td>
+                    <td>能输出标准解决方案</td>
+                    <td>具备定制方案能力</td>
+                </tr>
+                <tr>
+                    <td>市场影响</td>
+                    <td>无线上露出</td>
+                    <td>网站公众号上线运营</td>
+                    <td>行业内有初步认知</td>
+                </tr>
+            </table>
+            <h3>10.2 投入产出预估</h3>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="number">18-32万</div>
+                    <div class="label">3个月人力投入</div>
+                </div>
+                <div class="summary-card">
+                    <div class="number">5-20万</div>
+                    <div class="label">预期首单金额</div>
+                </div>
+                <div class="summary-card">
+                    <div class="number">50-100万</div>
+                    <div class="label">3个月商机管道价值</div>
+                </div>
+                <div class="summary-card">
+                    <div class="number">30-80万</div>
+                    <div class="label">6个月订单金额</div>
+                </div>
+            </div>
+            <div class="highlight highlight-green">
+                <strong>ROI判断：</strong>以3-6个月为周期，人力投入可通过业务收入覆盖。长期价值在于团队能力积累与市场地位建立。
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>十一、审批请求</h2>
+            <p>本方案请求董事会审批以下事项：</p>
+            <ul class="checkbox-list">
+                <li>同意上述人员编制规划（3-4人）</li>
+                <li>同意薪酬预算范围（月度人力成本53,000-91,000元）</li>
+                <li>同意招聘计划与费用预算</li>
+                <li>授权总经理开展人员招聘与薪酬谈判</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>文件编号：HR-2026-001 | 版本：V1.0 | 制定日期：2026年5月</p>
+            <p>本文件为董事会审批文件，请妥善保管。</p>
+        </div>
+    </div>
+</body>
+</html>
