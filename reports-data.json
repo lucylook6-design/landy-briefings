@@ -22,17 +22,6 @@
     "file": "reports/2026-04-19.html"
   },
   {
-    "date": "2026-04-19-v2",
-    "title": "AI研究员--Landy陸葉的简报",
-    "desc": "4月23日（下周四） · 建议关注：",
-    "tags": [
-      "ai",
-      "stock",
-      "energy"
-    ],
-    "file": "reports/2026-04-19-v2.html"
-  },
-  {
     "date": "2026-04-20",
     "title": "AI研究员--Landy葉的简报",
     "desc": "阿里AI视频模型HappyHorse将于4月27日开放测试 · 国际能源署：2025年数据中心电力需求增长17%，电动汽车增长38% · 沪深两市成交额连续第9个交易日突破2万亿",
@@ -317,23 +306,5 @@
       "energy"
     ],
     "file": "reports/2026-05-15.html"
-  },
-  {
-    "date": "2026-04-19-v2",
-    "title": "AI研究员--Landy陸葉的简报",
-    "desc": "4月23日（下周四） · 建议关注：",
-    "tags": [
-      "ai"
-    ],
-    "file": "reports/2026-04-19-v2.html"
-  },
-  {
-    "date": "cejn-product-inventory",
-    "title": "综合产品库存文档",
-    "desc": "暂无摘要",
-    "tags": [
-      "ai"
-    ],
-    "file": "reports/cejn-product-inventory.html"
   }
 ]
